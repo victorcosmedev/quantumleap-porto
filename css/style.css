@@ -22,44 +22,85 @@ body{
     padding: 0 75px; 
     width: 100%;
     justify-content: space-between;
+
+    .logo{
+        margin-right: 75px;
+        width: 225px;
+        height: auto;
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .links-esquerda{
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .links-direita{
+            list-style: none;
+
+            .link a{
+                display: block;
+                padding: 5px 25px;
+                border-radius: 5px;
+                background-color: #0046C7;
+                color: #fff;
+            }
+        }
+
+        /* Retirando a formatação dos links do header */
+        ul .link a{
+            text-decoration: None;
+            color: inherit;
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+    }
 }
 
-#topo .logo{
-    margin-right: 75px;
-    width: 225px;
-    height: auto;
-}
-
-#topo nav{
+#rodape{
+    height: 180px;
+    background-color: #000;
     display: flex;
     align-items: center;
+    padding: 0 100px;
     justify-content: space-between;
-    width: 100%;
-}
 
-#topo nav .links-esquerda{
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
+    nav .link-redes{
+        display: flex;
+        gap: 10px;
+    }
 
-#topo nav .links-direita{
-    list-style: none;
-}
+    nav .download-app{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
 
-/* Botão de login */
-.links-direita .link a{
-    display: block;
-    padding: 5px 25px;
-    border-radius: 5px;
-    background-color: #0046C7;
-    color: #fff;
-}
+        li a{
+            text-decoration: None;
+            color: inherit;
+        }
 
-/* Retirando a formatação dos links do header */
-.link a{
-    text-decoration: None;
-    color: inherit;
-    font-weight: 600;
-    font-size: 2.5rem;
+        img{
+            height: 40px;
+            width: auto;
+        }
+    }
+
+    .logo-redes{
+        height: 35px;
+        width: auto;
+        filter: invert(1);
+    }
+
+    .logo-porto{
+        height: 130px;
+        width: auto;
+    }
 }
