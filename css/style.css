@@ -17,34 +17,46 @@ body{
 
 #topo{
     height: 100px;
-    border: 1px solid black;
     display: flex;
     align-items: center;
-    padding: 0 10%; 
+    padding: 0 75px; 
     width: 100%;
     justify-content: space-between;
-
-    nav{
-        display: flex;
-        border: 2px solid red;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
 }
 
-.links-esquerda{
+#topo .logo{
+    margin-right: 40px;
+    width: 160px;
+    height: auto;
+}
+
+#topo nav{
     display: flex;
-    border: 1px solid blue;
-    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#topo nav .links-esquerda{
+    display: flex;
+    gap: 35px;
     list-style: none;
 }
 
-.links-direita{
-    border: 1px solid green;
+#topo nav .links-direita{
     list-style: none;
 }
 
+/* Botão de login */
+.links-direita .link a{
+    display: block;
+    padding: 5px 25px;
+    border-radius: 5px;
+    background-color: #0046C7;
+    color: #fff;
+}
+
+/* Retirando a formatação dos links do header */
 .link a{
     text-decoration: None;
     color: inherit;
