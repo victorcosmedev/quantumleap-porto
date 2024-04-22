@@ -66,9 +66,9 @@ body{
 
 #titulo-img{
    display: flex;
-}
+   margin-bottom: 20px;
 
-#lado-esquerdo-cadastro{
+   .lado-esquerdo-cadastro{
     width: 720px;
     height: 401px;
     background-color: #EFF4F0;
@@ -94,11 +94,47 @@ body{
         border-radius: 5px;
     }
 }
-
-
-.img-motorista{
-    height: 402px;
+    .img-motorista{
+        height: 402px;
+    }
 }
+
+#meio-pagina{
+    display: flex;
+    margin-bottom: 20px;
+    .meio-pagina-esquerda{
+        width: 723px;
+        height: 441px;
+        background-color: #01A1FD;
+        display: flex;
+
+        p{
+            color: #FFFFFF;
+            font-size: 32px;
+            margin-left: 190px;
+            padding: 20px;
+        }
+        
+        nav{
+            font-weight: bold;
+            color: #FFFFFF;
+            font-size: 26px;
+            margin-left: 230px;
+            
+        }
+    }
+
+    .caminhao-porto{
+        width: 720px;
+        height: 422px;
+    }
+    
+
+}
+
+
+
+
 
 #rodape{
     height: 180px;
