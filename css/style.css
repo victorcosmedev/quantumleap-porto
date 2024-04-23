@@ -161,6 +161,47 @@ body{
 }
 
 
+#div-login{
+    display: flex;
+    justify-content: center;
+
+    
+   
+    .quadrado {
+        width: 500px;
+        height: 600px;
+        background-color: #EFF4F0;
+        border: solid black 3px;
+        border-radius: 20px;
+        margin: 30px;
+    }
+    h1{
+        text-align: center;
+        margin-top: 100px;
+    }
+    p{
+        text-align: center;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    .formatacao-entrada{
+        height: 60px;
+        width: 400px;
+        border-radius: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 #rodape{
     height: 180px;
