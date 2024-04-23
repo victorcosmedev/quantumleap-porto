@@ -206,6 +206,37 @@ body{
         font-size: 2rem;
     }
 }
+#div-cadastro{
+    display: flex;
+    justify-content: center;
+    .quadrado {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 600px;
+        background-color: #EFF4F0;
+        border: solid black 3px;
+        border-radius: 20px;
+        margin: 30px;
+    }
+    h1{
+        text-align: center;
+        margin-top: 50px;
+    }
+    p{
+        text-align: center;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    .formatacao-entrada-cadastro{
+        align-self: center;
+        height: 60px;
+        width: 400px;
+        border-radius: 50px;
+        margin-top: 20px;
+        font-size: 3rem;
+    }
+}
 
 
 
