@@ -168,6 +168,8 @@ body{
     
    
     .quadrado {
+        display: flex;
+        flex-direction: column;
         width: 500px;
         height: 600px;
         background-color: #EFF4F0;
@@ -184,10 +186,24 @@ body{
         margin-top: 20px;
         font-weight: bold;
     }
+    h2{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 30px;
+        font-size: 2rem;
+    }
     .formatacao-entrada{
+        align-self: center;
         height: 60px;
         width: 400px;
         border-radius: 50px;
+        font-size: 3rem;
+    }
+    h3{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 30px;
+        font-size: 2rem;
     }
 }
 
