@@ -18,7 +18,7 @@ body{
 /* Extra Grande (XL) - Desktops Grandes */
 @media screen and (min-width: 1200px){
     #cabecalho{
-        height: 11vh;
+        height: 12vh;
         display: flex;
         align-items: center;
         padding: 0 75px; 
@@ -28,7 +28,7 @@ body{
         .logo{
             margin-right: 75px;
             width: auto;
-            height: 9vh;
+            height: 13vh;
         }
     
         nav{
@@ -65,6 +65,7 @@ body{
         }
     }
     
+    /* Página inicial */
     main .grid-main{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -75,9 +76,9 @@ body{
             padding-left: 5vw;
             background-color: #EFF4F0;
 
-
             h1{
                 margin-bottom: 5vh;
+                font-size: 2.5rem;
             }
 
             h2{
@@ -88,7 +89,7 @@ body{
                 border: solid #0046C7;
                 color: #0046C7;
                 font-size: 24px;
-                padding: 5px 25px;
+                padding: 1.25vh 2vw;
                 border-radius: 5px;
                 text-decoration: none;
             }
@@ -96,7 +97,7 @@ body{
 
         .box-img-motorista img{
             width: 100%;
-            height: 100%;
+            height: auto;
         }
 
         .box-lista-problemas {
@@ -105,6 +106,8 @@ body{
             padding-left: 5vw;
             background-color: #01A1FD;
             color: #fff;
+            padding: 12vh 0vw 12vh 5vw;
+
 
             div h2{
                 margin-bottom: 5vh
@@ -120,9 +123,13 @@ body{
             }
         }
 
-        .box-img-caminhao img{
-            width: 100%;
-            height: 100%;
+        .box-img-caminhao {
+            display:flex;
+            align-items: center;
+            img{
+                width: 100%;
+                height: auto;
+            }
         }
         
         .box-iniciar-chat{
@@ -150,110 +157,13 @@ body{
         }
     }
 
-    #titulo-img{
-       display: flex;
-       margin-bottom: 20px;
-       border: 2px solid red;   
-    
-       .lado-esquerdo-cadastro{
-            width: 720px;
-            height: 401px;
-            background-color: #EFF4F0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        
-        h1{
-            font-size: 3rem;    
-        }
-    
-        h2{
-            font-size: 3rem;    
-            margin-top: 7vh;
-            margin-bottom: 9vh;
-        }
-        .botao-cadastro{
-            border: solid #0046C7;
-            color: #0046C7;
-            font-size: 24px;
-            padding: 5px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    .img-motorista{
-        height: 402px;
-    }
-    }
-    
-    #meio-pagina{
-        display: flex;
-        margin-bottom: 20px;
-        .meio-pagina-esquerda{
-            width: 723px;
-            height: 441px;
-            background-color: #01A1FD;
-            display: flex;
-    
-            p{
-                color: #FFFFFF;
-                font-size: 32px;
-                margin-left: 190px;
-                padding: 20px;
-            }
-            
-            nav{
-                font-weight: bold;
-                color: #FFFFFF;
-                font-size: 26px;
-                margin-left: 230px;
-                
-            }
-        }
-    
-        .caminhao-porto{
-            width: 720px;
-            height: 422px;
-        }
-        
-    
-    }
-    
-    #final-pagina{
-        background-color: #EFF4F0;
-        width: 1440px;
-        height: 401px;
-        margin-bottom: 20px;
-        
-    
-        p{
-            font-size: 40px;
-            text-align: center;
-            font-weight: bold;
-            padding: 50px;
-            margin-bottom: 50px;
-        }
-    
-        .botao-iniciar-chat{
-            border: solid #0046C7;
-            font-size: 36px;
-            background-color: #0046C7;
-            color: #fff;
-            border-radius: 10px;
-            padding: 5px 25px;
-            text-decoration: none;
-            margin-left: 600px;
-        }
-    }
-    
-    
+    /* Página de login */
     #div-login{
         display: flex;
         justify-content: center;
     
         
-       
+    
         .quadrado {
             display: flex;
             flex-direction: column;
@@ -293,85 +203,86 @@ body{
             font-size: 2rem;
         }
     }
-    #div-cadastro{
-        display: flex;
-        justify-content: center;
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 50px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .formatacao-entrada-cadastro{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-size: 3rem;
-        }
-    }
+
+    /* Página de cadastro */
+     #div-cadastro{
+         display: flex;
+         justify-content: center;
+         .quadrado {
+             display: flex;
+             flex-direction: column;
+             width: 500px;
+             height: 600px;
+             background-color: #EFF4F0;
+             border: solid black 3px;
+             border-radius: 20px;
+             margin: 30px;
+         }
+         h1{
+             text-align: center;
+             margin-top: 50px;
+         }
+         p{
+             text-align: center;
+             margin-top: 20px;
+             font-weight: bold;
+         }
+         .formatacao-entrada-cadastro{
+             align-self: center;
+             height: 60px;
+             width: 400px;
+             border-radius: 50px;
+             margin-top: 20px;
+             font-size: 3rem;
+         }
+     }
     
     
-    #rodape{
-        height: 180px;
+    #rodape {
+        height: 35vh;
         background-color: #000;
         display: flex;
         align-items: center;
         padding: 0 10vw;
         justify-content: space-between;
     
-        nav .link-redes{
-            display: flex;
-            gap: 0.3vw;
-        }
-
         nav{
             display: flex;
             gap: 1vh;
             align-items: center;
-            flex-direction: column      ;
-        }
-    
-        nav .download-app{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-    
-            li a{
-                text-decoration: None;
-                color: inherit;
-                height: 8vh;
-                width: auto;
-                display: inline-block;
+            flex-direction: column;
 
-                img{
-                    height: 100%;
-                    width: 100%;
+            ul.links-redes{
+                display: flex;
+                gap: 0.3vw;
+
+                li a img.logo-redes{
+                    height: auto;
+                    width: 2.5vw;
+                    filter: invert(1);
                 }
             }
     
-            
-        }
+            ul.download-app{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+        
+                li a{
+                    text-decoration: None;
+                    color: inherit;
+                    height: 8vh;
+                    width: auto;
+                    display: inline-block;
     
-        .logo-redes{
-            height: auto;
-            width: 2.25vw;
-            filter: invert(1);
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+
         }
     
         .logo-porto{
@@ -383,8 +294,8 @@ body{
 
 /* Grande (LG) - Desktops Médios */
 @media screen and (min-width: 992px) and (max-width: 1199px){
-    #topo{
-        height: 10vh;
+    #cabecalho{
+        height: 12vh;
         display: flex;
         align-items: center;
         padding: 0 75px; 
@@ -394,7 +305,7 @@ body{
         .logo{
             margin-right: 75px;
             width: auto;
-            height: 8vh;
+            height: 13vh;
         }
     
         nav{
@@ -408,13 +319,14 @@ body{
                 gap: 35px;
                 list-style: none;
             }
-    
+            
+            /* Botão da direita */
             .links-direita{
                 list-style: none;
     
                 .link a{
                     display: block;
-                    padding: 5px 25px;
+                    padding: 1.25vh 2vw;
                     border-radius: 5px;
                     background-color: #0046C7;
                     color: #fff;
@@ -431,110 +343,110 @@ body{
         }
     }
     
-    
-    #titulo-img{
-       display: flex;
-       margin-bottom: 20px;
-    
-       .lado-esquerdo-cadastro{
-        width: 720px;
-        height: 401px;
-        background-color: #EFF4F0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    /* Página inicial */
+    main .grid-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         
-        
-        h1{
-            font-size: 40px;    
-        }
-    
-        h2{
-            font-size: 40px;    
-            margin-top: 64px;
-            margin-bottom: 50px;
-        }
-        .botao-cadastro{
-            border: solid #0046C7;
-            color: #0046C7;
-            font-size: 24px;
-            padding: 5px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    }
-        .img-motorista{
-            height: 402px;
-        }
-    }
-    
-    #meio-pagina{
-        display: flex;
-        margin-bottom: 20px;
-        .meio-pagina-esquerda{
-            width: 723px;
-            height: 441px;
-            background-color: #01A1FD;
+        .box-banner-cadastro{
             display: flex;
-    
-            p{
-                color: #FFFFFF;
-                font-size: 32px;
-                margin-left: 190px;
-                padding: 20px;
+            align-items: center;
+            padding-left: 5vw;
+            background-color: #EFF4F0;
+
+
+            h1{
+                margin-bottom: 4vh;
+                font-size: 2.6rem;
             }
-            
-            nav{
-                font-weight: bold;
-                color: #FFFFFF;
-                font-size: 26px;
-                margin-left: 230px;
-                
+
+            h2{
+                margin-bottom: 11vh;
+                font-size: 2.4rem;
+            }
+
+            .botao-cadastro{
+                border: 2px solid #0046C7;
+                color: #0046C7;
+                font-size: 2rem;
+                padding: 5px 25px;
+                border-radius: 5px;
+                text-decoration: none;
             }
         }
-    
-        .caminhao-porto{
-            width: 720px;
-            height: 422px;
+
+        .box-img-motorista img{
+            width: 100%;
+            height: 100%;
         }
-        
-    
-    }
-    
-    #final-pagina{
-        background-color: #EFF4F0;
-        width: 1440px;
-        height: 401px;
-        margin-bottom: 20px;
-        
-    
-        p{
-            font-size: 40px;
-            text-align: center;
-            font-weight: bold;
-            padding: 50px;
-            margin-bottom: 50px;
-        }
-    
-        .botao-iniciar-chat{
-            border: solid #0046C7;
-            font-size: 36px;
-            background-color: #0046C7;
+
+        .box-lista-problemas {
+            display: flex;
+            align-items: center;
+            padding: 12vh 0vw 12vh 5vw;
+            background-color: #01A1FD;
             color: #fff;
-            border-radius: 10px;
-            padding: 5px 25px;
-            text-decoration: none;
-            margin-left: 600px;
+
+            div h2{
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div .lista-problemas{
+                padding-left: 1vw;
+                font-size: 1.75rem;
+
+                ul li{
+                    margin-bottom: 1vh;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .box-img-caminhao {
+            display: flex;
+            align-items: center;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+            
+        
+        .box-iniciar-chat{
+            grid-column: 1 / span 2;
+            padding: 11% 0;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+            
+            h1{
+                margin-bottom: 4.5%;
+                font-size: 2.6rem;
+            }
+
+            .botao-iniciar-chat{
+                border: solid #0046C7;
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 2vh 3vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 2.25rem;
+            }
         }
     }
-    
-    
+
+    /* Página de login */
     #div-login{
         display: flex;
         justify-content: center;
     
         
-       
+    
         .quadrado {
             display: flex;
             flex-direction: column;
@@ -574,84 +486,100 @@ body{
             font-size: 2rem;
         }
     }
-    #div-cadastro{
-        display: flex;
-        justify-content: center;
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 50px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .formatacao-entrada-cadastro{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-size: 3rem;
-        }
-    }
+
+    /* Página de cadastro */
+     #div-cadastro{
+         display: flex;
+         justify-content: center;
+         .quadrado {
+             display: flex;
+             flex-direction: column;
+             width: 500px;
+             height: 600px;
+             background-color: #EFF4F0;
+             border: solid black 3px;
+             border-radius: 20px;
+             margin: 30px;
+         }
+         h1{
+             text-align: center;
+             margin-top: 50px;
+         }
+         p{
+             text-align: center;
+             margin-top: 20px;
+             font-weight: bold;
+         }
+         .formatacao-entrada-cadastro{
+             align-self: center;
+             height: 60px;
+             width: 400px;
+             border-radius: 50px;
+             margin-top: 20px;
+             font-size: 3rem;
+         }
+     }
     
     
-    #rodape{
-        height: 180px;
+    #rodape {
+        height: 35vh;
         background-color: #000;
         display: flex;
         align-items: center;
-        padding: 0 100px;
+        padding: 0 10vw;
         justify-content: space-between;
     
-        nav .link-redes{
+
+        nav{
             display: flex;
-            gap: 10px;
-        }
-    
-        nav .download-app{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-    
-            li a{
-                text-decoration: None;
-                color: inherit;
+            gap: 1vh;
+            flex-direction: column;
+
+            ul.links-redes{
+                display: flex;
+                flex: 1;
+                gap: 0.3vw;
+                border: 2px solid #476C9B;
+
+                li a img.logo-redes{
+                    height: auto;
+                    width: 2.5vw;
+                    filter: invert(1);
+                }
             }
-    
-            img{
-                height: 40px;
-                width: auto;
+
+            ul.download-app{
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+                border: 2px solid #8CD867;
+        
+                li a{
+                    text-decoration: None;
+                    color: inherit;
+                    height: 6vh;
+                    width: auto;
+                    display: inline-block;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
             }
-        }
-    
-        .logo-redes{
-            height: 35px;
-            width: auto;
-            filter: invert(1);
         }
     
         .logo-porto{
-            height: 130px;
-            width: auto;
+            height: auto;
+            width: 18vw;
         }
     }
 }
 
-/* Médio (MD) - Tablets e Laptops */
 
+/* Médio (MD) - Tablets e Laptops */
 @media screen and (min-width: 768px) and (max-width: 991px){
     #topo{
         height: 10vh;
