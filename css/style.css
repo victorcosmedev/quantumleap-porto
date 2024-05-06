@@ -24,6 +24,11 @@ body{
         padding: 0 75px; 
         width: 100%;
         justify-content: space-between;
+
+        .hamburguer{
+            display: none;
+            visibility: hidden;
+        }
     
         .logo{
             margin-right: 75px;
@@ -301,6 +306,11 @@ body{
         padding: 0 75px; 
         width: 100%;
         justify-content: space-between;
+
+        .hamburguer{
+            display: none;
+            visibility: hidden;
+        }
     
         .logo{
             margin-right: 75px;
@@ -529,7 +539,6 @@ body{
         padding: 0 10vw;
         justify-content: space-between;
     
-
         nav{
             display: flex;
             gap: 1vh;
@@ -539,11 +548,302 @@ body{
                 display: flex;
                 flex: 1;
                 gap: 0.3vw;
-                border: 2px solid #476C9B;
 
                 li a img.logo-redes{
                     height: auto;
                     width: 2.5vw;
+                    filter: invert(1);
+                }
+            }
+
+            ul.download-app{
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+        
+                li a{
+                    text-decoration: None;
+                    color: inherit;
+                    height: 6vh;
+                    width: auto;
+                    display: inline-block;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+        .logo-porto{
+            height: auto;
+            width: 18vw;
+        }
+    }
+}
+
+
+/* Médio (MD) - Tablets e Laptops */
+@media screen and (min-width: 768px) and (max-width: 991px){
+    #cabecalho{
+        height: 12vh;
+        display: flex;
+        align-items: center;
+        padding: 0 75px; 
+        width: 100%;
+        justify-content: space-between;
+
+        .hamburguer{
+            display: none;
+            visibility: hidden;
+        }
+    
+        .logo{
+            margin-right: 75px;
+            width: auto;
+            height: 13vh;
+        }
+    
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+    
+            .links-esquerda{
+                display: flex;
+                gap: 35px;
+                list-style: none;
+            }
+            
+            /* Botão da direita */
+            .links-direita{
+                list-style: none;
+    
+                .link a{
+                    display: block;
+                    padding: 1vh 2vw;
+                    border-radius: 5px;
+                    background-color: #0046C7;
+                    color: #fff;
+                }
+            }
+    
+            /* Retirando a formatação dos links do header */
+            ul .link a{
+                text-decoration: None;
+                color: inherit;
+                font-weight: 600;
+                font-size: 1.75rem;
+            }
+        }
+    }
+    
+    /* Página inicial */
+    main .grid-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        .box-banner-cadastro{
+            display: flex;
+            align-items: center;
+            background-color: #EFF4F0;
+            padding: 10vh 0 10vh 5vw;
+
+
+            h1{
+                margin-bottom: 4vh;
+                font-size: 2.4rem;
+            }
+
+            h2{
+                margin-bottom: 11vh;
+                font-size: 2.2rem;
+            }
+
+            .botao-cadastro{
+                border: 2px solid #0046C7;
+                color: #0046C7;
+                font-size: 1.8rem;
+                padding: 5px 25px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+        }
+
+        .box-img-motorista img{
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .box-lista-problemas {
+            display: flex;
+            align-items: center;
+            padding: 12vh 0vw 12vh 5vw;
+            background-color: #01A1FD;
+            color: #fff;
+
+            div h2{
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div .lista-problemas{
+                padding-left: 1vw;
+                font-size: 1.75rem;
+
+                ul li{
+                    margin-bottom: 1vh;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .box-img-caminhao {
+            display: flex;
+            align-items: center;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+            
+        
+        .box-iniciar-chat{
+            grid-column: 1 / span 2;
+            padding: 11% 0;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+            
+            h1{
+                margin-bottom: 4.5%;
+                font-size: 2.4rem;
+            }
+
+            .botao-iniciar-chat{
+                border: solid #0046C7;
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 2vh 3vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 2.1rem;
+            }
+        }
+    }
+
+    /* Página de login */
+    #div-login{
+        display: flex;
+        justify-content: center;
+    
+        
+    
+        .quadrado {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 600px;
+            background-color: #EFF4F0;
+            border: solid black 3px;
+            border-radius: 20px;
+            margin: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        .formatacao-entrada{
+            align-self: center;
+            height: 60px;
+            width: 400px;
+            border-radius: 50px;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    /* Página de cadastro */
+     #div-cadastro{
+         display: flex;
+         justify-content: center;
+         .quadrado {
+             display: flex;
+             flex-direction: column;
+             width: 500px;
+             height: 600px;
+             background-color: #EFF4F0;
+             border: solid black 3px;
+             border-radius: 20px;
+             margin: 30px;
+         }
+         h1{
+             text-align: center;
+             margin-top: 50px;
+         }
+         p{
+             text-align: center;
+             margin-top: 20px;
+             font-weight: bold;
+         }
+         .formatacao-entrada-cadastro{
+             align-self: center;
+             height: 60px;
+             width: 400px;
+             border-radius: 50px;
+             margin-top: 20px;
+             font-size: 3rem;
+         }
+     }
+    
+    
+    #rodape {
+        height: 35vh;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 0 10vw;
+        justify-content: space-between;
+    
+
+        nav{
+            display: flex;
+            gap: 1vh;
+            flex-direction: column;
+
+            ul.links-redes{
+                display: flex;
+                flex: 1;
+                gap: 0.7vw;
+                border: 2px solid #476C9B;
+
+                li a img.logo-redes{
+                    height: auto;
+                    width: 3.3vw;
                     filter: invert(1);
                 }
             }
@@ -578,315 +878,109 @@ body{
     }
 }
 
-
-/* Médio (MD) - Tablets e Laptops */
-@media screen and (min-width: 768px) and (max-width: 991px){
-    #topo{
-        height: 10vh;
-        display: flex;
-        align-items: center;
-        padding: 0 75px; 
-        width: 100%;
-        justify-content: space-between;
-    
-        .logo{
-            margin-right: 75px;
-            width: auto;
-            height: 8vh;
-        }
-    
-        nav{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-    
-            .links-esquerda{
-                display: flex;
-                gap: 35px;
-                list-style: none;
-            }
-    
-            .links-direita{
-                list-style: none;
-    
-                .link a{
-                    display: block;
-                    padding: 5px 25px;
-                    border-radius: 5px;
-                    background-color: #0046C7;
-                    color: #fff;
-                }
-            }
-    
-            /* Retirando a formatação dos links do header */
-            ul .link a{
-                text-decoration: None;
-                color: inherit;
-                font-weight: 600;
-                font-size: 1.75rem;
-            }
-        }
-    }
-    
-    
-    #titulo-img{
-       display: flex;
-       margin-bottom: 20px;
-    
-       .lado-esquerdo-cadastro{
-        width: 720px;
-        height: 401px;
-        background-color: #EFF4F0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        
-        h1{
-            font-size: 40px;    
-        }
-    
-        h2{
-            font-size: 40px;    
-            margin-top: 64px;
-            margin-bottom: 50px;
-        }
-        .botao-cadastro{
-            border: solid #0046C7;
-            color: #0046C7;
-            font-size: 24px;
-            padding: 5px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    }
-        .img-motorista{
-            height: 402px;
-        }
-    }
-    
-    #meio-pagina{
-        display: flex;
-        margin-bottom: 20px;
-        .meio-pagina-esquerda{
-            width: 723px;
-            height: 441px;
-            background-color: #01A1FD;
-            display: flex;
-    
-            p{
-                color: #FFFFFF;
-                font-size: 32px;
-                margin-left: 190px;
-                padding: 20px;
-            }
-            
-            nav{
-                font-weight: bold;
-                color: #FFFFFF;
-                font-size: 26px;
-                margin-left: 230px;
-                
-            }
-        }
-    
-        .caminhao-porto{
-            width: 720px;
-            height: 422px;
-        }
-        
-    
-    }
-    
-    #final-pagina{
-        background-color: #EFF4F0;
-        width: 1440px;
-        height: 401px;
-        margin-bottom: 20px;
-        
-    
-        p{
-            font-size: 40px;
-            text-align: center;
-            font-weight: bold;
-            padding: 50px;
-            margin-bottom: 50px;
-        }
-    
-        .botao-iniciar-chat{
-            border: solid #0046C7;
-            font-size: 36px;
-            background-color: #0046C7;
-            color: #fff;
-            border-radius: 10px;
-            padding: 5px 25px;
-            text-decoration: none;
-            margin-left: 600px;
-        }
-    }
-    
-    
-    #div-login{
-        display: flex;
-        justify-content: center;
-    
-        
-       
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 100px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        h2{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-        .formatacao-entrada{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            font-size: 3rem;
-        }
-        h3{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-    }
-    #div-cadastro{
-        display: flex;
-        justify-content: center;
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 50px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .formatacao-entrada-cadastro{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-size: 3rem;
-        }
-    }
-    
-
-    #rodape{
-        height: 180px;
-        background-color: #000;
-        display: flex;
-        align-items: center;
-        padding: 0 100px;
-        justify-content: space-between;
-    
-        nav .link-redes{
-            display: flex;
-            gap: 10px;
-        }
-    
-        nav .download-app{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-    
-            li a{
-                text-decoration: None;
-                color: inherit;
-            }
-    
-            img{
-                height: 40px;
-                width: auto;
-            }
-        }
-    
-        .logo-redes{
-            height: 35px;
-            width: auto;
-            filter: invert(1);
-        }
-    
-        .logo-porto{
-            height: 130px;
-            width: auto;
-        }
-    }
-}
-
 /* Pequeno (SM) - Telefones Médios e Tablets Pequenos */
 @media screen and (min-width: 576px) and (max-width: 767px){
-    #topo{
-        height: 10vh;
+
+    /* Menu para XS e SM */
+    .container-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+    
+        ul.botoes {
+            a{
+                text-decoration: none;
+                color: inherit;
+
+                .botao-menu{
+                    padding: 5vh 0vw 3vh 5vw;
+                    border-bottom: 2px solid #0046C7;
+                }
+            }
+        } 
+        
+        ul.botao-voltar{
+            position:absolute;
+            bottom: 0;
+            height: 8vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 2vh;
+
+            li{ 
+                list-style-type: none;
+                width: 1vw;
+                a {
+                    text-decoration: none;
+                    width: min-content;
+
+                    img{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #cabecalho{
+        height: 12vh;
         display: flex;
         align-items: center;
         padding: 0 75px; 
         width: 100%;
         justify-content: space-between;
-    
+
         .logo{
             margin-right: 75px;
             width: auto;
-            height: 8vh;
+            height: 13vh;
         }
     
         nav{
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
             width: 100%;
     
             .links-esquerda{
-                display: flex;
+                display: none;
+                visibility: hidden;
                 gap: 35px;
                 list-style: none;
             }
-    
+            
+            .hamburguer li {
+                display: flex;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    .icone-hamburguer {
+                        height: 6vh;
+                        width: auto;
+                    }
+                }
+            }
+            
+            /* Botão da direita */
             .links-direita{
                 list-style: none;
+                display: none;
+                visibility: hidden;
     
                 .link a{
                     display: block;
-                    padding: 5px 25px;
+                    padding: 1vh 2vw;
                     border-radius: 5px;
                     background-color: #0046C7;
                     color: #fff;
                 }
             }
+
+        
     
             /* Retirando a formatação dos links do header */
             ul .link a{
@@ -898,110 +992,132 @@ body{
         }
     }
     
-    
-    #titulo-img{
-       display: flex;
-       margin-bottom: 20px;
-    
-       .lado-esquerdo-cadastro{
-        width: 720px;
-        height: 401px;
-        background-color: #EFF4F0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    /* Página inicial */
+    main .grid-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         
-        
-        h1{
-            font-size: 40px;    
-        }
-    
-        h2{
-            font-size: 40px;    
-            margin-top: 64px;
-            margin-bottom: 50px;
-        }
-        .botao-cadastro{
-            border: solid #0046C7;
-            color: #0046C7;
-            font-size: 24px;
-            padding: 5px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    }
-        .img-motorista{
-            height: 402px;
-        }
-    }
-    
-    #meio-pagina{
-        display: flex;
-        margin-bottom: 20px;
-        .meio-pagina-esquerda{
-            width: 723px;
-            height: 441px;
-            background-color: #01A1FD;
+        .box-banner-cadastro{
             display: flex;
+            align-items: center;
+            background-image: url("../img/motorista-azul.jpeg");
+            background-position: center center;
+            background-size: cover;
+            grid-column: 1 / span 2;
+
+            div{
+                padding: 15vh 0 15vh 10vw;
+                background-color: rgba(0, 0, 0, 0.7);
+                width: 100%;
+
+                h1{
+                    color: #fff;
+                    margin-bottom: 4vh;
+                    font-size: 2.4rem;
+                }
     
-            p{
-                color: #FFFFFF;
-                font-size: 32px;
-                margin-left: 190px;
-                padding: 20px;
+                h2{
+                    color: #fff;
+                    margin-bottom: 8vh;
+                    font-size: 2.2rem;
+                }
+    
+                .botao-cadastro{
+                    background-color: #fff;
+                    font-weight: 500;
+                    color: #0046C7;
+                    font-size: 1.8rem;
+                    padding: 5px 25px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                }
             }
-            
-            nav{
-                font-weight: bold;
-                color: #FFFFFF;
-                font-size: 26px;
-                margin-left: 230px;
-                
-            }
         }
-    
-        .caminhao-porto{
-            width: 720px;
-            height: 422px;
+
+        .box-img-motorista img{
+            display: none;
+            visibility:none;
+            width: 100%;
+            height: 100%;
         }
-        
-    
-    }
-    
-    #final-pagina{
-        background-color: #EFF4F0;
-        width: 1440px;
-        height: 401px;
-        margin-bottom: 20px;
-        
-    
-        p{
-            font-size: 40px;
-            text-align: center;
-            font-weight: bold;
-            padding: 50px;
-            margin-bottom: 50px;
-        }
-    
-        .botao-iniciar-chat{
-            border: solid #0046C7;
-            font-size: 36px;
-            background-color: #0046C7;
+
+
+        .box-lista-problemas {
+            display: flex;
+            align-items: center;
             color: #fff;
-            border-radius: 10px;
-            padding: 5px 25px;
-            text-decoration: none;
-            margin-left: 600px;
+            grid-column: 1 / span 2;
+            background-image: url("../img/caminhao-porto.jpeg");
+            background-position: center center;
+            background-size: cover;
+
+
+            div h2{
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div {
+                background-color: rgba(0, 102, 161, 0.8);
+                padding: 12vh 0vw 12vh 10vw;
+                width: 100%;
+                .lista-problemas{
+                    padding-left: 1vw;
+                    font-size: 1.75rem;
+
+                    ul li{
+                        margin-bottom: 1vh;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .box-img-caminhao {
+            display: none;
+            visibility: none;
+            align-items: center;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+            
+        
+        .box-iniciar-chat{
+            grid-column: 1 / span 2;
+            padding: 11% 0;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+            
+            h1{
+                margin-bottom: 4.5%;
+                font-size: 2.4rem;
+            }
+
+            .botao-iniciar-chat{
+                border: solid #0046C7;
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 2vh 3vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 2.1rem;
+            }
         }
     }
-    
-    
+
+    /* Página de login */
     #div-login{
         display: flex;
         justify-content: center;
     
         
-       
+    
         .quadrado {
             display: flex;
             flex-direction: column;
@@ -1041,78 +1157,92 @@ body{
             font-size: 2rem;
         }
     }
-    #div-cadastro{
-        display: flex;
-        justify-content: center;
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 50px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .formatacao-entrada-cadastro{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-size: 3rem;
-        }
-    }
 
+    /* Página de cadastro */
+     #div-cadastro{
+         display: flex;
+         justify-content: center;
+         .quadrado {
+             display: flex;
+             flex-direction: column;
+             width: 500px;
+             height: 600px;
+             background-color: #EFF4F0;
+             border: solid black 3px;
+             border-radius: 20px;
+             margin: 30px;
+         }
+         h1{
+             text-align: center;
+             margin-top: 50px;
+         }
+         p{
+             text-align: center;
+             margin-top: 20px;
+             font-weight: bold;
+         }
+         .formatacao-entrada-cadastro{
+             align-self: center;
+             height: 60px;
+             width: 400px;
+             border-radius: 50px;
+             margin-top: 20px;
+             font-size: 3rem;
+         }
+     }
     
-    #rodape{
-        height: 180px;
+    
+    #rodape {
+        height: 35vh;
         background-color: #000;
         display: flex;
         align-items: center;
-        padding: 0 100px;
+        padding: 0 10vw;
         justify-content: space-between;
     
-        nav .link-redes{
+
+        nav{
             display: flex;
-            gap: 10px;
-        }
-    
-        nav .download-app{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-    
-            li a{
-                text-decoration: None;
-                color: inherit;
+            gap: 1vh;
+            flex-direction: column;
+
+            ul.links-redes{
+                display: flex;
+                flex: 1;
+                gap: 0.7vw;
+
+                li a img.logo-redes{
+                    height: auto;
+                    width: 4.3vw;
+                    filter: invert(1);
+                }
             }
-    
-            img{
-                height: 40px;
-                width: auto;
+
+            ul.download-app{
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+        
+                li a{
+                    text-decoration: None;
+                    color: inherit;
+                    height: 6vh;
+                    width: auto;
+                    display: inline-block;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
             }
-        }
-    
-        .logo-redes{
-            height: 35px;
-            width: auto;
-            filter: invert(1);
         }
     
         .logo-porto{
-            height: 130px;
-            width: auto;
+            height: auto;
+            width: 18vw;
         }
     }
 }
@@ -1120,4 +1250,367 @@ body{
 /* Extra Pequeno (XS) - Telefones Pequenos */
 @media screen and (max-width: 575px){
 
+    /* Menu para XS e SM */
+    .container-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+    
+        ul.botoes {
+            a{
+                text-decoration: none;
+                color: inherit;
+
+                .botao-menu{
+                    padding: 5vh 0vw 3vh 5vw;
+                    border-bottom: 2px solid #0046C7;
+                }
+            }
+        } 
+        
+        ul.botao-voltar{
+            position:absolute;
+            bottom: 0;
+            height: 8vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 2vh;
+
+            li{ 
+                list-style-type: none;
+                width: 1vw;
+                a {
+                    text-decoration: none;
+                    width: min-content;
+
+                    img{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #cabecalho{
+        height: 12vh;
+        display: flex;
+        align-items: center;
+        padding: 0 25px; 
+        width: 100%;
+        justify-content: space-between;
+
+        .logo{
+            margin-right: 75px;
+            width: auto;
+            height: 13vh;
+        }
+    
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+    
+            .links-esquerda{
+                display: none;
+                visibility: hidden;
+                gap: 35px;
+                list-style: none;
+            }
+            
+            .hamburguer li {
+                display: flex;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    .icone-hamburguer {
+                        height: 6vh;
+                        width: auto;
+                    }
+                }
+            }
+            
+            /* Botão da direita */
+            .links-direita{
+                list-style: none;
+                display: none;
+                visibility: hidden;
+    
+                .link a{
+                    display: block;
+                    padding: 1vh 2vw;
+                    border-radius: 5px;
+                    background-color: #0046C7;
+                    color: #fff;
+                }
+            }
+
+        
+    
+            /* Retirando a formatação dos links do header */
+            ul .link a{
+                text-decoration: None;
+                color: inherit;
+                font-weight: 600;
+                font-size: 1.75rem;
+            }
+        }
+    }
+    
+    /* Página inicial */
+    main .grid-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        .box-banner-cadastro{
+            display: flex;
+            align-items: center;
+            background-image: url("../img/motorista-azul.jpeg");
+            background-position: center center;
+            background-size: cover;
+            grid-column: 1 / span 2;
+
+            div{
+                padding: 15vh 0 15vh 10vw;
+                background-color: rgba(0, 0, 0, 0.7);
+                width: 100%;
+
+                h1{
+                    color: #fff;
+                    margin-bottom: 4vh;
+                    font-size: 2.4rem;
+                }
+    
+                h2{
+                    color: #fff;
+                    margin-bottom: 8vh;
+                    font-size: 2.2rem;
+                }
+    
+                .botao-cadastro{
+                    background-color: #fff;
+                    font-weight: 500;
+                    color: #0046C7;
+                    font-size: 1.8rem;
+                    padding: 5px 25px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .box-img-motorista img{
+            display: none;
+            visibility:none;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .box-lista-problemas {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            grid-column: 1 / span 2;
+            background-image: url("../img/caminhao-porto.jpeg");
+            background-position: center center;
+            background-size: cover;
+
+
+            div h2{
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div {
+                background-color: rgba(0, 102, 161, 0.8);
+                padding: 12vh 0vw 12vh 10vw;
+                width: 100%;
+                .lista-problemas{
+                    padding-left: 1vw;
+                    font-size: 1.75rem;
+
+                    ul li{
+                        margin-bottom: 1vh;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .box-img-caminhao {
+            display: none;
+            visibility: none;
+            align-items: center;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+            
+        
+        .box-iniciar-chat{
+            grid-column: 1 / span 2;
+            padding: 15% 0;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+            
+            h1{
+                margin-bottom: 4.5%;
+                font-size: 2rem;
+            }
+
+            .botao-iniciar-chat{
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 1.5vh 5vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    /* Página de login */
+    #div-login{
+        display: flex;
+        justify-content: center;
+    
+        
+    
+        .quadrado {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 600px;
+            background-color: #EFF4F0;
+            border: solid black 3px;
+            border-radius: 20px;
+            margin: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        .formatacao-entrada{
+            align-self: center;
+            height: 60px;
+            width: 400px;
+            border-radius: 50px;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    /* Página de cadastro */
+     #div-cadastro{
+         display: flex;
+         justify-content: center;
+         .quadrado {
+             display: flex;
+             flex-direction: column;
+             width: 500px;
+             height: 600px;
+             background-color: #EFF4F0;
+             border: solid black 3px;
+             border-radius: 20px;
+             margin: 30px;
+         }
+         h1{
+             text-align: center;
+             margin-top: 50px;
+         }
+         p{
+             text-align: center;
+             margin-top: 20px;
+             font-weight: bold;
+         }
+         .formatacao-entrada-cadastro{
+             align-self: center;
+             height: 60px;
+             width: 400px;
+             border-radius: 50px;
+             margin-top: 20px;
+             font-size: 3rem;
+         }
+     }
+    
+    
+    #rodape {
+        height: 29vh;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 0 8vw;
+        justify-content: space-between;
+    
+
+        nav{
+            display: flex;
+            gap: 1vh;
+            flex-direction: column;
+
+            ul.links-redes{
+                display: flex;
+                flex: 1;
+                gap: 0.7vw;
+                
+                li a img.logo-redes{
+                    height: auto;
+                    width: 4.3vw;
+                    filter: invert(1);
+                }
+            }
+
+            ul.download-app{
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+        
+                li a{
+                    text-decoration: None;
+                    color: inherit;
+                    height: 4vh;
+                    width: auto;
+                    display: inline-block;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+        .logo-porto{
+            height: auto;
+            width: 25vw;
+        }
+    }
 }
