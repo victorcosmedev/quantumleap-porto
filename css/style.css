@@ -204,6 +204,10 @@ body {
       margin-top: 30px;
       font-size: 2rem;
     }
+    .fa-regular {
+      cursor: pointer;
+      user-select: none;
+    }
   }
 
   /* Página de cadastro */

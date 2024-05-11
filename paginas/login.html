@@ -12,6 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" defer></script>
     <title>QuickFix - Porto Seguro</title>
   </head>
   <body>
@@ -36,24 +37,29 @@
     <main>
       <div id="div-login">
         <div class="quadrado">
-          <form>
+          <form
+            action="#"
+            method="get"
+            onsubmit="return validaCampos(this.idEmail,this.idSenha)"
+          >
             <h1>Acessar Conta</h1>
             <p>Preencha seus dados de acesso para continuar.</p>
             <div>
               <h2>Conta:</h2>
               <input
                 class="formatacao-entrada"
-                type="password"
+                type="email"
                 name="senha"
                 placeholder=" CPF / CNPJ"
               />
             </div>
             <div>
-              <h3>Senha:</h3>
+              <h3 for="idSenha">Senha:</h3>
               <input
                 class="formatacao-entrada"
                 type="password"
                 name="senha"
+                id="idSenha"
                 placeholder=" SENHA"
               />
               <i class="fa-regular fa-eye-slash"></i>
