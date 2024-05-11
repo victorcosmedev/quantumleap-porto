@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <header id="topo">
+    <header id="cabecalho">
       <img
         class="logo"
         src="./img/logo-porto.png"
@@ -17,69 +17,72 @@
         height="100"
       />
       <nav>
+        <ul class="hamburguer">
+          <li>
+            <a href="./menu.html"
+              ><img
+                src="./img/icone-hamburguer.png"
+                alt="menu com mais opções"
+                class="icone-hamburguer"
+              />
+            </a>
+          </li>
+        </ul>
         <ul class="links-esquerda">
           <li class="link"><a href="./index.html">Home</a></li>
-          <li class="link"><a href="./sobre-nos.html">Sobre nós</a></li>
+          <li class="link"><a href="./paginas/sobre-nos.html">Sobre nós</a></li>
         </ul>
         <ul class="links-direita">
-          <li class="link"><a href="./login.html">Login</a></li>
+          <li class="link"><a href="./paginas/login.html">Login</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <div id="titulo-img">
-        <div class="lado-esquerdo-cadastro">
+      <div class="grid-main">
+        <div class="box-banner-cadastro">
           <div>
             <h1>Problemas com seu carro?</h1>
             <h2>Nós temos a solução</h2>
-
-            <a class="botao-cadastro" href="./cadastro.html">Cadastre-se já</a>
+            <a class="botao-cadastro" href="./paginas/cadastro.html"
+              >Cadastre-se já</a
+            >
           </div>
         </div>
-        <img
-          class="img-motorista"
-          src="./img/motorista-azul.jpeg"
-          alt="Motorista com camisa azul"
-        />
-      </div>
-
-      <div id="meio-pagina">
-        <div class="meio-pagina-esquerda">
+        <div class="box-img-motorista">
+          <img src="./img/motorista-azul.jpeg" alt="" />
+        </div>
+        <div class="box-lista-problemas">
           <div>
-            <p>Problemas como:</p>
-
-            <nav>
+            <h2>Problemas como:</h2>
+            <nav class="lista-problemas">
               <ul>
-                <li>Alinhamento,</li>
-                <li>Ar-condicionado,</li>
-                <li>Arrefecimentp</li>
-                <li>Balanceamento e Geometria,</li>
-                <li>Correias,</li>
-                <li>Discos e Pastilhas de Freio,</li>
-                <li>Embreagens,</li>
-                <li>Filtros,</li>
+                <li>Alinhamento</li>
+                <li>Ar-condicionado</li>
+                <li>Arrefecimento</li>
+                <li>Balanceamento e Geometria</li>
+                <li>Correias</li>
+                <li>Discos e Pastilhas de Freio</li>
+                <li>Embreagens</li>
+                <li>Filtros</li>
                 <li>Velas de Ignição</li>
               </ul>
             </nav>
           </div>
         </div>
-        <img
-          class="caminhao-porto"
-          src="./img/caminhao-porto.jpeg"
-          alt="Caminhão da porto seguro"
-        />
-      </div>
-
-      <div id="final-pagina">
-        <p>Precisa de ajuda? Fale conosco!</p>
-        <a class="botao-iniciar-chat" href="#">Iniciar Chat</a>
+        <div class="box-img-caminhao">
+          <img src="./img/caminhao-porto.jpeg" alt="" />
+        </div>
+        <div class="box-iniciar-chat">
+          <h1>Precisa de ajuda? Fale conosco!</h1>
+          <a class="botao-iniciar-chat" href="./chat.html">Iniciar Chat</a>
+        </div>
       </div>
     </main>
 
     <footer id="rodape">
       <nav class="links-rodape">
-        <ul class="link-redes">
+        <ul class="links-redes">
           <li>
             <a href="https://twitter.com/portoseguro" target="_blank"
               ><img
