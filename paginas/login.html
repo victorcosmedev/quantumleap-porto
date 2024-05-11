@@ -4,6 +4,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <title>QuickFix - Porto Seguro</title>
   </head>
@@ -29,22 +36,32 @@
     <main>
       <div id="div-login">
         <div class="quadrado">
-          <h1>Acessar Conta</h1>
-          <p>Preencha seus dados de acesso para continuar.</p>
-          <h2>Conta:</h2>
-          <input
-            class="formatacao-entrada"
-            type="password"
-            name="senha"
-            placeholder=" CPF / CNPJ"
-          />
-          <h3>Senha:</h3>
-          <input
-            class="formatacao-entrada"
-            type="password"
-            name="senha"
-            placeholder=" SENHA"
-          />
+          <form>
+            <h1>Acessar Conta</h1>
+            <p>Preencha seus dados de acesso para continuar.</p>
+            <div>
+              <h2>Conta:</h2>
+              <input
+                class="formatacao-entrada"
+                type="password"
+                name="senha"
+                placeholder=" CPF / CNPJ"
+              />
+            </div>
+            <div>
+              <h3>Senha:</h3>
+              <input
+                class="formatacao-entrada"
+                type="password"
+                name="senha"
+                placeholder=" SENHA"
+              />
+              <i class="fa-regular fa-eye-slash"></i>
+            </div>
+            <div>
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
         </div>
       </div>
     </main>
