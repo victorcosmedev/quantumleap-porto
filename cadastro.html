@@ -16,6 +16,17 @@
         height="100"
       />
       <nav>
+        <ul class="hamburguer">
+          <li>
+            <a href="./menu.html"
+              ><img
+                src="./img/icone-hamburguer.png"
+                alt="menu com mais opções"
+                class="icone-hamburguer"
+              />
+            </a>
+          </li>
+        </ul>
         <ul class="links-esquerda">
           <li class="link"><a href="./index.html">Home</a></li>
           <li class="link"><a href="./sobre-nos.html">Sobre nós</a></li>
@@ -25,37 +36,50 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <div id="div-cadastro">
-        <div class="quadrado">
+    <main id="container-cadastro">
+      <form id="form-cadastro" action="#">
+        <fieldset class="quadrado">
           <h1>Crie sua conta</h1>
           <p>Preencha seus dados de acesso para continuar.</p>
-          <input
-            class="formatacao-entrada-cadastro"
-            type="password"
-            name="CPF"
-            placeholder="CPF / CNPJ"
-          />
-          <input
-            class="formatacao-entrada-cadastro"
-            type="password"
-            name="nome"
-            placeholder="NOME"
-          />
-          <input
-            class="formatacao-entrada-cadastro"
-            type="password"
-            name="email"
-            placeholder="EMAIL"
-          />
-          <input
-            class="formatacao-entrada-cadastro"
-            type="password"
-            name="senha"
-            placeholder="SENHA"
-          />
-        </div>
-      </div>
+          <div class="div-campo">
+            <label for="nome">Nome<span>*</span></label>
+            <input
+              class="formatacao-entrada-cadastro"
+              type="text"
+              name="nome"
+              placeholder="Nome"
+            />
+          </div>
+          <div class="div-campo">
+            <label for="cpf">CPF<span>*</span></label>
+            <input
+              class="formatacao-entrada-cadastro"
+              type="text"
+              name="cpf"
+              placeholder="CPF/CNPJ"
+            />
+          </div>
+          <div class="div-campo">
+            <label for="email">Email<span>*</span></label>
+            <input
+              class="formatacao-entrada-cadastro"
+              type="text"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="div-campo">
+            <label for="senha">Senha<span>*</span></label>
+            <input
+              class="formatacao-entrada-cadastro"
+              type="password"
+              name="senha"
+              placeholder="Senha"
+            />
+          </div>
+          <button class="enviar" type="submit">Enviar</button>
+        </fieldset>
+      </form>
     </main>
 
     <footer id="rodape">
