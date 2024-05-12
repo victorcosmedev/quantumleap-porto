@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/sobre-nos.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>QuickFix - Porto Seguro</title>
   </head>
   <body>
-    <header id="topo">
+    <header id="cabecalho">
       <img
         class="logo"
         src="./img/logo-porto.png"
@@ -16,6 +16,17 @@
         height="100"
       />
       <nav>
+        <ul class="hamburguer">
+          <li>
+            <a href="./menu.html"
+              ><img
+                src="./img/icone-hamburguer.png"
+                alt="menu com mais opções"
+                class="icone-hamburguer"
+              />
+            </a>
+          </li>
+        </ul>
         <ul class="links-esquerda">
           <li class="link"><a href="./index.html">Home</a></li>
           <li class="link"><a href="./sobre-nos.html">Sobre nós</a></li>
@@ -26,7 +37,7 @@
       </nav>
     </header>
     <main>
-      <section id="conteudo">
+      <section id="conteudo-sobre-nos">
         <h1>Sobre nós</h1>
         <div>
           <img
@@ -61,16 +72,20 @@
             <h4>RM 558856</h4>
           </div>
         </div>
-        <nav>
+        <nav class="link-repositorio">
           <ul>
-            <li><a href="https://github.com/victorcosmedev/quantumleap-porto">Link para o repositório</a></li>
+            <li>
+              <a href="https://github.com/victorcosmedev/quantumleap-porto"
+                >Link para o repositório</a
+              >
+            </li>
           </ul>
         </nav>
       </section>
     </main>
     <footer id="rodape">
       <nav class="links-rodape">
-        <ul class="link-redes">
+        <ul class="links-redes">
           <li>
             <a href="https://twitter.com/portoseguro" target="_blank"
               ><img
