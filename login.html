@@ -16,6 +16,17 @@
         height="100"
       />
       <nav>
+        <ul class="hamburguer">
+          <li>
+            <a href="./menu.html"
+              ><img
+                src="./img/icone-hamburguer.png"
+                alt="menu com mais opções"
+                class="icone-hamburguer"
+              />
+            </a>
+          </li>
+        </ul>
         <ul class="links-esquerda">
           <li class="link"><a href="./index.html">Home</a></li>
           <li class="link"><a href="./sobre-nos.html">Sobre nós</a></li>
@@ -25,27 +36,32 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <div id="div-login">
-        <div class="quadrado">
+    <main id="container-form">
+      <form id="formulario">
+        <fieldset class="quadrado">
           <h1>Acessar Conta</h1>
           <p>Preencha seus dados de acesso para continuar.</p>
-          <h2>Conta:</h2>
-          <input
-            class="formatacao-entrada"
-            type="password"
-            name="senha"
-            placeholder="CPF / CNPJ"
-          />
-          <h3>Senha:</h3>
-          <input
-            class="formatacao-entrada"
-            type="password"
-            name="senha"
-            placeholder="SENHA"
-          />
-        </div>
-      </div>
+          <div class="div-campo">
+            <label for="cpf">Email</label>
+            <input
+              class="formatacao-entrada-campo"
+              type="password"
+              name="senha"
+              placeholder="CPF / CNPJ"
+            />
+          </div>
+          <div class="div-campo">
+            <label for="senha">Senha</label>
+            <input
+              class="formatacao-entrada-campo"
+              type="password"
+              name="senha"
+              placeholder="Senha"
+            />
+          </div>
+          <button class="enviar" type="submit">Enviar</button>
+        </fieldset>
+      </form>
     </main>
 
     <footer id="rodape">
