@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/script.js" defer></script>
+    
     <title>QuickFix - Porto Seguro</title>
   </head>
   <body>
@@ -30,12 +31,17 @@
           <li class="link"><a href="./sobre-nos.html">Sobre nós</a></li>
         </ul>
         <ul class="links-direita">
+          <li id="user-info" style="display: none;"><span id="user-name"></span></li>
           <li class="link"><a href="./login.html">Login</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
       <div id="div-login">
+        <div>
+          <p class="valida"></p>
+        </div>
         <div class="quadrado">
           <form
             action="#"
@@ -47,6 +53,7 @@
             <div>
               <h2>Conta:</h2>
               <input
+                id="idEmail"
                 class="formatacao-entrada"
                 type="email"
                 name="senha"
@@ -56,6 +63,7 @@
             <div>
               <h3 for="idSenha">Senha:</h3>
               <input
+                id="idSenha"
                 class="formatacao-entrada"
                 type="password"
                 name="senha"
