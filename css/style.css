@@ -204,6 +204,18 @@ body {
       margin-top: 30px;
       font-size: 2rem;
     }
+    button{
+      display: block;
+      padding: 5px 25px;
+      border-radius: 5px;
+      border:solid 1px ;
+      background-color: #0046c7;
+      color: #fff;
+      font-size: 1.75rem;
+      margin-left: 200px;
+      margin-top: 30px;
+      
+    }
     .fa-regular {
       cursor: pointer;
       user-select: none;
@@ -505,6 +517,18 @@ body {
       margin-top: 30px;
       font-size: 2rem;
     }
+    button{
+      display: block;
+      padding: 5px 25px;
+      border-radius: 5px;
+      border:solid 1px ;
+      background-color: #0046c7;
+      color: #fff;
+      font-size: 1.75rem;
+      margin-left: 200px;
+      margin-top: 30px;
+      
+    }
     .formatacao-entrada {
       align-self: center;
       height: 60px;
@@ -787,6 +811,18 @@ body {
       font-weight: bold;
       margin-top: 30px;
       font-size: 2rem;
+    }
+    button{
+      display: block;
+      padding: 5px 25px;
+      border-radius: 5px;
+      border:solid 1px ;
+      background-color: #0046c7;
+      color: #fff;
+      font-size: 1.75rem;
+      margin-left: 200px;
+      margin-top: 30px;
+      
     }
     .formatacao-entrada {
       align-self: center;
@@ -1147,6 +1183,18 @@ body {
       margin-top: 30px;
       font-size: 2rem;
     }
+    button{
+      display: block;
+      padding: 5px 25px;
+      border-radius: 5px;
+      border:solid 1px ;
+      background-color: #0046c7;
+      color: #fff;
+      font-size: 1.75rem;
+      margin-left: 200px;
+      margin-top: 30px;
+      
+    }
     .formatacao-entrada {
       align-self: center;
       height: 60px;
@@ -1504,6 +1552,18 @@ body {
       font-weight: bold;
       margin-top: 30px;
       font-size: 2rem;
+    }
+    button{
+      display: block;
+      padding: 5px 25px;
+      border-radius: 5px;
+      border:solid 1px ;
+      background-color: #0046c7;
+      color: #fff;
+      font-size: 1.75rem;
+      margin-left: 200px;
+      margin-top: 30px;
+      
     }
     .formatacao-entrada {
       align-self: center;
