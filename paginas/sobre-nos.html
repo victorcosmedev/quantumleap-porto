@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/auth.js" defer></script>
     <link rel="stylesheet" href="../css/sobre-nos.css" />
     <title>QuickFix - Porto Seguro</title>
   </head>
@@ -21,7 +22,8 @@
           <li class="link"><a href="./sobre-nos.html">Sobre nós</a></li>
         </ul>
         <ul class="links-direita">
-          <li class="link"><a href="./login.html">Login</a></li>
+          <li id="user-info" style="display: none;"><span id="user-name"></span></li>
+          <li class="link login-link"><a href="./paginas/login.html">Login</a></li>
         </ul>
       </nav>
     </header>
