@@ -1498,16 +1498,20 @@ body{
         align-items: space-between;
     
         ul.botoes {
+            li{
+                display: flex;
+                flex-direction: column;
+                padding: 5vh 0vw 3vh 5vw;
+                
+            }
             a{
                 text-decoration: none;
                 color: inherit;
-
-                .botao-menu{
-                    padding: 5vh 0vw 3vh 5vw;
-                    border-bottom: 2px solid #0046C7;
-                }
+                padding: 5vh 0vw 3vh 5vw;
+                border-bottom: 2px solid #0046C7;
             }
         } 
+    
         
         ul.botao-voltar{
             position:absolute;
@@ -1532,6 +1536,7 @@ body{
             }
         }
     }
+    
 
     #cabecalho{
         height: 9vh;
@@ -1600,8 +1605,9 @@ body{
                 font-size: 1.75rem;
             }
         }
-    }
     
+    }
+
     /* Página inicial */
     main .grid-main{
         display: grid;
@@ -2062,6 +2068,7 @@ body{
     }
 }
 
+
 /* Extra Pequeno (XS) - Telefones Pequenos */
 @media screen and (max-width: 575px){
 
@@ -2072,14 +2079,19 @@ body{
         align-items: space-between;
     
         ul.botoes {
+            li{
+                display: flex;
+                flex-direction: column;
+                padding: 5vh 0vw 3vh 5vw;
+                
+            }
             a{
                 text-decoration: none;
                 color: inherit;
+                padding: 5vh 0vw 3vh 5vw;
+                border-bottom: 2px solid #0046C7;
 
-                .botao-menu{
-                    padding: 5vh 0vw 3vh 5vw;
-                    border-bottom: 2px solid #0046C7;
-                }
+            
             }
         } 
         
