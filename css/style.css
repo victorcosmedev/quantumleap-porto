@@ -1501,7 +1501,7 @@ body{
             li{
                 display: flex;
                 flex-direction: column;
-                padding: 5vh 0vw 3vh 5vw;
+                padding: vh 0vw 3vh 5vw;
                 
             }
             a{
@@ -2082,7 +2082,7 @@ body{
             li{
                 display: flex;
                 flex-direction: column;
-                padding: 5vh 0vw 3vh 5vw;
+                padding: vh 0vw 3vh 5vw;
                 
             }
             a{
