@@ -1,4 +1,4 @@
-export default function Conteudo (){
+export default function Home(){
     return(
         <main>
         <div className="grid-main">
@@ -39,5 +39,5 @@ export default function Conteudo (){
           </div>
         </div>
       </main>
-    )
+    );
 }
