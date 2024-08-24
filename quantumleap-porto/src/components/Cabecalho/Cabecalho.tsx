@@ -1,11 +1,13 @@
 import styles from "./Cabecalho.module.css";
+import logo from "../../img/logo-porto.png";
+import hamburguer from "../../img/icone-hamburguer.png";
 
 export default function Cabecalho (){
     return(
       <header className={styles.cabecalho}>
         <img
           className={styles.logo}
-          src="./img/logo-porto.png"
+          src={logo}
           alt="Logo da Porto Seguro"
           width="200"
           height="100"
@@ -15,9 +17,9 @@ export default function Cabecalho (){
             <li>
               <a href="./paginas/menu.html"
                 ><img
-                  src="./img/icone-hamburguer.png"
+                  src={hamburguer}
                   alt="menu com mais opções"
-                  className="icone-hamburguer"
+                  className={styles.iconehamburguer}
                 />
               </a>
             </li>
