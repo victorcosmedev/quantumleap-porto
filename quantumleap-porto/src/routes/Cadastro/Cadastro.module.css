@@ -52,10 +52,13 @@
         font-weight: 600;
     }
     
+    main.containerForm .formulario .quadrado .divCampo label span{
+        color: red;
+    }
     main.containerForm .formulario .quadrado .divCampo{
         margin-top: 3vh;
     }
-
+    
     main.containerForm .formulario .quadrado .divCampo .formatacaoEntradaCampo{
         align-self: center;
         height: 6vh;
