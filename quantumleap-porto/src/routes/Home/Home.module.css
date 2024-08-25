@@ -1,0 +1,522 @@
+@media screen and (min-width: 1200px) {
+    /* Página inicial */
+    main .gridMain {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .boxBannerCadastro {
+            display: flex;
+            align-items: center;
+            padding-left: 5vw;
+            background-color: #EFF4F0;
+
+            h1 {
+                margin-bottom: 5vh;
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                margin-bottom: 15vh;
+            }
+
+            .botaoCadastro {
+                border: solid #0046C7;
+                color: #0046C7;
+                font-size: 24px;
+                padding: 1.25vh 2vw;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+        }
+
+        .boxImgMotorista img {
+            width: 100%;
+            height: auto;
+        }
+
+        .boxListaProblemas {
+            display: flex;
+            align-items: center;
+            padding-left: 5vw;
+            background-color: #01A1FD;
+            color: #fff;
+            padding: 12vh 0vw 12vh 5vw;
+
+            div h2 {
+                margin-bottom: 5vh;
+            }
+
+            div .listaProblemas {
+                padding-left: 1vw;
+                font-size: 1.75rem;
+
+                ul li {
+                    margin-bottom: 1vh;
+                }
+            }
+        }
+
+        .boxImgCaminhao {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .boxIniciarChat {
+            grid-column: 1 / span 2;
+            padding: 11% 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+
+            h1 {
+                margin-bottom: 4.5%;
+            }
+
+            .botaoIniciarChat {
+                border: solid #0046C7;
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 2vh 3vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 150%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    main .gridMain {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .boxBannerCadastro {
+            display: flex;
+            align-items: center;
+            padding-left: 5vw;
+            background-color: #EFF4F0;
+
+            h1 {
+                margin-bottom: 4vh;
+                font-size: 2.6rem;
+            }
+
+            h2 {
+                margin-bottom: 11vh;
+                font-size: 2.4rem;
+            }
+
+            .botaoCadastro {
+                border: 2px solid #0046C7;
+                color: #0046C7;
+                font-size: 2rem;
+                padding: 5px 25px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+        }
+
+        .boxImgMotorista img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .boxListaProblemas {
+            display: flex;
+            align-items: center;
+            padding: 12vh 0vw 12vh 5vw;
+            background-color: #01A1FD;
+            color: #fff;
+
+            div h2 {
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div .listaProblemas {
+                padding-left: 1vw;
+                font-size: 1.75rem;
+
+                ul li {
+                    margin-bottom: 1vh;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .boxImgCaminhao {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .boxIniciarChat {
+            grid-column: 1 / span 2;
+            padding: 11% 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+
+            h1 {
+                margin-bottom: 4.5%;
+                font-size: 2.6rem;
+            }
+
+            .botaoIniciarChat {
+                border: solid #0046C7;
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 2vh 3vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 2.25rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Página inicial */
+    main .gridMain {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .boxBannerCadastro {
+            display: flex;
+            align-items: center;
+            background-color: #EFF4F0;
+            padding: 10vh 0 10vh 5vw;
+
+            h1 {
+                margin-bottom: 4vh;
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                margin-bottom: 11vh;
+                font-size: 2.2rem;
+            }
+
+            .botaoCadastro {
+                border: 2px solid #0046C7;
+                color: #0046C7;
+                font-size: 1.8rem;
+                padding: 5px 25px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+        }
+
+        .boxImgMotorista img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .boxListaProblemas {
+            display: flex;
+            align-items: center;
+            padding: 12vh 0vw 12vh 5vw;
+            background-color: #01A1FD;
+            color: #fff;
+
+            div h2 {
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div .listaProblemas {
+                padding-left: 1vw;
+                font-size: 1.75rem;
+
+                ul li {
+                    margin-bottom: 1vh;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .boxImgCaminhao {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .boxIniciarChat {
+            grid-column: 1 / span 2;
+            padding: 11% 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+
+            h1 {
+                margin-bottom: 4.5%;
+                font-size: 2.4rem;
+            }
+
+            .botaoIniciarChat {
+                border: solid #0046C7;
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 2vh 3vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 2.1rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    /* Página inicial */
+    main .gridMain {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .boxBannerCadastro {
+            display: flex;
+            align-items: center;
+            background-image: url("../img/motorista-azul.jpeg");
+            background-position: center center;
+            background-size: cover;
+            grid-column: 1 / span 2;
+
+            div {
+                padding: 15vh 0 15vh 10vw;
+                background-color: rgba(0, 0, 0, 0.7);
+                width: 100%;
+
+                h1 {
+                    color: #fff;
+                    margin-bottom: 4vh;
+                    font-size: 2.4rem;
+                }
+
+                h2 {
+                    color: #fff;
+                    margin-bottom: 8vh;
+                    font-size: 2.2rem;
+                }
+
+                .botaoCadastro {
+                    background-color: #fff;
+                    font-weight: 500;
+                    color: #0046C7;
+                    font-size: 1.8rem;
+                    padding: 5px 25px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .boxImgMotorista img {
+            display: none;
+            visibility: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .boxListaProblemas {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            grid-column: 1 / span 2;
+            background-image: url("../img/caminhao-porto.jpeg");
+            background-position: center center;
+            background-size: cover;
+
+            div h2 {
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div {
+                background-color: rgba(0, 102, 161, 0.8);
+                padding: 12vh 0vw 12vh 10vw;
+                width: 100%;
+
+                .listaProblemas {
+                    padding-left: 1vw;
+                    font-size: 1.75rem;
+
+                    ul li {
+                        margin-bottom: 1vh;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .boxImgCaminhao {
+            display: none;
+            visibility: none;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .boxIniciarChat {
+            grid-column: 1 / span 2;
+            padding: 15% 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+
+            h1 {
+                margin-bottom: 4.5%;
+                font-size: 2rem;
+            }
+
+            .botaoIniciarChat {
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 1.5vh 5vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    /* Página inicial */
+    main .gridMain {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .boxBannerCadastro {
+            display: flex;
+            align-items: center;
+            background-image: url("../img/motorista-azul.jpeg");
+            background-position: center center;
+            background-size: cover;
+            grid-column: 1 / span 2;
+
+            div {
+                padding: 15vh 0 15vh 10vw;
+                background-color: rgba(0, 0, 0, 0.7);
+                width: 100%;
+
+                h1 {
+                    color: #fff;
+                    margin-bottom: 4vh;
+                    font-size: 2.4rem;
+                }
+
+                h2 {
+                    color: #fff;
+                    margin-bottom: 8vh;
+                    font-size: 2.2rem;
+                }
+
+                .botaoCadastro {
+                    background-color: #fff;
+                    font-weight: 500;
+                    color: #0046C7;
+                    font-size: 1.8rem;
+                    padding: 5px 25px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .boxImgMotorista img {
+            display: none;
+            visibility: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .boxListaProblemas {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            grid-column: 1 / span 2;
+            background-image: url("../img/caminhao-porto.jpeg");
+            background-position: center center;
+            background-size: cover;
+
+            div h2 {
+                margin-bottom: 3vh;
+                font-size: 2.4rem;
+            }
+
+            div {
+                background-color: rgba(0, 102, 161, 0.8);
+                padding: 12vh 0vw 12vh 10vw;
+                width: 100%;
+
+                .listaProblemas {
+                    padding-left: 1vw;
+                    font-size: 1.75rem;
+
+                    ul li {
+                        margin-bottom: 1vh;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .boxImgCaminhao {
+            display: none;
+            visibility: none;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .boxIniciarChat {
+            grid-column: 1 / span 2;
+            padding: 15% 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #EFF4F0;
+
+            h1 {
+                margin-bottom: 4.5%;
+                font-size: 2rem;
+            }
+
+            .botaoIniciarChat {
+                background-color: #0046C7;
+                color: #fff;
+                border-radius: 10px;
+                padding: 1.5vh 5vw;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
