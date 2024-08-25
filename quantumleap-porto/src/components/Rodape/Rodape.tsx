@@ -1,70 +1,81 @@
+import style from "./Rodape.module.css";
+import TwitterLogo from "../../img/twitter-logo.png";
+import FacebookLogo from "../../img/facebook-logo.png";
+import InstagramLogo from "../../img/instagram-logo.png";
+import LinkedinLogo from "../../img/linkedin-logo.png";
+import YoutubeLogo from "../../img/youtube-logo.png";
+import TiktokLogo from "../../img/tiktok-logo.png";
+import PlayStoreIcon from "../../img/google-play-icone.png";
+import AppleStoreIcon from "../../img/apple-store-icone.png";
+import LogoPorto from "../../img/logo-porto.png";
+
 export default function Rodape(){
     return(
-    <footer id="rodape">
-      <nav className="links-rodape">
-        <ul className="links-redes">
+    <footer className={style.rodape}>
+      <nav className={style.LinksRodape}>
+        <ul className={style.LinksRedes}>
           <li>
             <a href="https://twitter.com/portoseguro" target="_blank"
               ><img
-                src="./img/twitter-logo.png"
+                src={TwitterLogo}
                 alt="logo do twitter"
-                className="logo-redes"
+                className={style.LogoRedes}
               />
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/porto/" target="_blank"
               ><img
-                src="./img/facebook-logo.png"
+                src={FacebookLogo}
                 alt="logo do facebook"
-                className="logo-redes"
+                className={style.LogoRedes}
               />
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com/porto/" target="_blank"
               ><img
-                src="./img/instagram-logo.png"
+                src={InstagramLogo}
                 alt="logo do instagram"
-                className="logo-redes"
+                className={style.LogoRedes}
               />
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/company/porto/" target="_blank"
               ><img
-                src="./img/linkedin-logo.png"
+                src={LinkedinLogo}
                 alt="logo do linkedin"
-                className="logo-redes"
+                className={style.LogoRedes}
               />
             </a>
           </li>
           <li>
             <a href="https://www.youtube.com/portoseguro" target="_blank"
               ><img
-                src="./img/youtube-logo.png"
+                src={YoutubeLogo}
                 alt="logo do youtube"
-                className="logo-redes"
+                className={style.LogoRedes}
               />
             </a>
           </li>
           <li>
             <a href="https://www.tiktok.com/@porto" target="_blank"
               ><img
-                src="./img/tiktok-logo.png"
+                src={TiktokLogo}
                 alt="logo do tiktok"
-                className="logo-redes"
+                className={style.LogoRedes}
               />
             </a>
           </li>
         </ul>
-        <ul className="download-app">
+        <ul className={style.DownloadApp}>
           <li>
             <a
               href="https://apps.apple.com/us/app/porto-seguro-residencial-e/id1511026277"
               target="_blank"
               ><img
-                src="./img/apple-store-icone.png"
+                src={AppleStoreIcon}
                 alt="baixar app via apple store"
               />
             </a>
@@ -75,7 +86,7 @@ export default function Rodape(){
               target="_blank"
             >
               <img
-                src="./img/google-play-icone.png"
+                src={PlayStoreIcon}
                 alt="baixar app via google play store"
               />
             </a>
@@ -83,8 +94,8 @@ export default function Rodape(){
         </ul>
       </nav>
       <img
-        className="logo-porto"
-        src="./img/logo-porto.png"
+        className={style.LogoPorto}
+        src={LogoPorto}
         alt="logo da porto seguro"
       />
     </footer>
