@@ -1,0 +1,361 @@
+/* Extra Grande (XL) - Desktops Grandes */
+@media screen and (min-width: 1200px){
+
+    /* Página de login */
+    .divLogin{
+        display: flex;
+        justify-content: center;
+    
+        .quadrado {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 600px;
+            background-color: #EFF4F0;
+            border: solid black 3px;
+            border-radius: 20px;
+            margin: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        .formatacaoEntrada{
+            align-self: center;
+            height: 60px;
+            width: 400px;
+            border-radius: 50px;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    /* Página de cadastro */
+    .containerForm{
+        padding: 5vh 25vw;
+        .formulario{
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .formatacao-entrada-campo{
+        align-self: center;
+        height: 6vh;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 1vh;
+        border: none;
+        font-size: 1.6rem;
+        padding: 0.5vh 2vw;
+        background-color: #d8d7d7;
+    }
+
+}
+
+/* Grande (LG) - Desktops Médios */
+@media screen and (min-width: 992px) and (max-width: 1199px){
+
+    /* Página de login */
+    .divLogin{
+        display: flex;
+        justify-content: center;
+    
+        
+    
+        .quadrado {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 600px;
+            background-color: #EFF4F0;
+            border: solid black 3px;
+            border-radius: 20px;
+            margin: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        .formatacaoEntrada{
+            align-self: center;
+            height: 60px;
+            width: 400px;
+            border-radius: 50px;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    /* Página de cadastro */
+    .containerForm{
+        padding: 5vh 25vw;
+        .formulario{
+            display: flex;
+            justify-content: center;
+           
+            
+            
+        }
+    }
+
+    .formatacao-entrada-campo{
+        align-self: center;
+        height: 6vh;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 1vh;
+        border: none;
+        font-size: 1.6rem;
+        padding: 0.5vh 2vw;
+        background-color: #d8d7d7;
+    }
+
+}
+
+
+/* Médio (MD) - Tablets e Laptops */
+@media screen and (min-width: 768px) and (max-width: 991px){
+    /* Página de login */
+    .divLogin{
+        display: flex;
+        justify-content: center;
+    
+        
+    
+        .quadrado {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 600px;
+            background-color: #EFF4F0;
+            border: solid black 3px;
+            border-radius: 20px;
+            margin: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        .formatacaoEntrada{
+            align-self: center;
+            height: 60px;
+            width: 400px;
+            border-radius: 50px;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    /* Página de cadastro */
+    .containerForm{
+        padding: 5vh 15vw;
+        .formulario{
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .formatacao-entrada-campo{
+        align-self: center;
+        height: 6vh;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 1vh;
+        border: none;
+        font-size: 1.6rem;
+        padding: 0.5vh 2vw;
+        background-color: #d8d7d7;
+    }
+}
+
+/* Pequeno (SM) - Telefones Médios e Tablets Pequenos */
+@media screen and (min-width: 576px) and (max-width: 767px){
+
+    /* Página de login */
+    .divLogin{
+        display: flex;
+        justify-content: center;
+        
+    
+        .quadrado {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 600px;
+            background-color: #EFF4F0;
+            border: solid black 3px;
+            border-radius: 20px;
+            margin: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        .formatacaoEntrada{
+            align-self: center;
+            height: 60px;
+            width: 400px;
+            border-radius: 50px;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    /* Página de cadastro */
+    .containerForm{
+        padding: 9vh 12vw;
+        .formulario{
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .formatacao-entrada-campo{
+        align-self: center;
+        height: 6vh;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 1vh;
+        border: none;
+        font-size: 1.25rem;
+        padding: 0.5vh 2vw;
+        background-color: #d8d7d7;
+    }
+
+}
+
+
+/* Extra Pequeno (XS) - Telefones Pequenos */
+@media screen and (max-width: 575px){
+
+    /* Página de login */
+    .divLogin{
+        display: flex;
+        justify-content: center;
+    
+        .quadrado {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 600px;
+            background-color: #EFF4F0;
+            border: solid black 3px;
+            border-radius: 20px;
+            margin: 30px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        p{
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        .formatacaoEntrada{
+            align-self: center;
+            height: 60px;
+            width: 400px;
+            border-radius: 50px;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    /* Página de cadastro */
+    .containerForm{
+        
+        .formulario{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    .formatacao-entrada-campo{
+        align-self: center;
+        height: 6vh;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 1vh;
+        border: none;
+        font-size: 1.25rem;
+        padding: 0.5vh 2vw;
+        background-color: #d8d7d7;
+    }
+}

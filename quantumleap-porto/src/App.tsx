@@ -7,6 +7,7 @@ function App(){
   return (
     <div className={styles.parent}>
       <Cabecalho/>
+        <Outlet/>
       <Rodape/>
     </div>
   );

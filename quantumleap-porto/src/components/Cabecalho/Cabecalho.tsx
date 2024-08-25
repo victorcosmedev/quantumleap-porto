@@ -1,6 +1,7 @@
 import styles from "./Cabecalho.module.css";
 import logo from "../../img/logo-porto.png";
 import hamburguer from "../../img/icone-hamburguer.png";
+import { Link } from "react-router-dom";
 
 export default function Cabecalho (){
     return(
@@ -15,21 +16,21 @@ export default function Cabecalho (){
         <nav>
           <ul className={styles.hamburguer}>
             <li>
-              <a href="./paginas/menu.html"
+              <Link to="./paginas/menu.html"
                 ><img
                   src={hamburguer}
                   alt="menu com mais opções"
                   className={styles.iconehamburguer}
                 />
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className={styles.linksesquerda}>
-            <li className={styles.link}><a href="./index.html">Home</a></li>
-            <li className={styles.link}><a href="./paginas/sobre-nos.html">Sobre nós</a></li>
+            <li className={styles.link}><Link to="/">Home</Link></li>
+            <li className={styles.link}><Link to="/sobre-nos">Sobre nós</Link></li>
           </ul>
           <ul className={styles.linksdireita}>
-            <li className={styles.link}><a href="./paginas/login.html">Login</a></li>
+            <li className={styles.link}><Link to="/login">Login</Link></li>
           </ul>
         </nav>
       </header>
