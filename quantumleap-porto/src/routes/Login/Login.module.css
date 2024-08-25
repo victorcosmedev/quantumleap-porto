@@ -1,137 +1,132 @@
 /* Extra Grande (XL) - Desktops Grandes */
 @media screen and (min-width: 1200px){
 
-    /* Página de login */
-    .divLogin{
+    
+    main.containerForm{
+        padding: 5vh 25vw;
+        
+    }
+
+    main.containerForm .formulario{
         display: flex;
         justify-content: center;
-    
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 100px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        h2{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-        .formatacaoEntrada{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            font-size: 3rem;
-        }
-        h3{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
     }
 
-    /* Página de cadastro */
-    .containerForm{
-        padding: 5vh 25vw;
-        .formulario{
-            display: flex;
-            justify-content: center;
-        }
-    }
-
-    .formatacao-entrada-campo{
-        align-self: center;
-        height: 6vh;
+    main.containerForm .formulario .quadrado {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        border-radius: 8px;
-        margin-top: 1vh;
-        border: none;
-        font-size: 1.6rem;
-        padding: 0.5vh 2vw;
-        background-color: #d8d7d7;
+        height: 100%;
+        background-color: #EFF4F0;
+        border: solid black 3px;
+        border-radius: 20px;
+        padding: 5vh 4vw;
     }
 
+
+    main.containerForm .formulario .quadrado h1{
+        text-align: center;
+        margin-top: 3rem;
+    }
+    main.containerForm .formulario .quadrado p{
+        text-align: center;
+        margin-top: 2vh;
+        font-weight: bold;
+    }
+    main.containerForm .formulario .quadrado h2{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 30px;
+        font-size: 2rem;
+    }
+
+    main.containerForm .formulario .quadrado h3{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 30px;
+        font-size: 2rem;
+    }
+
+    main.containerForm .formulario .quadrado .divCampo{
+        margin-top: 3vh;
+
+        label{
+            font-size: 2rem;
+            font-weight: 600;
+
+            span{
+                color: red;
+            }
+        }
+        .formatacaoEntradaCampo{
+            align-self: center;
+            height: 6vh;
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 1vh;
+            border: none;
+            font-size: 1.6rem;
+            padding: 0.5vh 2vw;
+            background-color: #d8d7d7;
+        }
+    }
+
+    main.containerForm .formulario .quadrado .enviar{
+        align-self: flex-start;
+        margin-top: 6vh;
+        padding: 1.5vh 2.5vw;
+        font-size: 1.6rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #0046C7;
+        color: #FFF;
+    }
 }
 
 /* Grande (LG) - Desktops Médios */
 @media screen and (min-width: 992px) and (max-width: 1199px){
 
-    /* Página de login */
-    .divLogin{
+    main.containerForm{
+        padding: 5vh 25vw;
+    }
+
+    main.containerForm .formulario{
         display: flex;
-        justify-content: center;
-    
+        justify-content: center;   
+    }
         
     
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 100px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        h2{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-        .formatacaoEntrada{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            font-size: 3rem;
-        }
-        h3{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
+    main.containerForm .formulario .quadrado {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: #EFF4F0;
+        border: solid black 3px;
+        border-radius: 20px;
+        padding: 5vh 4vw;
     }
 
-    /* Página de cadastro */
-    .containerForm{
-        padding: 5vh 25vw;
-        .formulario{
-            display: flex;
-            justify-content: center;
-           
-            
-            
-        }
+    main.containerForm .formulario .quadrado h1{
+        text-align: center;
+        font-size: 3rem;
+    }
+    main.containerForm .formulario .quadrado p{
+        text-align: center;
+        margin-top: 2vh;
+        font-weight: bold;
     }
 
-    .formatacao-entrada-campo{
+    main.containerForm .formulario .quadrado .divCampo{
+        margin-top: 3vh;
+    }
+
+    main.containerForm .formulario .quadrado .divCampo label{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    main.containerForm .formulario .quadrado .divCampo input.formatacaoEntradaCampo{
         align-self: center;
         height: 6vh;
         width: 100%;
@@ -143,68 +138,64 @@
         background-color: #d8d7d7;
     }
 
+    main.containerForm .formulario .quadrado .enviar{
+        align-self: flex-start;
+        margin-top: 6vh;
+        padding: 1.5vh 2.5vw;
+        font-size: 1.6rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #0046C7;
+        color: #FFF;
+    }
 }
 
 
 /* Médio (MD) - Tablets e Laptops */
 @media screen and (min-width: 768px) and (max-width: 991px){
-    /* Página de login */
-    .divLogin{
-        display: flex;
-        justify-content: center;
-    
-        
-    
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 100px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        h2{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-        .formatacaoEntrada{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            font-size: 3rem;
-        }
-        h3{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-    }
 
     /* Página de cadastro */
-    .containerForm{
+    main.containerForm{
         padding: 5vh 15vw;
-        .formulario{
-            display: flex;
-            justify-content: center;
-        }
     }
 
-    .formatacao-entrada-campo{
+    main.containerForm .formulario{
+        display: flex;
+        justify-content: center;
+    }
+
+    main.containerForm .formulario .quadrado {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: #EFF4F0;
+        border: solid black 2px;
+        border-radius: 20px;
+        padding: 8vh 4vw;
+    }
+
+    main.containerForm .formulario .quadrado h1{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    main.containerForm .formulario .quadrado p{
+        text-align: center;
+        margin-top: 2vh;
+        font-size: 1.5rem;
+        font-weight: bold; 
+    }
+
+    main.containerForm .formulario .quadrado .divCampo{
+        margin-top: 3vh;
+    }
+    main.containerForm .formulario .quadrado .divCampo label{
+        font-size: 2rem;
+        font-weight: 600;
+
+    }
+
+    main.containerForm .formulario .quadrado .divCampo .formatacaoEntradaCampo{
         align-self: center;
         height: 6vh;
         width: 100%;
@@ -214,68 +205,64 @@
         font-size: 1.6rem;
         padding: 0.5vh 2vw;
         background-color: #d8d7d7;
+    }
+
+    main.containerForm .formulario .quadrado .enviar{
+        align-self: flex-start;
+        margin-top: 6vh;
+        padding: 1.5vh 2.5vw;
+        font-size: 1.6rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #0046C7;
+        color: #FFF;
     }
 }
 
 /* Pequeno (SM) - Telefones Médios e Tablets Pequenos */
 @media screen and (min-width: 576px) and (max-width: 767px){
 
-    /* Página de login */
-    .divLogin{
+    main.containerForm {
+        padding: 9vh 12vw;
+    }
+
+    main.containerForm .formulario{
         display: flex;
         justify-content: center;
-        
-    
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 100px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        h2{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-        .formatacaoEntrada{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            font-size: 3rem;
-        }
-        h3{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
     }
 
-    /* Página de cadastro */
-    .containerForm{
-        padding: 9vh 12vw;
-        .formulario{
-            display: flex;
-            justify-content: center;
-        }
+    main.containerForm .formulario .quadrado {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: #EFF4F0;
+        border: solid black 1px;
+        border-radius: 20px;
+        padding: 7vh 4vw;
+    }
+    main.containerForm .formulario .quadrado h1{
+        text-align: center;
+        font-size: 2.25rem;
     }
 
-    .formatacao-entrada-campo{
+
+    main.containerForm .formulario .quadrado p{
+        text-align: center;
+        margin-top: 2vh;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    main.containerForm .formulario .quadrado .divCampo{
+        margin-top: 3vh;
+    }
+
+    main.containerForm .formulario .quadrado .divCampo label{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    main.containerForm .formulario .quadrado .divCampo .formatacaoEntradaCampo{
         align-self: center;
         height: 6vh;
         width: 100%;
@@ -287,67 +274,53 @@
         background-color: #d8d7d7;
     }
 
+    main.containerForm .formulario .quadrado .enviar{
+        align-self: flex-start;
+        margin-top: 4vh;
+        padding: 1.5vh 2.5vw;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #0046C7;
+        color: #FFF;
+    }
 }
 
 
 /* Extra Pequeno (XS) - Telefones Pequenos */
 @media screen and (max-width: 575px){
-
-    /* Página de login */
-    .divLogin{
+    main.containerForm .formulario{
         display: flex;
         justify-content: center;
+    }
     
-        .quadrado {
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            height: 600px;
-            background-color: #EFF4F0;
-            border: solid black 3px;
-            border-radius: 20px;
-            margin: 30px;
-        }
-        h1{
-            text-align: center;
-            margin-top: 100px;
-        }
-        p{
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        h2{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
-        .formatacaoEntrada{
-            align-self: center;
-            height: 60px;
-            width: 400px;
-            border-radius: 50px;
-            font-size: 3rem;
-        }
-        h3{
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            font-size: 2rem;
-        }
+    main.containerForm .formulario .quadrado{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: #EFF4F0;
+        border: none;
+        padding: 14vh 6vw;
+    }
+    
+    main.containerForm .formulario .quadrado h1{
+        text-align: center;
+        font-size: 2.22rem;
     }
 
-    /* Página de cadastro */
-    .containerForm{
-        
-        .formulario{
-            display: flex;
-            justify-content: center;
-        }
+    main.containerForm .formulario .quadrado p{
+        text-align: center;
+        margin-top: 2vh;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    main.containerForm .formulario .quadrado .divCampo{
+        margin-top: 3vh;
     }
     
-    .formatacao-entrada-campo{
+    main.containerForm .formulario .quadrado .divCampo .formatacaoEntradaCampo{
         align-self: center;
         height: 6vh;
         width: 100%;
@@ -357,5 +330,15 @@
         font-size: 1.25rem;
         padding: 0.5vh 2vw;
         background-color: #d8d7d7;
+    }
+    main.containerForm .formulario .quadrado .enviar{
+        align-self: flex-start;
+        margin-top: 4vh;
+        padding: 1.5vh 5vw;
+        font-size: 1.4rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #0046C7;
+        color: #FFF;
     }
 }
