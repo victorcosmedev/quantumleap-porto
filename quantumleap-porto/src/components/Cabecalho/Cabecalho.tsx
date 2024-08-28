@@ -1,38 +1,14 @@
-import styles from "./Cabecalho.module.css";
-import logo from "../../img/logo-porto.png";
-import hamburguer from "../../img/icone-hamburguer.png";
-import { Link } from "react-router-dom";
+import { DivLogoHeader, Header, LogoPorto } from "../../style/style";
+import Menu from "./Menu";
 
-export default function Cabecalho (){
-    return(
-      <header className={styles.cabecalho}>
-        <img
-          className={styles.logo}
-          src={logo}
-          alt="Logo da Porto Seguro"
-          width="200"
-          height="100"
-        />
-        <nav>
-          <ul className={styles.hamburguer}>
-            <li>
-              <Link to="./paginas/menu.html"
-                ><img
-                  src={hamburguer}
-                  alt="menu com mais opções"
-                  className={styles.iconehamburguer}
-                />
-              </Link>
-            </li>
-          </ul>
-          <ul className={styles.linksesquerda}>
-            <li className={styles.link}><Link to="/">Home</Link></li>
-            <li className={styles.link}><Link to="/sobre-nos">Sobre nós</Link></li>
-          </ul>
-          <ul className={styles.linksdireita}>
-            <li className={styles.link}><Link to="/login">Login</Link></li>
-          </ul>
-        </nav>
-      </header>
-    )
+
+export default function Cabecalho(){
+    return (
+        <Header>
+            <DivLogoHeader>
+                <LogoPorto src="./../../../public/img/logo-porto.png" alt="Logo Porto Seguro"/>   
+            </DivLogoHeader>
+            <Menu/>
+        </Header>
+    );
 }
