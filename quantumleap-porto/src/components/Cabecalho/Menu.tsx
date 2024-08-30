@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { ItemMenu, NavHeader, UlLinkHome, UlMenu } from "../../style/style";
+import { ItemMenu, LinkPadrao, NavHeader, UlLinkHome, UlMenu } from "../../style/style";
 
 export default function Menu(){
     return(
         <NavHeader>
             <UlMenu>
-                <ItemMenu><Link to="/"><UlLinkHome>Home</UlLinkHome></Link></ItemMenu>
+                <ItemMenu><LinkPadrao to="/">Home</LinkPadrao></ItemMenu>
+                <ItemMenu><LinkPadrao to="/">Sobre nós</LinkPadrao></ItemMenu>
             </UlMenu>
             <UlMenu>
-
+                <ItemMenu><LinkPadrao to="/">Login</LinkPadrao></ItemMenu>
             </UlMenu>
         </NavHeader>
     );

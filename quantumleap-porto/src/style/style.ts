@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 export const MainContent = styled.main`
     width: 100%;
@@ -55,6 +56,8 @@ export const NavHeader = styled.nav`
         border: 2px solid blue;
         width: 100%;
         margin-left: 5%;
+        display: flex;
+        justify-content: space-between;
     }
 `
 
@@ -64,7 +67,8 @@ export const UlMenu = styled.ul`
         list-style-type: none;
         margin: 0;
         padding: 0;
-        justify-content: space-between;
+        border: 2px solid green;
+        gap: 1%;
     }
 ` 
 
@@ -74,7 +78,7 @@ export const ItemMenu = styled.li`
     }
 `
 
-export const UlLinkHome = styled.a`
+export const LinkPadrao = styled(Link)`
     text-decoration: none;
-    color: black;
+    color: inherit;
 `
