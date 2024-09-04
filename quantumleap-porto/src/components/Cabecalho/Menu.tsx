@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BotaoMenu, ItemMenu, LinkPadrao, NavHeader, UlLinkHome, UlMenu } from "../../style/style";
+import Hamburguer from "./Hamburguer";
 
 export default function Menu(){
     return(
@@ -15,6 +16,7 @@ export default function Menu(){
                     </BotaoMenu>
                 </ItemMenu>
             </UlMenu>
+            <Hamburguer/>
         </NavHeader>
     );
 }

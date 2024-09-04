@@ -26,6 +26,7 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     width: 100%;
+    
     @media screen and (min-width: 1200px){
         padding: 1.5vh 13vw;
         justify-content: space-between;
@@ -48,6 +49,19 @@ export const Header = styled.header`
         padding: 1.5vh 13vw;
         justify-content: space-between;
         border: 2px solid red;
+    }
+
+    @media screen and (min-width: 576px) and (max-width: 767px){
+        padding: 1.5vh 13vw;
+        justify-content: space-between;
+        border: 2px solid red;
+    }
+
+    @media screen and (max-width: 575px){
+        padding: 1.5vh 6vw;
+        justify-content: space-between;
+        border: 2px solid red;
+        max-height: 70px;
     }
 `
 
@@ -79,6 +93,14 @@ export const DivLogoHeader = styled.div`
     @media screen and (min-width: 576px) and (max-width: 767px) {
         height: 100%;
         width: 25%;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 575px) {
+        height: 100%;
+        width: 22%;
         border: 2px solid black;
         display: flex;
         align-items: center;
@@ -148,6 +170,10 @@ export const NavHeader = styled.nav`
         margin-left: 5%;
         font-weight: 400;
     }
+
+    @media screen and (max-width: 575px) {
+        justify-content: end;
+    }
 `
 
 export const UlMenu = styled.ul`
@@ -172,6 +198,10 @@ export const UlMenu = styled.ul`
     @media screen and (min-width: 576px) and (max-width: 767px) {
         gap: 2vw;
         font-size: 1.3rem;
+    }
+
+    @media screen and (max-width: 576px){
+        display: none;
     }
 ` 
 
@@ -229,4 +259,24 @@ export const BotaoMenu = styled.button`
         border-radius: 3px;
         font-weight: 500;   
     }
+`
+
+export const BotaoHamburguer = styled.button`
+    display: none;
+
+
+    @media screen and (max-width: 576px) {
+        display: block; 
+        width: 50%;
+        height: auto;
+        max-width: 100px;
+        background: none;
+        padding: 0vh 2vw;
+        border: none;
+    }
+`
+
+export const IconeHamburguer = styled.img`
+    width: 100%;
+    height: auto;
 `
