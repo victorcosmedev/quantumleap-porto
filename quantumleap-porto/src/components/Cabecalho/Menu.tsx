@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ItemMenu, LinkPadrao, NavHeader, UlLinkHome, UlMenu } from "../../style/style";
+import { BotaoMenu, ItemMenu, LinkPadrao, NavHeader, UlLinkHome, UlMenu } from "../../style/style";
 
 export default function Menu(){
     return(
@@ -9,7 +9,11 @@ export default function Menu(){
                 <ItemMenu><LinkPadrao to="/">Sobre nós</LinkPadrao></ItemMenu>
             </UlMenu>
             <UlMenu>
-                <ItemMenu><LinkPadrao to="/">Login</LinkPadrao></ItemMenu>
+                <ItemMenu>
+                    <BotaoMenu>
+                        teste
+                    </BotaoMenu>
+                </ItemMenu>
             </UlMenu>
         </NavHeader>
     );

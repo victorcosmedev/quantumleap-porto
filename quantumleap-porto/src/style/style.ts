@@ -24,7 +24,7 @@ export const Header = styled.header`
     @media screen and (min-width: 1200px){
         display: flex;
         align-items: center;
-        padding: 0 13%;
+        padding: 1.5vh 13vw;
         width: 100%;
         justify-content: space-between;
         border: 2px solid red;  
@@ -52,12 +52,15 @@ export const LogoPorto = styled.img`
 `
 
 export const NavHeader = styled.nav`
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+
     @media screen and (min-width: 1200px){
         border: 2px solid blue;
         width: 100%;
         margin-left: 5%;
-        display: flex;
-        justify-content: space-between;
+        font-weight: 600;
     }
 `
 
@@ -67,8 +70,8 @@ export const UlMenu = styled.ul`
         list-style-type: none;
         margin: 0;
         padding: 0;
-        border: 2px solid green;
-        gap: 1%;
+        justify-content: space-between;
+        gap: 2vw;
     }
 ` 
 
@@ -80,5 +83,17 @@ export const ItemMenu = styled.li`
 
 export const LinkPadrao = styled(Link)`
     text-decoration: none;
-    color: inherit;
+    color: black;
+`
+
+export const BotaoMenu = styled.button`
+    border: none;
+    @media screen and (min-width: 1200px){
+        padding: 1vh 1.5vw;
+        font-weight: 600;
+        background-color: #0046C7;
+        color: white;
+        border-radius: 5px;
+        font-size: inherit;
+    }
 `
