@@ -43,6 +43,12 @@ export const Header = styled.header`
         justify-content: space-between;
         border: 2px solid red;
     }
+
+    @media screen and (min-width: 576px) and (max-width: 767px){
+        padding: 1.5vh 13vw;
+        justify-content: space-between;
+        border: 2px solid red;
+    }
 `
 
 export const DivLogoHeader = styled.div`
@@ -69,6 +75,14 @@ export const DivLogoHeader = styled.div`
         display: flex;
         align-items: center;
     }
+
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+        height: 100%;
+        width: 25%;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+    }
 `
 
 export const LogoPorto = styled.img`
@@ -89,6 +103,20 @@ export const LogoPorto = styled.img`
         max-width: 100px;
         display: flex; 
     }
+
+    @media screen and (min-width:768px) and (max-width: 992px){
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+        display: flex;
+    }
+
+    @media screen and (min-width:576px) and (max-width: 767px){
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+        display: flex;
+    }
 `
 
 export const NavHeader = styled.nav`
@@ -104,6 +132,18 @@ export const NavHeader = styled.nav`
     }
 
     @media screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 100%;
+        margin-left: 5%;
+        font-weight: 400;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        width: 100%;
+        margin-left: 5%;
+        font-weight: 400;
+    }
+
+    @media screen and (min-width: 576px) and (max-width: 767px) {
         width: 100%;
         margin-left: 5%;
         font-weight: 400;
@@ -124,14 +164,32 @@ export const UlMenu = styled.ul`
     @media screen and (min-width: 992px) and (max-width: 1199px) {
         gap: 2vw;
     }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        gap: 2vw;
+    }
+
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+        gap: 2vw;
+        font-size: 1.3rem;
+    }
 ` 
 
 export const ItemMenu = styled.li`
+    font-size: inherit;
     @media screen and (min-width: 1200px) {
         
     }
 
     @media screen and (min-width: 992px) and (max-width: 1199px) {
+        font-weight: 600;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        font-weight: 600;
+    }
+
+    @media screen and (min-width: 576px) and (max-width: 767px) {
         font-weight: 600;
     }
 `
@@ -143,31 +201,32 @@ export const LinkPadrao = styled(Link)`
 
 export const BotaoMenu = styled.button`
     border: none;
+    font-weight: inherit;
+    background-color: #0046C7;
+    color: white;
+    font-size: inherit;   
+
     @media screen and (min-width: 1200px){
         padding: 1vh 1.5vw;
         font-weight: 600;
-        background-color: #0046C7;
-        color: white;
         border-radius: 5px;
-        font-size: inherit;
     }
 
     @media screen and (min-width: 992px) and (max-width: 1199px) {
         padding: 1vh 1.5vw;
-        background-color: #0046C7;
-        color: white;
         border-radius: 5px;
-        font-size: inherit;    
-        font-weight: 500;   
+        font-weight: 500;
     }
 
     @media screen and (min-width: 768px) and (max-width: 991px) {
         padding: 1vh 1.5vw;
-        font-weight: inherit;
-        background-color: #0046C7;
-        color: white;
-        border-radius: 5px;
-        font-size: inherit;    
+        border-radius: 3px;
+        font-weight: 500;   
+    }
+
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+        padding: 1vh 1.5vw;
+        border-radius: 3px;
         font-weight: 500;   
     }
 `

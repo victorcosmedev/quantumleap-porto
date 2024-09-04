@@ -11,7 +11,7 @@ export default function Menu(){
             <UlMenu>
                 <ItemMenu>
                     <BotaoMenu>
-                        Login
+                        Entrar
                     </BotaoMenu>
                 </ItemMenu>
             </UlMenu>
