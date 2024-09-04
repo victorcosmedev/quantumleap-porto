@@ -20,15 +20,28 @@ export const TituloH3 = styled.h3`
     text-align: center;
 `
 
+
+// FORMATAÇÃO DO HEADER
 export const Header = styled.header`
+    display: flex;
+    align-items: center;
+    width: 100%;
     @media screen and (min-width: 1200px){
-        display: flex;
-        align-items: center;
         padding: 1.5vh 13vw;
-        width: 100%;
         justify-content: space-between;
         border: 2px solid red;  
-        align-items: center;
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        padding: 1.5vh 13vw;
+        justify-content: space-between;
+        border: 2px solid red;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px){
+        padding: 1.5vh 13vw;
+        justify-content: space-between;
+        border: 2px solid red;
     }
 `
 
@@ -40,14 +53,41 @@ export const DivLogoHeader = styled.div`
         display: flex;
         align-items: center;
     }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        height: 100%;
+        width: 20%;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        height: 100%;
+        width: 20%;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+    }
 `
 
 export const LogoPorto = styled.img`
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    display: flex;
     @media screen and (min-width: 1200px){
         width: 100%;
         height: auto;
         max-width: 100px;
         display: flex;
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+        display: flex; 
     }
 `
 
@@ -55,29 +95,44 @@ export const NavHeader = styled.nav`
     display: flex; 
     justify-content: space-between;
     align-items: center;
+    border: 2px solid blue;
 
     @media screen and (min-width: 1200px){
-        border: 2px solid blue;
         width: 100%;
         margin-left: 5%;
         font-weight: 600;
     }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        width: 100%;
+        margin-left: 5%;
+        font-weight: 400;
+    }
 `
 
 export const UlMenu = styled.ul`
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+
     @media screen and (min-width: 1200px){
-        display: flex;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        justify-content: space-between;
+        gap: 2vw;
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
         gap: 2vw;
     }
 ` 
 
 export const ItemMenu = styled.li`
     @media screen and (min-width: 1200px) {
-        font-weight: 700;
+        
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        font-weight: 600;
     }
 `
 
@@ -95,5 +150,24 @@ export const BotaoMenu = styled.button`
         color: white;
         border-radius: 5px;
         font-size: inherit;
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+        padding: 1vh 1.5vw;
+        background-color: #0046C7;
+        color: white;
+        border-radius: 5px;
+        font-size: inherit;    
+        font-weight: 500;   
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 1vh 1.5vw;
+        font-weight: inherit;
+        background-color: #0046C7;
+        color: white;
+        border-radius: 5px;
+        font-size: inherit;    
+        font-weight: 500;   
     }
 `
