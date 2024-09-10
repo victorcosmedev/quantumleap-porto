@@ -17,6 +17,14 @@ export default function Home() {
                 <div className={style.boxImgMotorista}>
                     <img src={motoristaAzul} alt="" />
                 </div>
+                <div className={style.descricaoQuickfix}>
+                    <h1>O que é o QuickFix?</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dicta placeat impedit quisquam, libero, tempore dolor quis voluptas saepe fugit quas. Inventore aliquam ut possimus fugiat, temporibus quos qui alias.
+                        Quam fugiat inventore natus tempora vero beatae dolorem ipsum voluptate eum neque quasi autem sit numquam repellendus debitis perferendis magnam laborum, placeat, dolores dignissimos quaerat ducimus omnis est. Dicta, enim.
+                        Iure quasi aliquid reiciendis voluptates doloribus porro neque in illo excepturi rerum ipsam distinctio repellendus vel voluptatum, tempore voluptatem labore itaque laudantium eaque unde incidunt blanditiis! Provident error ratione voluptates.
+                    </p>
+                </div>
                 <div className={style.boxListaProblemas}>
                     <div>
                         <h2>Problemas como:</h2>
@@ -42,6 +50,7 @@ export default function Home() {
                     <h1>Precisa de ajuda? Fale conosco!</h1>
                     <a className={style.botaoIniciarChat} href="./paginas/chat.html">Iniciar Chat</a>
                 </div>
+                
             </div>
         </main>
     );

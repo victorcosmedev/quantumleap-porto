@@ -1,3 +1,22 @@
+main .gridMain {
+    .descricaoQuickfix {
+        border: 2px solid black;
+        grid-column: 1 / span 2;
+        padding: 7% 16vw;
+        font-weight: 400;
+        
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2%;
+            color: #0046C7;
+        }
+    }
+}
+
 @media screen and (min-width: 1200px) {
     /* Página inicial */
     main .gridMain {
