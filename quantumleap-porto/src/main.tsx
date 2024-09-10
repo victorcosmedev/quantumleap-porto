@@ -8,6 +8,7 @@ import Cadastro from "./routes/Cadastro/index.tsx";
 import Login from "./routes/Login/index.tsx";
 import Error from "./routes/Error/index.tsx";
 import SobreNos from './routes/SobreNos/index.tsx';
+import AreaCliente from './routes/AreaCliente/index.tsx';
 
 const routes = createBrowserRouter([
   {path: "/", element: <App/>, errorElement: <Error/>,
@@ -15,7 +16,8 @@ const routes = createBrowserRouter([
       {path: "/", element: <Home/>},
       {path: "/cadastro", element: <Cadastro/>},
       {path: "/login", element: <Login/>},
-      {path: "/sobre-nos", element: <SobreNos/>}
+      {path: "/sobre-nos", element: <SobreNos/>},
+      {path: "/area-cliente", element: <AreaCliente/>},
     ]
   }
 ]);
