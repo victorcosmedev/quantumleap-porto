@@ -34,7 +34,6 @@
         display: flex;
         justify-content: space-between;
         min-height: 50vh;
-        display: none;
     }   
 
     main.containerAreaCliente div.cardUsuario div.dadosUsuario{
@@ -42,6 +41,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        display: none;
     }
 
     main.containerAreaCliente div.cardUsuario div.dadosUsuario ul{
@@ -89,13 +89,35 @@
         font-size: 1.2rem;
         font-weight: 400;
     }
-
-    main.containerAreaCliente form.formCadastroVeiculo{
+    
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo{
         border-radius: 8px;
         padding: 3vh 2vw 3vh 3vw;
         background-color: #E0E0E0;
-        display: flex;
         justify-content: space-between;
         min-height: 50vh;
+        border: 2px solid red;
+    }
+
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo{
+        border: 2px solid black;
+    }
+
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo label{
+        display: block;
+    }
+
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo input, select{
+        display: block;
+    }
+
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset button{
+        padding: 1.5vh 2vw;
+        width: fit-content;
+        border-radius: 5px;
+        border: none;
+        background-color: #0046C7;
+        font-weight: 600;
+        color: white;
     }
 }

@@ -29,6 +29,50 @@ export default function AreaCliente(){
                     </ul>
                     <button className={styles.editarDados}>Editar dados</button>
                 </div>
+
+                <form action="" className={styles.formCadastroVeiculo}>
+                    {/* {
+                        Montadora
+                        Modelo
+                        Ano
+                        Quilometragem
+                        Placa do veículo
+                    } */}
+                    <fieldset>
+                        <div className={styles.campo}>
+                            <label htmlFor="montadora:">Montadora</label>
+                            <select className={styles.selectMontadoras} id="montadoras" name="montadoras">
+                                <option value="chevrolet">Chevrolet</option>
+                                <option value="fiat">Fiat</option>
+                                <option value="ford">Ford</option>
+                                <option value="honda">Honda</option>
+                                <option value="hyundai">Hyundai</option>
+                                <option value="jeep">Jeep</option>
+                                <option value="nissan">Nissan</option>
+                                <option value="renault">Renault</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="volkswagen">Volkswagen</option>
+                            </select>
+                        </div>
+                        <div className="campo">
+                            <label htmlFor="modelo">Modelo</label>
+                            <input type="text" id="modelo" name="modelo" placeholder="Ex.: Honda Accord"/>
+                        </div>
+                        <div className="campo">
+                            <label htmlFor="ano">Ano</label>
+                            <input type="text" id="ano" name="ano" placeholder="Ex.: 2002"/>
+                        </div>
+                        <div className="campo">
+                            <label htmlFor="km">Quilometragem</label>
+                            <input type="text" id="ano" name="ano" placeholder="Ex.: 100.000"/>
+                        </div>
+                        <div className="campo">
+                            <label htmlFor="placa">Placa do veículo</label>
+                            <input type="text" id="placa" name="placa" placeholder="Ex.: ABC1D23 ou ABC1234"/>
+                        </div>
+                        <button>Enviar</button>
+                    </fieldset>                    
+                </form>
                 
 
                 <div className={styles.divVeiculos}>
@@ -40,9 +84,6 @@ export default function AreaCliente(){
                     </ul>
                 </div>
             </div>
-            <form action="" className={styles.formCadastroVeiculo}>
-                <h1>teste</h1>
-            </form>
         </main>
     )
 }
