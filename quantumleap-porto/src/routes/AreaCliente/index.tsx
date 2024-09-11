@@ -40,6 +40,9 @@ export default function AreaCliente(){
                     </ul>
                 </div>
             </div>
+            <form action="" className={styles.formCadastroVeiculo}>
+                <h1>teste</h1>
+            </form>
         </main>
     )
 }

@@ -34,6 +34,7 @@
         display: flex;
         justify-content: space-between;
         min-height: 50vh;
+        display: none;
     }   
 
     main.containerAreaCliente div.cardUsuario div.dadosUsuario{
@@ -89,5 +90,12 @@
         font-weight: 400;
     }
 
-
+    main.containerAreaCliente form.formCadastroVeiculo{
+        border-radius: 8px;
+        padding: 3vh 2vw 3vh 3vw;
+        background-color: #E0E0E0;
+        display: flex;
+        justify-content: space-between;
+        min-height: 50vh;
+    }
 }
