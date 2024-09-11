@@ -1,3 +1,7 @@
+.conteudoCardUsuarioNone{
+    display: none;
+}
+
 @media screen and (min-width: 1200px){
     main.containerAreaCliente{
         border: 2px solid green;
@@ -92,26 +96,48 @@
     
     main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo{
         border-radius: 8px;
-        padding: 3vh 2vw 3vh 3vw;
+        padding: 3vh 2vw 3vh 1vw;
         background-color: #E0E0E0;
         justify-content: space-between;
         min-height: 50vh;
-        border: 2px solid red;
+        /* border: 2px solid red; */
+    }
+
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset{
+        border: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4vw;
+        height: 100%;
     }
 
     main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo{
-        border: 2px solid black;
+        /* border: 2px solid black; */
     }
 
     main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo label{
         display: block;
+        margin-bottom: 1vh;
+        font-weight: 600;
     }
 
-    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo input, select{
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo input{
         display: block;
+        margin-top: 0;
+        width: 20vw;
+        height: 5vh;
+        margin-bottom: 3vh;
     }
+    main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset div.campo select {
+        /* display: block; */
+        width: 20vw;
+        height: 5vh;
+        margin-bottom: 3vh;
+    }
+
 
     main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset button{
+        margin-top: 3vh;
         padding: 1.5vh 2vw;
         width: fit-content;
         border-radius: 5px;
@@ -119,5 +145,7 @@
         background-color: #0046C7;
         font-weight: 600;
         color: white;
+        grid-column: span 2;
+        align-self: end;
     }
 }

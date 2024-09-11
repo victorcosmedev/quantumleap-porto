@@ -31,17 +31,14 @@ export default function AreaCliente(){
                 </div>
 
                 <form action="" className={styles.formCadastroVeiculo}>
-                    {/* {
-                        Montadora
-                        Modelo
-                        Ano
-                        Quilometragem
-                        Placa do veículo
-                    } */}
                     <fieldset>
+                        {/* <div className={styles.campos}>
+
+                        </div> */}
                         <div className={styles.campo}>
                             <label htmlFor="montadora:">Montadora</label>
                             <select className={styles.selectMontadoras} id="montadoras" name="montadoras">
+                                <option value="" selected disabled>Selecione uma opção</option>
                                 <option value="chevrolet">Chevrolet</option>
                                 <option value="fiat">Fiat</option>
                                 <option value="ford">Ford</option>
@@ -54,19 +51,19 @@ export default function AreaCliente(){
                                 <option value="volkswagen">Volkswagen</option>
                             </select>
                         </div>
-                        <div className="campo">
+                        <div className={styles.campo}>
                             <label htmlFor="modelo">Modelo</label>
-                            <input type="text" id="modelo" name="modelo" placeholder="Ex.: Honda Accord"/>
+                            <input type="text" id="modelo" name="modelo" placeholder="Ex.: Accord"/>
                         </div>
-                        <div className="campo">
+                        <div className={styles.campo}>
                             <label htmlFor="ano">Ano</label>
                             <input type="text" id="ano" name="ano" placeholder="Ex.: 2002"/>
                         </div>
-                        <div className="campo">
+                        <div className={styles.campo}>
                             <label htmlFor="km">Quilometragem</label>
                             <input type="text" id="ano" name="ano" placeholder="Ex.: 100.000"/>
                         </div>
-                        <div className="campo">
+                        <div className={styles.campo}>
                             <label htmlFor="placa">Placa do veículo</label>
                             <input type="text" id="placa" name="placa" placeholder="Ex.: ABC1D23 ou ABC1234"/>
                         </div>
