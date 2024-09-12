@@ -37,7 +37,7 @@ export default function AreaCliente(){
                         </div> */}
                         <div className={styles.campo}>
                             <label htmlFor="montadora:">Montadora</label>
-                            <select className={styles.selectMontadoras} id="montadoras" name="montadoras">
+                            <select className={`${styles.selectMontadoras} ${styles.conteudoCardUsuarioNome}`} id="montadoras" name="montadoras">
                                 <option value="" selected disabled>Selecione uma opção</option>
                                 <option value="chevrolet">Chevrolet</option>
                                 <option value="fiat">Fiat</option>
