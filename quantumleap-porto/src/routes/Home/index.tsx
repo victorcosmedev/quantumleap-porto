@@ -20,10 +20,21 @@ export default function Home() {
                 <div className={style.descricaoQuickfix}>
                     <h1>O que é o QuickFix?</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dicta placeat impedit quisquam, libero, tempore dolor quis voluptas saepe fugit quas. Inventore aliquam ut possimus fugiat, temporibus quos qui alias.
-                        Quam fugiat inventore natus tempora vero beatae dolorem ipsum voluptate eum neque quasi autem sit numquam repellendus debitis perferendis magnam laborum, placeat, dolores dignissimos quaerat ducimus omnis est. Dicta, enim.
-                        Iure quasi aliquid reiciendis voluptates doloribus porro neque in illo excepturi rerum ipsam distinctio repellendus vel voluptatum, tempore voluptatem labore itaque laudantium eaque unde incidunt blanditiis! Provident error ratione voluptates.
-                    </p>
+                        O QuickFix foi criado para facilitar o diagnóstico de problemas no seu veículo, seja você cliente da Porto ou não.
+                    </p> <br />  
+
+                    <p>
+                        Acesse nossa plataforma, cadastre-se e registre seu automóvel. Em seguida, você será guiado por um robô inteligente que fará perguntas sobre o problema. Com base nas suas respostas, ele gera um diagnóstico preciso.
+                    </p><br />
+
+                    <p>
+                        Além disso, o QuickFix sugere as peças necessárias e calcula um orçamento transparente, com base nos preços de peças e mão de obra. Tudo isso de forma online, sem precisar de um especialista no local. E o melhor: depois do diagnóstico, indicamos a oficina mais próxima para resolver o problema.
+                    </p><br />
+
+                    <p>
+                        O QuickFix agiliza o processo de diagnóstico e orçamento, garantindo mais confiança e previsibilidade nos serviços automotivos.
+                    </p><br />
+
                 </div>
                 <div className={style.boxListaProblemas}>
                     <div>
