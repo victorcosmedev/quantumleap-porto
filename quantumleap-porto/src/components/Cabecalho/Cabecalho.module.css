@@ -41,9 +41,12 @@
 
     header.cabecalho nav .linksdireita {
         list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1vh;
     }
 
-    header.cabecalho nav .linksdireita .link a {
+    header.cabecalho nav .linksdireita .link .cadastreSe {
         display: block;
         padding: 5px 25px;
         border-radius: 5px;
@@ -51,7 +54,12 @@
         color: #fff;
         text-decoration: none;
         font-weight: 600;
-        font-size: 1.75rem;
+        /* margin-bottom: 0.5vh; */
+    }
+
+
+    header.cabecalho nav .linksdireita .link span{
+        font-size: 1.2rem;
     }
 }
 

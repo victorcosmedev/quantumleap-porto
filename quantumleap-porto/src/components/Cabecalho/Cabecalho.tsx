@@ -29,9 +29,14 @@ export default function Cabecalho (){
             <li className={styles.link}><Link to="/">Home</Link></li>
             <li className={styles.link}><Link to="/sobre-nos">Sobre nós</Link></li>
           </ul>
-          <ul className={styles.linksdireita}>
-            <li className={styles.link}><Link to="/login">Login</Link></li>
-          </ul>
+          <div className={styles.linksdireita}>
+            <div className={styles.link}>
+              <Link className={styles.cadastreSe} to="/login">Entrar</Link>
+            </div>
+            <div>
+              <img src="/img/icone-usuario.png" alt="" />
+            </div>
+          </div>
         </nav>
       </header>
     )
