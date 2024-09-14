@@ -33,8 +33,10 @@ export default function Cabecalho (){
             <div className={styles.link}>
               <Link className={styles.cadastreSe} to="/login">Entrar</Link>
             </div>
-            <div>
-              <img src="/img/icone-usuario.png" alt="" />
+            <div className={styles.divIconeUsuario}>
+              <Link to="/area-cliente">
+                <img src="/img/icone-usuario.png" alt="" />
+              </Link>
             </div>
           </div>
         </nav>

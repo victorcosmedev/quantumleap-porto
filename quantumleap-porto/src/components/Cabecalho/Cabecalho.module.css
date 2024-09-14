@@ -43,7 +43,7 @@
         list-style: none;
         display: flex;
         align-items: center;
-        gap: 1vh;
+        gap: 3vh;
     }
 
     header.cabecalho nav .linksdireita .link .cadastreSe {
@@ -57,10 +57,15 @@
         /* margin-bottom: 0.5vh; */
     }
 
-
-    header.cabecalho nav .linksdireita .link span{
-        font-size: 1.2rem;
+    header.cabecalho nav .linksdireita .divIconeUsuario{
+        width: 2vw;
     }
+
+    header.cabecalho nav .linksdireita .divIconeUsuario img{
+        width: 100%;
+        height: auto;
+    }
+
 }
 
 
@@ -101,7 +106,11 @@
 
     header.cabecalho nav .linksdireita {
         list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 3vh;
     }
+
 
     header.cabecalho nav .linksdireita .link a {
         display: block;
@@ -117,6 +126,15 @@
     header.cabecalho a {
         color: inherit;
         text-decoration: none;
+    }
+
+    header.cabecalho nav .linksdireita .divIconeUsuario{
+        width: 2vw;
+    }
+
+    header.cabecalho nav .linksdireita .divIconeUsuario img{
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -156,9 +174,13 @@
         list-style: none;
     }
 
-    .cabecalho nav .linksdireita {
+    header.cabecalho nav .linksdireita {
         list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 3vh;
     }
+
 
     .cabecalho nav .linksdireita .link a {
         display: block;
@@ -174,6 +196,15 @@
     .cabecalho a {
         color: inherit;
         text-decoration: none;
+    }
+
+    header.cabecalho nav .linksdireita .divIconeUsuario{
+        width: 2vw;
+    }
+
+    header.cabecalho nav .linksdireita .divIconeUsuario img{
+        width: 100%;
+        height: auto;
     }
 }
 

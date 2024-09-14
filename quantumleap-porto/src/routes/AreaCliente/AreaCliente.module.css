@@ -481,6 +481,7 @@
     }
 }
 
+
 @media screen and (min-width: 576px) and (max-width: 767px){
     main.containerAreaCliente{
         border: 2px solid green;
@@ -650,7 +651,7 @@
 @media screen and (max-width: 575px){
     main.containerAreaCliente{
         border: 2px solid green;
-        padding: 8vh 10vw;
+        padding: 15vh 10vw;
     }
 
     main.containerAreaCliente .seletorBox{
@@ -664,7 +665,7 @@
         border-radius: 5px;
         border: none;
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         background: none;
         color: #D0D1D0;
         background-color: #e3e3e3;
@@ -691,8 +692,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        /* display: none; */
-        margin-bottom: 3vh;
+        display: none;
+        margin-bottom: 5vh;
     }
 
     main.containerAreaCliente div.cardUsuario div.dadosUsuario ul{
@@ -700,7 +701,7 @@
         line-height: 2.5;
         /* border: 2px solid black; */
         margin-bottom: 5vw;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     main.containerAreaCliente div.cardUsuario div.dadosUsuario ul li span{
@@ -708,21 +709,20 @@
     }
 
     main.containerAreaCliente div.cardUsuario div.dadosUsuario button.editarDados{
-        padding: 1vh 2vw;
+        padding: 1.5vh 2vw;
         width: fit-content;
         border-radius: 5px;
         border: none;
         background-color: #0046C7;
         font-weight: 400;
         color: white;
-        font-size: 1.1rem;
     }
 
     main.containerAreaCliente div.cardUsuario div.divVeiculos{
         background-color: #F4F4F4;
         border-radius: 8px;
         width: 100%;
-        padding: 2.5vh 3vw;
+        padding: 3vh 3vw;
     }
 
     main.containerAreaCliente div.cardUsuario div.divVeiculos h3{
@@ -742,18 +742,18 @@
     }
 
     main.containerAreaCliente div.cardUsuario div.divVeiculos ul li.veiculo span{
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 400;
     }
     
     main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo{
         border-radius: 8px;
-        padding: 0vh 2vw 0vh 1vw;
+        padding: 3vh 2vw 3vh 1vw;
         background-color: #E0E0E0;
         justify-content: space-between;
-        min-height: 43vh;
+        min-height: 50vh;
         /* border: 2px solid red; */
-        display: none;
+        /* display: none; */
     }
 
     main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset{
@@ -802,6 +802,7 @@
 
 
     main.containerAreaCliente div.cardUsuario form.formCadastroVeiculo fieldset button{
+        margin-top: 3vh;
         padding: 1.5vh 2vw;
         width: fit-content;
         border-radius: 5px;
