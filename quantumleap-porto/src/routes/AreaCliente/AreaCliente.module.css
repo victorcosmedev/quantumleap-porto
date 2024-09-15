@@ -8,6 +8,10 @@
         padding: 15vh 10vw;
     }
 
+    main.containerAreaCliente div.erro{
+        padding: 10vh 0;
+    }
+
     main.containerAreaCliente .seletorBox{
         margin-bottom: 2vh;
         display: flex;
@@ -161,6 +165,9 @@
     main.containerAreaCliente{
         border: 2px solid green;
         padding: 15vh 10vw;
+    }
+    main.containerAreaCliente div.erro{
+        padding: 12vh 0;
     }
 
     main.containerAreaCliente .seletorBox{
@@ -321,6 +328,10 @@
     main.containerAreaCliente{
         border: 2px solid green;
         padding: 15vh 10vw;
+    }
+
+    main.containerAreaCliente div.erro{
+        padding: 12vh 0;
     }
 
     main.containerAreaCliente .seletorBox{
@@ -488,6 +499,10 @@
         padding: 15vh 10vw;
     }
 
+    main.containerAreaCliente div.erro{
+        padding: 20vh 0;
+    }
+
     main.containerAreaCliente .seletorBox{
         margin-bottom: 2vh;
         display: flex;
@@ -652,6 +667,10 @@
     main.containerAreaCliente{
         border: 2px solid green;
         padding: 15vh 10vw;
+    }
+
+    main.containerAreaCliente div.erro{
+        padding: 15vh 0;
     }
 
     main.containerAreaCliente .seletorBox{

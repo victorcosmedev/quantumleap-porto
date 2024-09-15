@@ -57,6 +57,10 @@ export default function Login(){
                 setTimeout(() => {
                     navigate('/');
                 }, 5000);
+
+                setTimeout(() => {
+                    window.location.reload();
+                  }, 5000);
             } else {
                 setClasseMensagem("erro");
 		        setMsgStatusEnvio("A senha que você inseriu está incorreta.");

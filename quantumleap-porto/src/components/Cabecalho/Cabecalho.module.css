@@ -113,7 +113,7 @@
     }
 
 
-    header.cabecalho nav .linksdireita .link a {
+    header.cabecalho nav .linksdireita .link .cadastreSe {
         display: block;
         padding: 1.25vh 2vw;
         border-radius: 5px;
@@ -122,6 +122,7 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 1.75rem;
+        border: none;
     }
 
     header.cabecalho a {
@@ -183,7 +184,7 @@
     }
 
 
-    .cabecalho nav .linksdireita .link a {
+    .cabecalho nav .linksdireita .link .cadastreSe {
         display: block;
         padding: 1vh 2vw;
         border-radius: 5px;
@@ -192,6 +193,7 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 1.75rem;
+        border: none;
     }
 
     .cabecalho a {
@@ -262,7 +264,7 @@
         visibility: hidden;
     }
 
-    header.cabecalho nav .linksdireita .link a {
+    header.cabecalho nav .linksdireita .link .cadastreSe {
         display: block;
         padding: 1vh 2vw;
         border-radius: 5px;
@@ -271,6 +273,7 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 1.75rem;
+        border: none;
     }
 
     header.cabecalho a {
@@ -331,7 +334,7 @@
         visibility: hidden;
     }
 
-    header.cabecalho nav .linksdireita .link a {
+    header.cabecalho nav .linksdireita .link .cadastreSe {
         display: block;
         padding: 1vh 2vw;
         border-radius: 5px;
@@ -340,6 +343,7 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 1.75rem;
+        border:none;
     }
 
     header.cabecalho a {

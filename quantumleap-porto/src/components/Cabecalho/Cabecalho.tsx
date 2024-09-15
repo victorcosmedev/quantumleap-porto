@@ -17,19 +17,19 @@ export default function Cabecalho (){
     if(usuarioLogado !== null){
       setConteudoBotao("Sair");
     } else {
-        setConteudoBotao("Entrar")
+      setConteudoBotao("Entrar");
     }
-  }, []);
+  }, [usuarioLogado]);
 
   const acaoBotao = () => {
     const usuarioLogado = sessionStorage.getItem('usuarioAutenticado');
-    console.log("Usuário está logado? " + usuarioLogado);
     if(usuarioLogado){
       sessionStorage.removeItem('usuarioAutenticado');
       
-      setTimeout(() => {
-        window.location.reload();
-        }, 5000);
+      
+      navigate("/");
+      window.location.reload();
+      
     } else {
       navigate("/login");
     }
