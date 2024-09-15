@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "./Login.module.css";
 import { useState } from "react";
 
@@ -7,7 +7,6 @@ export default function Login(){
     const [msgStatusEnvio, setMsgStatusEnvio] = useState("");
     const [classeMensagem, setClasseMensagem] = useState("");
     const navigate = useNavigate();
-  
 
     const verificaCadastroUsuario = (cpf: string): boolean => {
 		for (let i: number = 0; i < localStorage.length; i++) {
@@ -45,15 +44,15 @@ export default function Login(){
         
         
         if(verificaCadastroUsuario(cpf) == true){
-            console.log("existe");
-            console.log(buscaRegistroUsuario(cpf));
+
             const registroUsuario = buscaRegistroUsuario(cpf);
-            console.log("senha inserida " + senha);
-            console.log("senha guardada no banco: " + registroUsuario.senha);
+
 
             if(registroUsuario.senha == senha){
                 setClasseMensagem("sucesso");
                 setMsgStatusEnvio("Logado com sucesso! Estamos te redirecionando à página principal");
+
+                sessionStorage.setItem('usuarioAutenticado', 'true');
 
                 setTimeout(() => {
                     navigate('/');
@@ -81,7 +80,7 @@ export default function Login(){
         <form className={style.formulario} onSubmit={envioFormulario}>
             <fieldset className={style.quadrado}>
                 <h1>Acessar Conta</h1>
-                <p>Preencha seus dados de acesso para continuar.</p>
+                <p>Não tem cadastro? <Link to="/cadastro">Cadastre-se já!</Link></p>
                 
                 <div className={style.divCampo}>
                     <label htmlFor="cpf">CPF</label>

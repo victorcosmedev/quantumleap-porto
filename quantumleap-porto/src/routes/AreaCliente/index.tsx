@@ -1,20 +1,20 @@
-import { useRef } from "react";
+
 import styles from "./AreaCliente.module.css";
 
 export default function AreaCliente(){
-    const btnCadastroVeiculo = useRef(null);
+    const usuarioLogado = sessionStorage.getItem('usuarioAutenticado');
 
-    const handleClick = () => {
-        console.log(btnCadastroVeiculo.current);
+    if(usuarioLogado != null){
+        console.log("Sessão Ativa");
+    } else {
+        console.log("Sessão Inativa");
     }
-
-    console.log(btnCadastroVeiculo);
 
     return(
         <main className={styles.containerAreaCliente}>
             <div className={styles.seletorBox}>
                 <button className={styles.buttonSelected}>Área do Cliente</button>
-                <button onClick={handleClick}>
+                <button>
                     Cadastro de Veículo
                 </button>
             </div>
@@ -38,7 +38,7 @@ export default function AreaCliente(){
                         <div className={styles.campo}>
                             <label htmlFor="montadora:">Montadora</label>
                             <select className={`${styles.selectMontadoras} ${styles.conteudoCardUsuarioNome}`} id="montadoras" name="montadoras">
-                                <option value="" selected disabled>Selecione uma opção</option>
+                                <option value="" disabled>Selecione uma opção</option>
                                 <option value="chevrolet">Chevrolet</option>
                                 <option value="fiat">Fiat</option>
                                 <option value="ford">Ford</option>

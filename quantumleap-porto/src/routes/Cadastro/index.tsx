@@ -16,30 +16,7 @@ export default function Cadastro(){
   const [classeMensagem, setClasseMensagem] = useState("");
   const navigate = useNavigate();
 
-  const testeVictor: Usuario = {
-    nome: "Victor",
-    email: "victorcosme.profissional@gmail.com",
-    senha: "123456789",
-    cpf: "43476250814",
-  }
-  testeVictor.id = "usuario_" + testeVictor.cpf;
-
-  const testeGui: Usuario = {
-    nome: "Gui",
-    email: "gui.profissional@gmail.com",
-    senha: "123456789",
-    cpf: "11122233344",
-  }
-  testeGui.id = "usuario_" + testeGui.cpf;
-
-
-  localStorage.setItem(testeVictor.id, JSON.stringify(testeVictor));
-
-  localStorage.setItem(testeGui.id, JSON.stringify(testeGui));
-  console.log(localStorage.length);
-
 	const validaCpf = (cpf: string): boolean => {
-		let validacaoCpf = false;
 		for (let i: number = 0; i < localStorage.length; i++) {
 			const chave: string | null = localStorage.key(i);
 			const valor = chave ? localStorage.getItem(chave) : null;
