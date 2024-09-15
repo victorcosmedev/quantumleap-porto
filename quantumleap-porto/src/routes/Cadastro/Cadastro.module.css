@@ -80,6 +80,17 @@
         border: none;
         background-color: #0046C7;
         color: #FFF;
+        margin-bottom: 5vh;
+    }
+
+    main.containerForm .formulario .quadrado p.sucesso{
+        color: green;
+        font-size: 1.6rem;
+    }
+
+    main.containerForm .formulario .quadrado p.erro{
+        color: red;
+        font-size: 1.6rem;
     }
 }
 
@@ -147,6 +158,17 @@
         border: none;
         background-color: #0046C7;
         color: #FFF;
+        margin-bottom: 5vh;
+    }
+
+    main.containerForm .formulario .quadrado p.sucesso{
+        color: green;
+        font-size: 1.6rem;
+    }
+
+    main.containerForm .formulario .quadrado p.erro{
+        color: red;
+        font-size: 1.6rem;
     }
 }
 
@@ -216,6 +238,17 @@
         border: none;
         background-color: #0046C7;
         color: #FFF;
+        margin-bottom: 3vh;
+    }
+
+    main.containerForm .formulario .quadrado p.sucesso{
+        color: green;
+        font-size: 1.6rem;
+    }
+
+    main.containerForm .formulario .quadrado p.erro{
+        color: red;
+        font-size: 1.6rem;
     }
 }
 
@@ -283,6 +316,17 @@
         border: none;
         background-color: #0046C7;
         color: #FFF;
+        margin-bottom: 2vh;
+    }
+
+    main.containerForm .formulario .quadrado p.sucesso{
+        color: green;
+        font-size: 1.5rem;
+    }
+
+    main.containerForm .formulario .quadrado p.erro{
+        color: red;
+        font-size: 1.5rem;
     }
 }
 
@@ -340,5 +384,15 @@
         border: none;
         background-color: #0046C7;
         color: #FFF;
+    }
+
+    main.containerForm .formulario .quadrado p.sucesso{
+        color: green;
+        font-size: 1.4rem;
+    }
+
+    main.containerForm .formulario .quadrado p.erro{
+        color: red;
+        font-size: 1.4rem;
     }
 }
