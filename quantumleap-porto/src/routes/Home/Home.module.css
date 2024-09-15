@@ -1,6 +1,5 @@
 main .gridMain {
     .descricaoQuickfix {
-        border: 2px solid black;
         grid-column: 1 / span 2;
         padding: 7% 16vw;
         font-weight: 400;
@@ -22,6 +21,15 @@ main .gridMain {
     main .gridMain {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        .descricaoQuickfix{
+            h1{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
 
         .boxBannerCadastro {
             display: flex;
@@ -115,6 +123,15 @@ main .gridMain {
     main .gridMain {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        .descricaoQuickfix{
+            h1{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
 
         .boxBannerCadastro {
             display: flex;
@@ -213,6 +230,15 @@ main .gridMain {
         display: grid;
         grid-template-columns: 1fr 1fr;
 
+        .descricaoQuickfix{
+            h1{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.4rem;
+            }
+        }
+
         .boxBannerCadastro {
             display: flex;
             align-items: center;
@@ -309,6 +335,15 @@ main .gridMain {
     main .gridMain {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        .descricaoQuickfix{
+            h1{
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 1.3rem;
+            }
+        }
 
         .boxBannerCadastro {
             display: flex;
@@ -427,6 +462,15 @@ main .gridMain {
     main .gridMain {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        .descricaoQuickfix{
+            h1{
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 1.3rem;
+            }
+        }
 
         .boxBannerCadastro {
             display: flex;

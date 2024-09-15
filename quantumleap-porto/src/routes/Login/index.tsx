@@ -53,6 +53,7 @@ export default function Login(){
                 setMsgStatusEnvio("Logado com sucesso! Estamos te redirecionando à página principal");
 
                 sessionStorage.setItem('usuarioAutenticado', 'true');
+                sessionStorage.setItem('registroUsuario', JSON.stringify(registroUsuario));
 
                 setTimeout(() => {
                     navigate('/');

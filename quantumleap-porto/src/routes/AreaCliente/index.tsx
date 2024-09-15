@@ -1,120 +1,167 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./AreaCliente.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function AreaCliente(){
+export default function AreaCliente() {
     const [usuarioLogado, setUsuarioLogado] = useState(sessionStorage.getItem('usuarioAutenticado'));
     const navigate = useNavigate();
 
-    const [classeBotaoAreaDoCliente, setClasseBotaoAreaDoCliente] = useState("buttonSelected");
+    const [classeBotaoAreaDoCliente, setClasseBotaoAreaDoCliente] = useState(styles.buttonSelected);
+    const [classeBotaoCadastroDoVeiculo, setClasseBotaoCadastroDoVeiculo] = useState("");
+    const [msgStatusEnvio, setMsgStatusEnvio] = useState("");
+    const [classeMensagem, setClasseMensagem] = useState(styles.mensagemInfo); // Ajuste a classe conforme necessário
+    const [mostrarAreaDoCliente, setMostrarAreaDoCliente] = useState(true);
+    const [dadosUsuario, setDadosUsuario] = useState(null);
 
-    const[classeBotaoCadastroDoVeiculo, setClasseBotaoCadastroDoVeiculo] = useState("");
+    useEffect(() => {
+        if (usuarioLogado === null) {
+            setTimeout(() => {
+                navigate("/login");
+            }, 5000);
+        } else {
+            const dados = sessionStorage.getItem("registroUsuario");
+            if (dados) {
+                setDadosUsuario(JSON.parse(dados));
+            }
+        }
+    }, [usuarioLogado, navigate]);
 
-    const botaoCadastroVeiculoOnclick = () => {
-        setClasseBotaoCadastroDoVeiculo("buttonSelected");
+    const botaoCadastroVeiculoOnClick = () => {
+        setClasseBotaoCadastroDoVeiculo(styles.buttonSelected);
         setClasseBotaoAreaDoCliente("");
+        setMostrarAreaDoCliente(false);
+    };
 
-    }
-
-    const botaoAreaDoClienteOnclick = () => {
+    const botaoAreaDoClienteOnClick = () => {
         setClasseBotaoCadastroDoVeiculo("");
-        setClasseBotaoAreaDoCliente("buttonSelected");
-    }
+        setClasseBotaoAreaDoCliente(styles.buttonSelected);
+        setMostrarAreaDoCliente(true);
+    };
 
+    const validaVeiculo = (placa) => {
+        if (!dadosUsuario || !dadosUsuario.veiculos) return true;
+        const quantidadeDeVeiculos = dadosUsuario.veiculos.length;
+        for (let i = 0; i < quantidadeDeVeiculos; i++) {
+            const veiculo = dadosUsuario.veiculos[i];
+            if (placa === veiculo.placa) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    const envioFormulario = (event) => {
+        event.preventDefault();
+
+        const montadora = event.target.montadora.value;
+        const modelo = event.target.modelo.value;
+        const ano = event.target.ano.value;
+        const km = event.target.km.value;
+        const placa = event.target.placa.value;
+
+        if (validaVeiculo(placa)) {
+            const veiculo = {
+                montadora,
+                modelo,
+                ano,
+                km,
+                placa
+            };
+
+            let veiculosDoUsuario = dadosUsuario.veiculos || [];
+            veiculosDoUsuario.push(veiculo);
+            dadosUsuario.veiculos = veiculosDoUsuario;
+
+            sessionStorage.setItem("registroUsuario", JSON.stringify(dadosUsuario));
+            localStorage.setItem("registroUsuario", JSON.stringify(dadosUsuario));
+
+            setMsgStatusEnvio("Veículo cadastrado com sucesso!");
+            setClasseMensagem(styles.sucesso);
+        } else {
+            setMsgStatusEnvio("Veículo já cadastrado.");
+            setClasseMensagem(styles.erro);
+        }
+    };
 
     const renderizaAreaCliente = () => {
-        if(usuarioLogado === null ){
-
+        if (usuarioLogado === null) {
             setTimeout(() => {
-            navigate("/login");
-                }, 5000);
+                navigate("/login");
+            }, 5000);
             return (
                 <main className={styles.containerAreaCliente}>
                     <h2>Você não está logado! Estamos te redirecionando para a página de login</h2>
                 </main>
-            )
-            
+            );
         } else {
             return (
                 <main className={styles.containerAreaCliente}>
                     <div className={styles.seletorBox}>
-                        <button className={styles.buttonSelected}>Área do Cliente</button>
-                        <button>
-                            Cadastro de Veículo
-                        </button>
+                        <button className={classeBotaoAreaDoCliente} onClick={botaoAreaDoClienteOnClick}>Área do Cliente</button>
+                        <button className={classeBotaoCadastroDoVeiculo} onClick={botaoCadastroVeiculoOnClick}>Cadastro de Veículo</button>
                     </div>
                     <div className={styles.cardUsuario}>
-                        <div className={styles.dadosUsuario}>
-                            <ul>
-                                <li><span>Nome: </span> Eduardo Pereira Rodrigues</li>
-                                <li><span>Telefone: </span> (11) 0000-0000</li>
-                                <li><span>Email: </span> email@dominio.com</li>
-                                <li><span>Endereço: </span> Rua dos Cravos, 555, Jd. das Dores - SP</li>
-                                <li><span>Cliente Porto: </span> Sim</li>
-                            </ul>
-                            <button className={styles.editarDados}>Editar dados</button>
-                        </div>
-
-                        <form action="" className={styles.formCadastroVeiculo}>
-                            <fieldset>
-                                {/* <div className={styles.campos}>
-
-                                </div> */}
-                                <div className={styles.campo}>
-                                    <label htmlFor="montadora:">Montadora</label>
-                                    <select className={`${styles.selectMontadoras} ${styles.conteudoCardUsuarioNome}`} id="montadoras" name="montadoras">
-                                        <option value="" disabled>Selecione uma opção</option>
-                                        <option value="chevrolet">Chevrolet</option>
-                                        <option value="fiat">Fiat</option>
-                                        <option value="ford">Ford</option>
-                                        <option value="honda">Honda</option>
-                                        <option value="hyundai">Hyundai</option>
-                                        <option value="jeep">Jeep</option>
-                                        <option value="nissan">Nissan</option>
-                                        <option value="renault">Renault</option>
-                                        <option value="toyota">Toyota</option>
-                                        <option value="volkswagen">Volkswagen</option>
-                                    </select>
-                                </div>
-                                <div className={styles.campo}>
-                                    <label htmlFor="modelo">Modelo</label>
-                                    <input type="text" id="modelo" name="modelo" placeholder="Ex.: Accord"/>
-                                </div>
-                                <div className={styles.campo}>
-                                    <label htmlFor="ano">Ano</label>
-                                    <input type="text" id="ano" name="ano" placeholder="Ex.: 2002"/>
-                                </div>
-                                <div className={styles.campo}>
-                                    <label htmlFor="km">Quilometragem</label>
-                                    <input type="text" id="ano" name="ano" placeholder="Ex.: 100.000"/>
-                                </div>
-                                <div className={styles.campo}>
-                                    <label htmlFor="placa">Placa do veículo</label>
-                                    <input type="text" id="placa" name="placa" placeholder="Ex.: ABC1D23 ou ABC1234"/>
-                                </div>
-                                <button>Enviar</button>
-                            </fieldset>                    
-                        </form>
+                        {mostrarAreaDoCliente ? (
+                            <div className={styles.dadosUsuario}>
+                                <ul>
+                                    {dadosUsuario && (
+                                        <>
+                                            <li><span>Nome: </span>{dadosUsuario.nome}</li>
+                                            <li><span>CPF: </span>{dadosUsuario.cpf}</li>
+                                            <li><span>Email: </span>{dadosUsuario.email}</li>
+                                        </>
+                                    )}
+                                </ul>
+                            </div>
+                        ) : (
+                            <form onSubmit={envioFormulario} className={styles.formCadastroVeiculo}>
+                                <fieldset>
+                                    <div className={styles.campo}>
+                                        <label htmlFor="montadora">Montadora</label>
+                                        <input type="text" id="montadora" name="montadora" placeholder="Ex.: Honda" required />
+                                    </div>
+                                    <div className={styles.campo}>
+                                        <label htmlFor="modelo">Modelo</label>
+                                        <input type="text" id="modelo" name="modelo" placeholder="Ex.: Accord" required />
+                                    </div>
+                                    <div className={styles.campo}>
+                                        <label htmlFor="ano">Ano</label>
+                                        <input type="text" id="ano" name="ano" placeholder="Ex.: 2002" required />
+                                    </div>
+                                    <div className={styles.campo}>
+                                        <label htmlFor="km">Quilometragem</label>
+                                        <input type="text" id="km" name="km" placeholder="Ex.: 100.000" required />
+                                    </div>
+                                    <div className={styles.campo}>
+                                        <label htmlFor="placa">Placa do veículo</label>
+                                        <input type="text" id="placa" name="placa" placeholder="Ex.: ABC1D23 ou ABC1234" required />
+                                    </div>
+                                    <button type="submit">Enviar</button>
+                                    <p className={classeMensagem}>{msgStatusEnvio}</p>
+                                </fieldset>
+                            </form>
+                        )}
                         
-
                         <div className={styles.divVeiculos}>
                             <h3>Veículos Cadastrados</h3>
                             <ul>
-                                <li className={styles.veiculo}>Honda Accord | ABC-12D3<br/><span>2024</span></li>
-                                <li className={styles.veiculo}>Volvo V60 | ABC-12D3<br/><span>2024</span></li>
-                                <li className={styles.veiculo}>Volkswagen Passat | ABC-12D3<br/><span>2024</span></li>
+                                {dadosUsuario && dadosUsuario.veiculos && dadosUsuario.veiculos.map((veiculo, index) => (
+                                    <li key={index} className={styles.veiculo}>
+                                        {`${veiculo.montadora} ${veiculo.modelo} | ${veiculo.placa} | ${veiculo.ano}`}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
+                    
                 </main>
-            )
+            );
         }
-    }
-    
-    return(
+    };
+
+    return (
         <>
-                {renderizaAreaCliente()}
-        </> 
-    )
+            {renderizaAreaCliente()}
+        </>
+    );
 }

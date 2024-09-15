@@ -8,6 +8,7 @@ interface Usuario {
   senha: string;
   cpf: string;
   id?: string; // `id` é opcional inicialmente
+  veiculos: [];
 }
 
 export default function Cadastro(){
@@ -52,7 +53,8 @@ export default function Cadastro(){
 				nome: nome,
 				email: email,
 				senha: senha,
-				cpf: cpf
+				cpf: cpf,
+        veiculos: []
 			}
 
 			objetoUsuario.id = "user_" + objetoUsuario.cpf;
