@@ -48,7 +48,7 @@ export default function Cabecalho (){
       <nav>
         <ul className={styles.hamburguer}>
           <li>
-            <Link to="./paginas/menu.html"
+            <Link to="/menu"
               ><img
                 src={hamburguer}
                 alt="menu com mais opções"

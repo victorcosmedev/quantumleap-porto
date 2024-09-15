@@ -60,6 +60,24 @@ export default function Home() {
                 <div className={style.boxIniciarChat}>
                     <h1>Precisa de ajuda? Fale conosco!</h1>
                     <Link className={style.botaoIniciarChat} to="/chat">Iniciar Chat</Link>
+
+                    <div className={style.forum}>
+                        <h1>Dúvidas frequentes</h1>
+                        <div className={style.boxPergunta}>
+                            <h2>Preciso estar logado para utilizar o chatbot?</h2>
+                            <p>Sim, é necessário estar logado para utilizar o chatbot.</p>
+                        </div>
+
+                        <div className={style.boxPergunta}>
+                            <h2>Não entendo nada de mecânica. Ainda assim consigo usar o QuickFix?</h2>
+                            <p>Sim! O QuickFix foi pensado justamente para pessoas que não têm conhecimento aprofundado em mecânica mas desejam manter a manutenção do seu veículo em dia.</p>
+                        </div>
+
+                        <div className={style.boxPergunta}>
+                            <h2>Como posso me cadastrar no QuickFix?</h2>
+                            <p>Para cadastrar-se no QuickFix, basta <Link to="/cadastro"> clicar aqui.</Link></p>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
