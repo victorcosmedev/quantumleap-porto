@@ -1,17 +1,27 @@
 
+import { useState } from "react";
 import styles from "./AreaCliente.module.css";
 
 export default function AreaCliente(){
-    const usuarioLogado = sessionStorage.getItem('usuarioAutenticado');
+    const [usuarioLogado, setUsuarioLogado] = useState(sessionStorage.getItem('usuarioAutenticado'));
+    const navigate = useNavigate();
 
-    if(usuarioLogado != null){
-        console.log("Sessão Ativa");
-    } else {
-        console.log("Sessão Inativa");
+
+    const renderizaAreaCliente = () => {
+        if(usuarioLogado === null ){
+
+            setTimeout(() => {
+      navigate("/login");
+                }, 5000);
+            return <h2>Você não está logado! Estamos te redirecionando para a página de login</h2>
+        } else {
+            console.log("Usuário logado");
+        }
     }
-
+    
     return(
         <main className={styles.containerAreaCliente}>
+
             <div className={styles.seletorBox}>
                 <button className={styles.buttonSelected}>Área do Cliente</button>
                 <button>
