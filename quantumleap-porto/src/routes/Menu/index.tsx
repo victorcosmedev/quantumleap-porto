@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "./Menu.module.css";
 
 export default function Menu(){
@@ -5,15 +6,10 @@ export default function Menu(){
         <nav className={style.containerMenu}>
             <ul className={style.botoes}>
                 <li>
-                    <a href="../index.html" className={style.botaoMenu}>Home</a>
-                    <a href="../paginas/sobre-nos.html">Sobre nós</a>
-                    <a href="../paginas/login.html">Login</a>
-                    <a href="../paginas/cadastro.html">Cadastro</a>
-                </li>
-            </ul>
-            <ul className={style.botaoVoltar}>
-                <li>
-                    <a href="../index.html"><img src="../img/icone-voltar.png" alt="" /></a>
+                    <Link to="/" className={style.botaoMenu}>Home</Link>
+                    <Link to="/sobre-nos" className={style.botaoMenu}>Sobre nós</Link>
+                    <Link to="/login" className={style.botaoMenu}>Login</Link>
+                    <Link to="/cadastro" className={style.botaoMenu}>Cadastro</Link>
                 </li>
             </ul>
         </nav>
