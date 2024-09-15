@@ -9,6 +9,7 @@ import Login from "./routes/Login/index.tsx";
 import Error from "./routes/Error/index.tsx";
 import SobreNos from './routes/SobreNos/index.tsx';
 import AreaCliente from './routes/AreaCliente/index.tsx';
+import Chat from './routes/Chat/index.tsx';
 
 const routes = createBrowserRouter([
   {path: "/", element: <App/>, errorElement: <Error/>,
@@ -18,6 +19,7 @@ const routes = createBrowserRouter([
       {path: "/login", element: <Login/>},
       {path: "/sobre-nos", element: <SobreNos/>},
       {path: "/area-cliente", element: <AreaCliente/>},
+      {path: "/chat", element: <Chat/>},
     ]
   }
 ]);

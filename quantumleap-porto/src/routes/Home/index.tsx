@@ -59,7 +59,7 @@ export default function Home() {
                 </div>
                 <div className={style.boxIniciarChat}>
                     <h1>Precisa de ajuda? Fale conosco!</h1>
-                    <a className={style.botaoIniciarChat} href="./paginas/chat.html">Iniciar Chat</a>
+                    <Link className={style.botaoIniciarChat} to="/chat">Iniciar Chat</Link>
                 </div>
                 
             </div>
