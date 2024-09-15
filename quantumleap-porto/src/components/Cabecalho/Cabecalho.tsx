@@ -21,7 +21,7 @@ export default function Cabecalho (){
     }
   }, [usuarioLogado]);
 
-  const acaoBotao = () => {
+  const botaoSair = () => {
     const usuarioLogado = sessionStorage.getItem('usuarioAutenticado');
     if(usuarioLogado){
       sessionStorage.removeItem('usuarioAutenticado');
@@ -33,6 +33,10 @@ export default function Cabecalho (){
     } else {
       navigate("/login");
     }
+  }
+
+  const botaoChamarGuincho = () => {
+    alert("Aguarde, estamos enviando um guincho para sua localização");
   }
 
 
@@ -60,10 +64,11 @@ export default function Cabecalho (){
         <ul className={styles.linksesquerda}>
           <li className={styles.link}><Link to="/">Home</Link></li>
           <li className={styles.link}><Link to="/sobre-nos">Sobre nós</Link></li>
+          <li className={styles.link}><Link onClick={botaoChamarGuincho}>Pedir Guincho</Link></li>
         </ul>
         <div className={styles.linksdireita}>
           <div className={styles.link}>
-            <button className={styles.cadastreSe} onClick={acaoBotao}>{conteudoBotao}</button>
+            <button className={styles.cadastreSe} onClick={botaoSair}>{conteudoBotao}</button>
           </div>
           <div className={styles.divIconeUsuario}>
             <Link to="/area-cliente">
