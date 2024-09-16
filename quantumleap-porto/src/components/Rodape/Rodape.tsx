@@ -1,13 +1,13 @@
 import style from "./Rodape.module.css";
-import TwitterLogo from "../../img/twitter-logo.png";
-import FacebookLogo from "../../img/facebook-logo.png";
-import InstagramLogo from "../../img/instagram-logo.png";
-import LinkedinLogo from "../../img/linkedin-logo.png";
-import YoutubeLogo from "../../img/youtube-logo.png";
-import TiktokLogo from "../../img/tiktok-logo.png";
-import PlayStoreIcon from "../../img/google-play-icone.png";
-import AppleStoreIcon from "../../img/apple-store-icone.png";
-import LogoPorto from "../../img/logo-porto.png";
+import TwitterLogo from "/img/twitter-logo.png";
+import FacebookLogo from "/img/facebook-logo.png";
+import InstagramLogo from "/img/instagram-logo.png";
+import LinkedinLogo from "/img/linkedin-logo.png";
+import YoutubeLogo from "/img/youtube-logo.png";
+import TiktokLogo from "/img/tiktok-logo.png";
+import PlayStoreIcon from "/img/google-play-icone.png";
+import AppleStoreIcon from "/img/apple-store-icone.png";
+import LogoPorto from "/img/logo-porto.png";
 
 export default function Rodape(){
     return(

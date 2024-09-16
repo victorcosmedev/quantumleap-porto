@@ -1,7 +1,7 @@
 import style from "./SobreNos.module.css";
-import fotoArthur from "../../img/foto-arthur.png";
-import fotoLucas from "../../img/foto-lucas.jpg";
-import fotoVictor from "../../img/foto-victor.jpg"
+import fotoArthur from "/img/foto-arthur.png";
+import fotoLucas from "/img/foto-lucas.jpg";
+import fotoVictor from "/img/foto-victor.jpg"
 
 export default function SobreNos() {
     return (

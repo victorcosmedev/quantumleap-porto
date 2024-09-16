@@ -1,6 +1,6 @@
 import style from "./Home.module.css";
-import motoristaAzul from "../../img/motorista-azul.jpeg";
-import caminhaoPorto from "../../img/caminhao-porto.jpeg";
+import motoristaAzul from "/img/motorista-azul.jpeg";
+import caminhaoPorto from "/img/caminhao-porto.jpeg";
 import { Link } from "react-router-dom";
 
 export default function Home() {

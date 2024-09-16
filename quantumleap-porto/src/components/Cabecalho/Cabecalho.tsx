@@ -1,6 +1,7 @@
 import styles from "./Cabecalho.module.css";
-import logo from "../../img/logo-porto.png";
-import hamburguer from "../../img/icone-hamburguer.png";
+import logo from "/img/logo-porto.png";
+import hamburguer from "/img/icone-hamburguer.png";
+import iconeUsuario from "/img/icone-usuario.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -72,7 +73,7 @@ export default function Cabecalho (){
           </div>
           <div className={styles.divIconeUsuario}>
             <Link to="/area-cliente">
-              <img src="/img/icone-usuario.png" alt="" />
+              <img src={iconeUsuario} alt="" />
             </Link>
           </div>
         </div>

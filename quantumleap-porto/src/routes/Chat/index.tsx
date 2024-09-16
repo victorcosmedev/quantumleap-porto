@@ -10,9 +10,9 @@ export default function Chat(){
 
     const renderizaAreaChat = () => {
         if (usuarioLogado === null) {
-            // setTimeout(() => {
-            //     navigate("/login");
-            // }, 5000);
+            setTimeout(() => {
+                navigate("/login");
+            }, 5000);
             return (
                 <main className={styles.containerChatErro}>
                     <h2>Você não está logado! Estamos te redirecionando para a página de login...</h2>

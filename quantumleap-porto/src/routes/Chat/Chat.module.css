@@ -3,7 +3,7 @@
         width: 100%;
         height: 100%;
         filter: blur();
-        background-image: url("../img/img-fundo-chat.jpg");
+        background-image: url("/img/img-fundo-chat.jpg");
         background-color: rgba(0, 0, 0, 0.7);
         background-position: center center;
         background-size: cover;
