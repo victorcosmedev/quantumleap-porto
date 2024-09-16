@@ -1,0 +1,278 @@
+@media screen and (min-width: 1200px) {
+    .rodape {
+        height: 35vh;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 0 10vw;
+        justify-content: space-between;
+    }
+
+    .rodape nav {
+        display: flex;
+        gap: 1vh;
+        flex-direction: column;
+    }
+
+    .rodape .LinksRedes {
+        display: flex;
+        flex: 1;
+        gap: 0.3vw;
+    }
+
+    .rodape nav ul.LinksRedes li a img.LogoRedes {
+        height: auto;
+        width: 2.5vw;
+        filter: invert(1);
+    }
+
+    .rodape .DownloadApp {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    .rodape .DownloadApp li a {
+        text-decoration: none;
+        color: inherit;
+        height: 3vh;
+        width: auto;
+        display: inline-block;
+    }
+
+    .rodape .DownloadApp li a img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .rodape .LogoPorto {
+        height: auto;
+        width: 18vw;
+    }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .rodape {
+        height: 35vh;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 0 10vw;
+        justify-content: space-between;
+    }
+
+    .rodape nav {
+        display: flex;
+        gap: 1vh;
+        flex-direction: column;
+    }
+
+    .rodape .LinksRedes {
+        display: flex;
+        flex: 1;
+        gap: 0.3vw;
+    }
+
+    .rodape .LinksRedes li a img.LogoRedes {
+        height: auto;
+        width: 2.5vw;
+        filter: invert(1);
+    }
+
+    .rodape .DownloadApp {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    .rodape .DownloadApp li a {
+        text-decoration: none;
+        color: inherit;
+        height: 3vh;
+        width: auto;
+        display: inline-block;
+    }
+
+    .rodape .DownloadApp li a img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .rodape .LogoPorto {
+        height: auto;
+        width: 18vw;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .rodape {
+        height: 20vh;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 0 10vw;
+        justify-content: space-between;
+    }
+
+    .rodape nav {
+        display: flex;
+        gap: 1vh;
+        flex-direction: column;
+    }
+
+    .rodape .LinksRedes {
+        display: flex;
+        flex: 1;
+        gap: 0.7vw;
+    }
+
+    .rodape .LinksRedes li a img.LogoRedes {
+        height: auto;
+        width: 3.3vw;
+        filter: invert(1);
+    }
+
+    .rodape .DownloadApp {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    .rodape .DownloadApp li a {
+        text-decoration: none;
+        color: inherit;
+        height: 3vh;
+        width: auto;
+        display: inline-block;
+    }
+
+    .rodape .DownloadApp li a img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .rodape .LogoPorto {
+        height: auto;
+        width: 18vw;
+    }
+}
+
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .rodape {
+        height: 20vh;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 0 10vw;
+        justify-content: space-between;
+    }
+
+    .rodape nav {
+        display: flex;
+        gap: 1vh;
+        flex-direction: column;
+    }
+
+    .rodape .LinksRedes {
+        display: flex;
+        flex: 1;
+        gap: 0.7vw;
+    }
+
+    .rodape .LinksRedes li a img.LogoRedes {
+        height: auto;
+        width: 4.3vw;
+        filter: invert(1);
+    }
+
+    .rodape .DownloadApp {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    .rodape .DownloadApp li a {
+        text-decoration: none;
+        color: inherit;
+        height: 3vh;
+        width: auto;
+        display: inline-block;
+    }
+
+    .rodape .DownloadApp li a img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .rodape .LogoPorto {
+        height: auto;
+        width: 18vw;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+    .rodape {
+        height: 25vh;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 0 8vw;
+        justify-content: space-between;
+    }
+
+    .rodape nav {
+        display: flex;
+        gap: 1vh;
+        flex-direction: column;
+    }
+
+    .rodape .LinksRedes {
+        display: flex;
+        flex: 1;
+        gap: 0.7vw;
+    }
+
+    .rodape .LinksRedes li a img.LogoRedes {
+        height: auto;
+        width: 4.3vw;
+        filter: invert(1);
+    }
+
+    .rodape .DownloadApp {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+
+    .rodape .DownloadApp li a {
+        text-decoration: none;
+        color: inherit;
+        height: 2.5vh;
+        width: auto;
+        display: inline-block;
+    }
+
+    .rodape .DownloadApp li a img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .rodape .LogoPorto {
+        height: auto;
+        width: 25vw;
+    }
+}
