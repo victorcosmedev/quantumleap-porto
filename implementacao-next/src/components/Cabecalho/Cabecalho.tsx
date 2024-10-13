@@ -43,9 +43,9 @@ export default function Cabecalho() {
   }
 
   return (
-    <header className="flex border-solid border-2 border-red-600 align-middle justify-between w-100 px-[75px] h-[13vh] py-3 gap-6">
+    <header className="flex border-solid border-2 border-red-600 align-middle justify-between w-100 2xl:px-[75px] 2xl:h-[13vh] 2xl:py-3 gap-6 lg:px-[75px] lg:h-[13vh] lg:py-3">
       <Image src={imgLogo} alt="Logo da Porto Seguro" width="200" height="100" className="border-solid border-2 w-[auto]" layout="intrinsic"/>
-      <nav className="border-solid border-2 border-blue-700 flex align-middle justify-between w-[100%]">
+      <nav className="border-solid border-2 border-blue-700 flex align-middle justify-between 2xl:w-[100%] lg:w-[100%]">
         <ul className="hamburguer">
           <li>
             <Link href="/">
@@ -55,29 +55,28 @@ export default function Cabecalho() {
                 width={200}
                 height={100}
                 layout="intrinsic"
-                className="image"
               />
             </Link>
           </li>
         </ul>
-        <ul className="flex gap-x-5 list-none border border-3 border-green-600 items-center links-header">
+        <ul className="flex 2xl:gap-x-5 lg:gap-x-5 list-none border border-3 border-green-600 items-center links-header">
           <li className="">
-            <Link href={"/"} className=" font-semibold text-xl">Home</Link>
+            <Link href={"/"} className="2xl:font-semibold 2xl:text-xl lg:font-semibold lg:text-md">Home</Link>
           </li>
           <li>
-            <Link href={"/sobre-nos"} className="font-semibold text-xl">Sobre nós</Link>
+            <Link href={"/sobre-nos"} className="2xl:font-semibold 2xl:text-xl lg:font-semibold lg:text-md">Sobre nós</Link>
           </li>
           <li>
-            <Link href={"/"} className="font-semibold text-xl">Pedir Guincho</Link>
+            <Link href={"/"} className="2xl:font-semibold 2xl:text-xl lg:font-semibold lg:text-md">Pedir Guincho</Link>
           </li>
         </ul>
         <div className="flex items-center gap-4">
           <div className="">
-            <button className="bg-blue-800 px-3 py-1 rounded-md text-white font-semibold" onClick={botaoSair}>{conteudoBotao}</button>
+            <button className="bg-blue-800 rounded-md text-white 2xl:px-3 2xl:py-1 2xl:font-semibold lg:font-semibold lg:px-3 lg:py-0.5 lg:text-md" onClick={botaoSair}>{conteudoBotao}</button>
           </div>
           <div className="h-full">
             <Link href="/area-cliente">
-              <Image src={iconeUsuario} alt="" width={200} height={100} className="w-auto h-full "/>
+              <Image src={iconeUsuario} alt="" width={200} height={100} className="2xl:w-auto 2xl:h-full lg:w-auto lg:h-full"/>
             </Link>
           </div>
         </div>
