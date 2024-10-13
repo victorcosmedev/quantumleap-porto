@@ -18,7 +18,7 @@ const config: Config = {
         'xl': '992px',
         'lg': '768px',
         'md': '576px',
-        'sm': '0px'
+        'sm': '414px'
       }
     },
   },
