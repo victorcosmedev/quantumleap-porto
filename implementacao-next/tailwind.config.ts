@@ -11,7 +11,15 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "bg-blue-800": "#0046C7",
       },
+      screens: {
+        '2xl': "1200px",
+        'xl': '992px',
+        'lg': '768px',
+        'md': '576px',
+        'sm': '0px'
+      }
     },
   },
   plugins: [],
