@@ -7,4 +7,19 @@
         display: none;
     }
 
+    .card-integrante {
+        @apply flex w-full items-center border-2;
+        & img{
+            @apply border-2 border-red-600 rounded-full h-full w-auto mr-8;
+        }
+
+        & div {
+            @apply font-black;
+
+            & h4 {
+                @apply text-slate-500
+            }
+        }
+    }
+
 }
