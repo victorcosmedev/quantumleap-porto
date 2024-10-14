@@ -5,9 +5,9 @@ import fotoVictor from "@/img/foto-victor.jpg"
 
 export default function SobreNos() {
     return (
-        <main className="container border-2 border-blue-600 mx-auto px-4 py-8">
+        <main className="container border-2 border-blue-600 mx-auto lg:px-[15%] md:px-[10%] sm:px-[10%] py-8">
             <section className="flex flex-col gap-8">
-                <h1 className="text-4xl font-bold">Sobre nós</h1>
+                <h1 className="lg:text-4xl md:text-2xl font-bold sm:text-2xl">Sobre nós</h1>
                 <div className="card-integrante">
                     <Image
                         className=""
@@ -17,7 +17,7 @@ export default function SobreNos() {
                         height={100}
                         layout="intrinsic"
                     />
-                    <div className="">
+                    <div className="sm">
                         <h2>Arthur Eduardo Luna Pulini - Turma 1TDSPY</h2>
                         <h4>RM 554848</h4>
                     </div>

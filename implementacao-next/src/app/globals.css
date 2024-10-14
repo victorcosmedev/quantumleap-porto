@@ -8,18 +8,21 @@
     }
 
     .card-integrante {
-        @apply flex w-full items-center border-2;
+        @apply flex w-full items-center sm:flex-col sm:items-center;
         & img{
-            @apply border-2 border-red-600 rounded-full h-full w-auto mr-8;
+            @apply rounded-full h-full w-auto mr-8;
         }
 
         & div {
-            @apply font-black;
+            @apply font-black sm:flex sm:flex-col sm:items-center sm:text-sm sm:text-center;
+
 
             & h4 {
                 @apply text-slate-500
             }
         }
     }
+
+
 
 }
