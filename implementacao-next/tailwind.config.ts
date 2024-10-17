@@ -11,7 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "bg-blue-800": "#0046C7",
+        "azul-escuro": "#0046C7",
+        "azul-claro": "#01A1FD",
       },
       screens: {
         '2xl': "1200px",
@@ -19,6 +20,9 @@ const config: Config = {
         'lg': '768px',
         'md': '576px',
         'sm': '414px'
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)']
       }
     },
   },

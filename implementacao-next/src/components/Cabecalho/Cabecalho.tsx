@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import imgLogo from "@/img/logo-porto.png";
 import iconeUsuario from "@/img/icone-usuario.png";
+import iconeMenu from "@/img/icone-hamburguer.png";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -43,14 +44,14 @@ export default function Cabecalho() {
   }
 
   return (
-    <header className="flex border-solid border-2 border-red-600 align-middle justify-between w-100 gap-6 2xl:px-[75px] 2xl:h-[13vh] 2xl:py-3 lg:px-[75px] lg:h-[13vh] lg:py-2">
+    <header className="flex border-solid border-2 border-red-600 align-middle justify-between w-100 gap-6 2xl:px-[75px] 2xl:h-[13vh] 2xl:py-3 lg:px-[75px] lg:h-[13vh] lg:py-2 md:px-[75px] md:h-[13vh] md:py-2 ">
       <Image src={imgLogo} alt="Logo da Porto Seguro" width="200" height="100" className="border-solid border-2 w-[auto]" layout="intrinsic"/>
-      <nav className="border-solid border-2 border-blue-700 flex align-middle justify-between 2xl:w-[100%] lg:w-[100%]">
+      <nav className="hidden border-solid border-2 border-blue-700 md:flex align-middle justify-between 2xl:w-[100%] lg:w-[100%] sm:invisible sm:hidden">
         <ul className="hamburguer">
           <li>
             <Link href="/">
               <Image
-                src={'/'}
+                src={iconeMenu}
                 alt="menu com mais opções"
                 width={200}
                 height={100}
@@ -67,16 +68,16 @@ export default function Cabecalho() {
             <Link href={"/sobre-nos"} className="2xl:font-semibold lg:font-semibold">Sobre nós</Link>
           </li>
           <li>
-            <Link href={"/"} className="2xl:font-semibold lg:font-semibold">Pedir Guincho</Link>
+            <Link href={"/"} className="2xl:font-semibold lg:font-semibold">Pedir  Guincho</Link>
           </li>
         </ul>
-        <div className="flex items-center gap-4">
-          <div className="">
+        <div className="flex items-center justify-between gap-4 border border-2 2xl:py-0 xl:py-1 lg:py-1 ">
+          <div className="border border-red-600 h-fit">
             <button className="bg-blue-800 rounded-md text-white 2xl:px-3 2xl:py-1 2xl:font-semibold lg:font-semibold lg:px-3 lg:py-0.5 lg:text-sm" onClick={botaoSair}>{conteudoBotao}</button>
           </div>
-          <div className="h-full">
+          <div className="border border-2 h-full">
             <Link href="/area-cliente">
-              <Image src={iconeUsuario} alt="" width={200} height={100} className="2xl:w-auto 2xl:h-full lg:w-auto lg:h-full"/>
+              <Image src={iconeUsuario} alt="" width={200} height={100} className="w-auto h-full"/>
             </Link>
           </div>
         </div>
