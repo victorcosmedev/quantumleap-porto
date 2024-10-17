@@ -16,14 +16,14 @@ public class VeiculoDAO implements RepositorioVeiculo {
     }
 
 
-    public void adicionarVeiculo(Cliente cliente, Veiculo veiculo) {
+    public void adicionarVeiculo(Veiculo veiculo) {
         String sql = "INSERT INTO tb_qfx_veiculo (id_cliente, montadora_veiculo, modelo_veiculo, ano_veiculo, quantidade_quilometros, placa_veiculo) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = conexao.prepareStatement(sql, new String[] {"id_veiculo"})) {
 
-            pstmt.setLong(1, cliente.getIdCliente());
+            pstmt.setLong(1, veiculo.getIdCliente());
             pstmt.setString(2, veiculo.getMontadoraVeiculo());
             pstmt.setString(3, veiculo.getModeloVeiculo());
-            pstmt.setDate(4, new Date(veiculo.getAnoVeiculo().getTime()));
+            pstmt.setDouble(4, veiculo.getAnoVeiculo());
             pstmt.setDouble(5, veiculo.getQuantidadeQuilometros());
             pstmt.setString(6, veiculo.getPlacaVeiculo());
             pstmt.executeUpdate();
@@ -49,18 +49,16 @@ public class VeiculoDAO implements RepositorioVeiculo {
             pstmt.setLong(1, veiculoId);
             try (ResultSet rs = pstmt.executeQuery()){
                 if (rs.next()) {
-                    veiculo = new Veiculo(
-                            rs.getString("montadora_veiculo"),
-                            rs.getString("modelo_veiculo"),
-                            rs.getDate("ano_veiculo"),
-                            rs.getDouble("quantidade_quilometros"),
-                            rs.getString("placa_veiculo")
-                    );
+                    veiculo = new Veiculo();
+                    veiculo.setMontadoraVeiculo(rs.getString("montadora_veiculo"));
+                    veiculo.setModeloVeiculo(rs.getString("modelo_veiculo"));
+                    veiculo.setAnoVeiculo(rs.getInt("ano_veiculo"));
+                    veiculo.setQuantidadeQuilometros(rs.getDouble("quantidade_quilometros"));
+                    veiculo.setPlacaVeiculo(rs.getString("placa_veiculo"));
                     veiculo.setIdVeiculo(rs.getLong("id_veiculo"));
+                    veiculo.setIdCliente(rs.getLong("id_cliente"));
                 }
             }
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -73,7 +71,7 @@ public class VeiculoDAO implements RepositorioVeiculo {
         try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
             pstmt.setString(1, veiculo.getMontadoraVeiculo());
             pstmt.setString(2, veiculo.getModeloVeiculo());
-            pstmt.setDate(3, new Date(veiculo.getAnoVeiculo().getTime()));
+            pstmt.setInt(3, veiculo.getAnoVeiculo());
             pstmt.setDouble(4, veiculo.getQuantidadeQuilometros());
             pstmt.setString(5, veiculo.getPlacaVeiculo());
             pstmt.setLong(6, idVeiculo);
@@ -100,21 +98,30 @@ public class VeiculoDAO implements RepositorioVeiculo {
 
     public ArrayList<Veiculo> listarVeiculos() {
         ArrayList<Veiculo> veiculos = new ArrayList<>();
-        String sql = "SELECT v.id_veiculo, v.montadora_veiculo, v.modelo_veiculo, v.ano_veiculo, v.quantidade_quilometros, v.placa_veiculo, c.nome_cliente " +
+        String sql = "SELECT * " +
                 "FROM tb_qfx_veiculo v " +
                 "JOIN tb_qfx_cliente c ON v.id_cliente = c.id_cliente";
         try (PreparedStatement pstmt = conexao.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
-                Veiculo veiculo = new Veiculo(
-                        rs.getString("montadora_veiculo"),
-                        rs.getString("modelo_veiculo"),
-                        rs.getDate("ano_veiculo"),
-                        rs.getDouble("quantidade_quilometros"),
-                        rs.getString("placa_veiculo")
-                );
+                Veiculo veiculo = new Veiculo();
+                veiculo.setMontadoraVeiculo(rs.getString("montadora_veiculo"));
+                veiculo.setModeloVeiculo(rs.getString("modelo_veiculo"));
+                veiculo.setAnoVeiculo(rs.getInt("ano_veiculo"));
+                veiculo.setQuantidadeQuilometros(rs.getDouble("quantidade_quilometros"));
+                veiculo.setPlacaVeiculo(rs.getString("placa_veiculo"));
                 veiculo.setIdVeiculo(rs.getLong("id_veiculo"));
+                veiculo.setIdCliente(rs.getLong("id_cliente"));
+//                Veiculo veiculo = new Veiculo(
+//                        rs.getLong("id_veiculo"),
+//                        rs.getString("montadora_veiculo"),
+//                        rs.getString("modelo_veiculo"),
+//                        rs.getInt("ano_veiculo"),
+//                        rs.getDouble("quantidade_quilometros"),
+//                        rs.getString("placa_veiculo"),
+//                        rs.getLong("id_cliente")
+//                );
                 veiculo.setNomeCliente(rs.getString("nome_cliente"));
 
                 veiculos.add(veiculo);

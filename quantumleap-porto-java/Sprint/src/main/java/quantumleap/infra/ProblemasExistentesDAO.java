@@ -2,6 +2,7 @@ package quantumleap.infra;
 
 import quantumleap.dominio.Peca;
 import quantumleap.dominio.ProblemasExistentes;
+import quantumleap.dominio.RepositorioProblemasExistentes;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ProblemasExistentesDAO {
+public class ProblemasExistentesDAO implements RepositorioProblemasExistentes {
 
     private Connection conexao;
 
@@ -21,7 +22,7 @@ public class ProblemasExistentesDAO {
         String sqlInsert = "INSERT INTO tb_qfx_problemas_existentes (id_peca, nome_problema, descricao_problema, custo_mao_de_obra_problema, qtd_peca) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement comandoInsercao = conexao.prepareStatement(sqlInsert, new String[] {"id_problema"})) {
 
-            comandoInsercao.setLong(1, problema.getPeca().getIdPeca());
+            comandoInsercao.setLong(1, problema.getIdPeca());
             comandoInsercao.setString(2, problema.getNomeProblema());
             comandoInsercao.setString(3, problema.getDescricaoProblema());
             comandoInsercao.setDouble(4, problema.getCustoMaoDeObraProblema());
@@ -55,7 +56,7 @@ public class ProblemasExistentesDAO {
                             rs.getString("descricao_problema"),
                             rs.getDouble("custo_mao_de_obra_problema"),
                             rs.getInt("qtd_peca"),
-                            new Peca()
+                            rs.getLong("id_peca")
                     );
                     problema.setIdProblemas(rs.getLong("id_problema"));
                 }
@@ -79,7 +80,7 @@ public class ProblemasExistentesDAO {
             pstmt.setString(2, problema.getDescricaoProblema());
             pstmt.setDouble(3, problema.getCustoMaoDeObraProblema());
             pstmt.setInt(4, problema.getQtdPeca());
-            pstmt.setLong(5, problema.getPeca().getIdPeca());
+            pstmt.setLong(5, problema.getIdPeca());
             pstmt.setLong(6, idProblema);
 
             pstmt.executeUpdate();
@@ -103,9 +104,8 @@ public class ProblemasExistentesDAO {
                 int qtdPeca = rs.getInt("qtd_peca");
                 long idPeca = rs.getLong("id_peca");
 
-                Peca peca = new PecaDAO().buscarPecaPorId(idPeca);
 
-                ProblemasExistentes problema = new ProblemasExistentes(nomeProblema, descricaoProblema, custo, qtdPeca, peca);
+                ProblemasExistentes problema = new ProblemasExistentes(nomeProblema, descricaoProblema, custo, qtdPeca, idPeca);
                 problema.setIdProblemas(rs.getLong("id_problema"));
                 problemas.add(problema);
             }
@@ -144,8 +144,7 @@ public class ProblemasExistentesDAO {
                     long idPeca = rs.getLong("id_peca");
 
 
-                    Peca peca = new PecaDAO().buscarPecaPorId(idPeca);
-                    problema = new ProblemasExistentes(nomeProblema, descricaoProblema, custoMaoDeObraProblema, qtdPeca, peca);
+                    problema = new ProblemasExistentes(nomeProblema, descricaoProblema, custoMaoDeObraProblema, qtdPeca, idPeca);
                     problema.setIdProblemas(problemasExistentesId);
                 }
             }

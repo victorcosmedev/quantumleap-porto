@@ -1,47 +1,32 @@
 package quantumleap.controller;
 
-import quantumleap.dominio.Cliente;
-import quantumleap.dominio.Veiculo;
-import quantumleap.infra.VeiculoDAO;
-import quantumleap.service.VeiculoService;
+import quantumleap.dominio.Guincho;
+import quantumleap.infra.GuinchoDAO;
+import quantumleap.service.GuinchoService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.awt.*;
 import java.util.ArrayList;
 
-@Path("veiculos")
-public class VeiculoController {
+@Path("guinchos")
+public class GuinchoController {
+    private GuinchoDAO guinchoDAO;
+    private GuinchoService guinchoService;
 
-    private VeiculoDAO veiculoDAO;
-    private VeiculoService veiculoService;
-
-    public VeiculoController(){
-        veiculoDAO = new VeiculoDAO();
-        veiculoService = new VeiculoService(veiculoDAO);
+    public GuinchoController(){
+        guinchoDAO = new GuinchoDAO();
+        guinchoService = new GuinchoService(guinchoDAO);
     }
 
-    //NÃO ESTA FUNCIONANDO
+
 
     @POST
-    public Response salvarVeiculo(Veiculo veiculo){
+    public Response adicionar(Guincho guincho){
         try{
-            veiculoService.adicionar(veiculo);
+            guinchoService.adicionar(guincho);
             return Response.status(Response.Status.CREATED).build();
-        } catch (RuntimeException e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
-        }
-    }
-
-    @GET
-    @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response retornaVeiculosPorId(@PathParam("id") long id){
-        try {
-            Veiculo veiculo = veiculoService.retornaVeiculoPorId(id);
-            return Response.status(Response.Status.OK).entity(veiculo).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -49,12 +34,28 @@ public class VeiculoController {
         }
     }
 
-    @PUT
-    @Path("/atualizarVeiculo/{id}")
+
+    @GET
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response atualizarVeiculo(@PathParam("id") long id, Veiculo veiculo){
-        try{
-            veiculoService.atualizarVeiculo(id, veiculo);
+    public Response buscarGuinchoPorId(@PathParam("id") Long id){
+        try {
+            Guincho guincho = guinchoService.buscarGuinchoPorId(id);
+            return Response.status(Response.Status.OK).entity(guincho).build();
+        }catch (RuntimeException e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+        }
+    }
+
+
+    @PUT
+    @Path("/atualizarGuincho/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response atualizarGuincho(@PathParam("id") long id, Guincho guincho){
+        try {
+            guinchoService.atualizarGuincho(id, guincho);
             return Response.status(Response.Status.OK).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
@@ -66,9 +67,24 @@ public class VeiculoController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response retornaClientes(){
-        try{
-            ArrayList<Veiculo> veiculos = veiculoService.listarTodosVeiculos();
-            return Response.status(Response.Status.OK).entity(veiculos).build();
+        try {
+            ArrayList<Guincho> guinchos = guinchoService.listarGuincho();
+            return Response.status(Response.Status.OK).entity(guinchos).build();
+        }catch (RuntimeException e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+
+        }
+    }
+
+    @DELETE
+    @Path("/deletarGuincho/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deletarGuincho(@PathParam("id")long id){
+        try {
+            guinchoService.deletarGuincho(id);
+            return Response.status(Response.Status.OK).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -76,18 +92,5 @@ public class VeiculoController {
         }
     }
 
-    @DELETE
-    @Path("deletarVeiculo/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response deletarVeiculo(@PathParam("id")long id){
-        try {
-            veiculoService.deletarVeiculo(id);
-            return Response.status(Response.Status.OK).build();
-        } catch (RuntimeException e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
-        }
-    }
 
 }

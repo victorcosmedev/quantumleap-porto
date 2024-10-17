@@ -1,28 +1,37 @@
 package quantumleap.dominio;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Agendamento {
     private long idAgendamento;
-    private Diagnostico diagnostico;
+    @JsonProperty
+    private long idDiagnostico;
+    @JsonProperty
     private String data;
+    @JsonProperty
     private String hora;
+    @JsonProperty
     private String localizacao;
-    private Oficina oficina;
+    @JsonProperty
+    private String descricao_agendamento;
+    @JsonProperty
+    private long idOficina;
 
 
-    public Agendamento(Diagnostico diagnostico, String data, String hora, Oficina oficina) {
-        this.diagnostico = diagnostico;
+    public Agendamento(long idDiagnostico, String data, String hora, long idOficina) {
+        this.idDiagnostico = idDiagnostico;
         this.data = data;
         this.hora = hora;
-        this.oficina = oficina;
+        this.idOficina = idOficina;
     }
 
-    public Oficina getOficina() {
-        return oficina;
+
+    public Agendamento(){}
+
+    public long getIdOficina() {
+        return idOficina;
     }
 
-    public void setOficina(Oficina oficina) {
-        this.oficina = oficina;
-    }
 
 
     public long getIdAgendamento() {
@@ -49,12 +58,16 @@ public class Agendamento {
         return localizacao;
     }
 
-    public Diagnostico getDiagnostico() {
-        return diagnostico;
+    public long getIdDiagnostico() {
+        return idDiagnostico;
     }
 
-    public void setDiagnostico(Diagnostico diagnostico) {
-        this.diagnostico = diagnostico;
+    public String getDescricao_agendamento() {
+        return descricao_agendamento;
+    }
+
+    public void setDescricao_agendamento(String descricao_agendamento) {
+        this.descricao_agendamento = descricao_agendamento;
     }
 
     public void setData(String data) {

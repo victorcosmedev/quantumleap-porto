@@ -6,22 +6,27 @@ public class ProblemasExistentes {
     private String descricaoProblema;
     private double custoMaoDeObraProblema;
     private int qtdPeca;
-    private Peca peca;
+    private long idPeca;
 
     public ProblemasExistentes() {
 
     }
 
-    public ProblemasExistentes(String nomeProblema, String descricaoProblema, double custoMaoDeObraProblema, int qtdPeca, Peca peca) {
+    public ProblemasExistentes(String nomeProblema, String descricaoProblema, double custoMaoDeObraProblema, int qtdPeca, long idPeca) {
         this.nomeProblema = nomeProblema;
         this.descricaoProblema = descricaoProblema;
         this.custoMaoDeObraProblema = custoMaoDeObraProblema;
         this.qtdPeca = qtdPeca;
-        this.peca = peca;
+        this.idPeca = idPeca;
     }
 
-    public double precoPeca(){
-        return peca.getPrecoPeca();
+
+    public long getIdPeca() {
+        return idPeca;
+    }
+
+    public void setIdPeca(long idPeca) {
+        this.idPeca = idPeca;
     }
 
     public void setDescricaoProblema(String descricaoProblema) {
@@ -40,13 +45,6 @@ public class ProblemasExistentes {
         this.qtdPeca = qtdPeca;
     }
 
-    public Peca getPeca() {
-        return peca;
-    }
-
-    public void setPeca(Peca peca) {
-        this.peca = peca;
-    }
 
     public String getDescricaoProblema(){ return descricaoProblema;}
 

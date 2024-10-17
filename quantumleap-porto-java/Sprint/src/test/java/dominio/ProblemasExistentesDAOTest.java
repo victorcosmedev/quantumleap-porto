@@ -13,17 +13,12 @@ public class ProblemasExistentesDAOTest {
 
     @Test
     void adicionandoProblemasComPecas() {
-        PecaDAO pecaDAO = new PecaDAO();
         ProblemasExistentesDAO problemasDAO = new ProblemasExistentesDAO();
 
-        Long idPecaExistente = 1L;
-        Peca pecaExistente = pecaDAO.buscarPecaPorId(idPecaExistente);
-        ProblemasExistentes problema = new ProblemasExistentes("Teste2", "Teste", 100, 2, pecaExistente);
-        ProblemasExistentes problema2 = new ProblemasExistentes("Teste2", "Teste", 100, 2, pecaExistente);
+        ProblemasExistentes problema = new ProblemasExistentes("Teste2", "Teste", 100, 2, 1L);
+        ProblemasExistentes problema2 = new ProblemasExistentes("Teste2", "Teste", 100, 2, 1L);
         problemasDAO.adicionarProblemaExistente(problema);
         problemasDAO.adicionarProblemaExistente(problema2);
-
-
     }
 
 
@@ -48,11 +43,8 @@ public class ProblemasExistentesDAOTest {
     @Test
     public void atualizandoProblemas() {
         ProblemasExistentesDAO problemasDAO = new ProblemasExistentesDAO();
-        PecaDAO pecaDAO = new PecaDAO();
         Long idProblema = 1L;
-        Long idPecaExistente = 1L;
-        Peca pecaExistente = pecaDAO.buscarPecaPorId(idPecaExistente);
-        ProblemasExistentes problema = new ProblemasExistentes("ProblemaAtualizado", "ProblemaAtualizado", 100, 2, pecaExistente);
+        ProblemasExistentes problema = new ProblemasExistentes("ProblemaAtualizado", "ProblemaAtualizado", 100, 2, 1L);
         problemasDAO.atualizarProblemaExistente(idProblema, problema);
     }
 
@@ -66,7 +58,7 @@ public class ProblemasExistentesDAOTest {
             System.out.println("Descricao: " + problema.getDescricaoProblema());
             System.out.println("Custo Mão de Obra: " + problema.getCustoMaoDeObraProblema());
             System.out.println("Quantidade de Peças: " + problema.getQtdPeca());
-            System.out.println("Peca: " + problema.getPeca().getNomePeca());
+            System.out.println("ID Peca: " + problema.getIdPeca());
             System.out.println("---------------------");
         }
     }

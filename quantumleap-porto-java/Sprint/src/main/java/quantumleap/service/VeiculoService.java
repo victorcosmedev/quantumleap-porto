@@ -4,6 +4,8 @@ import quantumleap.dominio.Cliente;
 import quantumleap.dominio.RepositorioVeiculo;
 import quantumleap.dominio.Veiculo;
 
+import java.util.ArrayList;
+
 public class VeiculoService {
 
     private RepositorioVeiculo repositorioVeiculo;
@@ -12,9 +14,31 @@ public class VeiculoService {
         this.repositorioVeiculo = repositorioVeiculo;
     }
 
-    public void adicionar(Cliente cliente, Veiculo veiculo){
-        repositorioVeiculo.adicionarVeiculo(cliente, veiculo);
+    public void adicionar(Veiculo veiculo){
+        repositorioVeiculo.adicionarVeiculo(veiculo);
         repositorioVeiculo.fecharConexao();
+    }
+
+    public Veiculo retornaVeiculoPorId(long id){
+        Veiculo veiculo = repositorioVeiculo.buscarVeiculoPorId(id);
+        repositorioVeiculo.fecharConexao();
+        return veiculo;
+    }
+
+    public void atualizarVeiculo(long id, Veiculo veiculo){
+        repositorioVeiculo.atualizarVeiculo(id, veiculo);
+        repositorioVeiculo.fecharConexao();
+    }
+
+    public void deletarVeiculo(long id){
+        repositorioVeiculo.deletarVeiculo(id);
+        repositorioVeiculo.fecharConexao();
+    }
+
+    public ArrayList<Veiculo> listarTodosVeiculos(){
+        ArrayList<Veiculo> veiculos = repositorioVeiculo.listarVeiculos();
+        repositorioVeiculo.fecharConexao();
+        return veiculos;
     }
 
 

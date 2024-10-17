@@ -15,24 +15,17 @@ public class VeiculoDAOTest{
     @Test
     public void testAdicionarVeiculo() throws ParseException {
         VeiculoDAO veiculoDAO = new VeiculoDAO();
-        Veiculo ve1 = new Veiculo("vw", "123", DateUtil.parseYear("2002"), 123, "1233");
-        Veiculo ve2 = new Veiculo("vw", "123", DateUtil.parseYear("2002"), 123, "1233");
-        long idCliente = 1;
-        ClienteDAO clienteDAO = new ClienteDAO();
-        Cliente cliente = clienteDAO.buscarClientePorId(idCliente);
+        Veiculo ve1 = new Veiculo("vw", "123", 2002, 123, "1233",1L);
+        Veiculo ve2 = new Veiculo("vw", "123", 2002, 123, "1233",1L);
 
-        if (cliente == null){
-            System.out.println("Usuario nao encontrado");
-        } else {
-            veiculoDAO.adicionarVeiculo(cliente, ve1);
-            veiculoDAO.adicionarVeiculo(cliente, ve2);
-        }
+        veiculoDAO.adicionarVeiculo(ve1);
+        veiculoDAO.adicionarVeiculo(ve2);
     }
 
     @Test
     public void buscarVeiculoPorId(){
         VeiculoDAO veiculoDAO = new VeiculoDAO();
-        Veiculo veiculo = veiculoDAO.buscarVeiculoPorId(1L);
+        Veiculo veiculo = veiculoDAO.buscarVeiculoPorId(14L);
 
         if (veiculo == null) {
             System.out.println("Nenhum veículo encontrado para o ID.");
@@ -44,6 +37,7 @@ public class VeiculoDAOTest{
             System.out.println("Ano: " + veiculo.getAnoVeiculo());
             System.out.println("Quantidade de Quilômetros: " + veiculo.getQuantidadeQuilometros());
             System.out.println("Placa: " + veiculo.getPlacaVeiculo());
+            System.out.println("ID Cliente: "+ veiculo.getIdCliente());
         }
     }
 
@@ -52,7 +46,7 @@ public class VeiculoDAOTest{
         VeiculoDAO veiculoDAO = new VeiculoDAO();
 
         Veiculo veiculo = new Veiculo("Fiat", "Palio"
-                , DateUtil.parseYear("2005"), 100000.00, "EFG4H56");
+                , 2005, 100000.00, "EFG4H56", 1L);
 
         long idVeiculo = 1L;
         if(veiculoDAO.buscarVeiculoPorId(idVeiculo) == null){

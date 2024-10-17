@@ -1,34 +1,31 @@
 package quantumleap.controller;
 
-import quantumleap.dominio.Cliente;
-import quantumleap.dominio.Veiculo;
-import quantumleap.infra.VeiculoDAO;
-import quantumleap.service.VeiculoService;
+import quantumleap.dominio.Diagnostico;
+import quantumleap.infra.DiagnosticoDAO;
+import quantumleap.service.DiagnosticoService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 
-@Path("veiculos")
-public class VeiculoController {
 
-    private VeiculoDAO veiculoDAO;
-    private VeiculoService veiculoService;
+@Path("diagnosticos")
+public class DiagnosticosController {
+    private DiagnosticoDAO diagnosticoDAO;
+    private DiagnosticoService diagnosticoService;
 
-    public VeiculoController(){
-        veiculoDAO = new VeiculoDAO();
-        veiculoService = new VeiculoService(veiculoDAO);
+    public DiagnosticosController(){
+        diagnosticoDAO = new DiagnosticoDAO();
+        diagnosticoService = new DiagnosticoService(diagnosticoDAO);
     }
 
-    //NÃO ESTA FUNCIONANDO
-
     @POST
-    public Response salvarVeiculo(Veiculo veiculo){
-        try{
-            veiculoService.adicionar(veiculo);
+    public Response salvarDiagnostico(Diagnostico diagnostico){
+        try {
+            diagnosticoService.adicionarDiagostico(diagnostico);
             return Response.status(Response.Status.CREATED).build();
-        } catch (RuntimeException e){
+        }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
@@ -38,10 +35,10 @@ public class VeiculoController {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response retornaVeiculosPorId(@PathParam("id") long id){
+    public Response buscarPorId(@PathParam("id")long id){
         try {
-            Veiculo veiculo = veiculoService.retornaVeiculoPorId(id);
-            return Response.status(Response.Status.OK).entity(veiculo).build();
+            Diagnostico diagnostico = diagnosticoService.buscarPorID(id);
+            return Response.status(Response.Status.OK).entity(diagnostico).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -50,11 +47,11 @@ public class VeiculoController {
     }
 
     @PUT
-    @Path("/atualizarVeiculo/{id}")
+    @Path("/atualizarDiagnostico/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response atualizarVeiculo(@PathParam("id") long id, Veiculo veiculo){
-        try{
-            veiculoService.atualizarVeiculo(id, veiculo);
+    public Response atualizarDiagnostico(@PathParam("id") long id, Diagnostico diagnostico){
+        try {
+            diagnosticoService.atualizarDiagnostico(id, diagnostico);
             return Response.status(Response.Status.OK).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
@@ -66,9 +63,9 @@ public class VeiculoController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response retornaClientes(){
-        try{
-            ArrayList<Veiculo> veiculos = veiculoService.listarTodosVeiculos();
-            return Response.status(Response.Status.OK).entity(veiculos).build();
+        try {
+            ArrayList<Diagnostico> diagnosticos = diagnosticoService.listarDiagnoticos();
+            return Response.status(Response.Status.OK).entity(diagnosticos).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -77,13 +74,13 @@ public class VeiculoController {
     }
 
     @DELETE
-    @Path("deletarVeiculo/{id}")
+    @Path("/deletarDiagnostico/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deletarVeiculo(@PathParam("id")long id){
+    public Response deletarDiagnostico(@PathParam("id")long id){
         try {
-            veiculoService.deletarVeiculo(id);
+            diagnosticoService.deletarDiagnostico(id);
             return Response.status(Response.Status.OK).build();
-        } catch (RuntimeException e){
+        }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();

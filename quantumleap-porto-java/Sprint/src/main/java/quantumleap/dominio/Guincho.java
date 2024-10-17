@@ -1,9 +1,14 @@
 package quantumleap.dominio;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Guincho {
     private long idGuincho;
+    @JsonProperty
     private String placa;
+    @JsonProperty
     private double preco;
+    @JsonProperty
     private double cargaMaxima;
 
 

@@ -1,34 +1,32 @@
 package quantumleap.controller;
 
-import quantumleap.dominio.Cliente;
-import quantumleap.dominio.Veiculo;
-import quantumleap.infra.VeiculoDAO;
-import quantumleap.service.VeiculoService;
+import quantumleap.dominio.ProblemasExistentes;
+import quantumleap.infra.ProblemasExistentesDAO;
+import quantumleap.service.ProblemasExistentesService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 
-@Path("veiculos")
-public class VeiculoController {
 
-    private VeiculoDAO veiculoDAO;
-    private VeiculoService veiculoService;
+@Path("problemasExistentes")
+public class ProblemasExistentesController {
 
-    public VeiculoController(){
-        veiculoDAO = new VeiculoDAO();
-        veiculoService = new VeiculoService(veiculoDAO);
+    private ProblemasExistentesDAO problemasExistentesDAO;
+    private ProblemasExistentesService problemasExistentesService;
+
+    public ProblemasExistentesController() {
+        problemasExistentesDAO = new ProblemasExistentesDAO();
+        problemasExistentesService = new ProblemasExistentesService(problemasExistentesDAO);
     }
 
-    //NÃO ESTA FUNCIONANDO
-
     @POST
-    public Response salvarVeiculo(Veiculo veiculo){
-        try{
-            veiculoService.adicionar(veiculo);
+    public Response adicionaProblema(ProblemasExistentes problemasExistentes){
+        try {
+            problemasExistentesService.adicionarProblema(problemasExistentes);
             return Response.status(Response.Status.CREATED).build();
-        } catch (RuntimeException e){
+        }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
@@ -38,10 +36,10 @@ public class VeiculoController {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response retornaVeiculosPorId(@PathParam("id") long id){
+    public Response buscandoPorID(@PathParam("id")long id){
         try {
-            Veiculo veiculo = veiculoService.retornaVeiculoPorId(id);
-            return Response.status(Response.Status.OK).entity(veiculo).build();
+            ProblemasExistentes problemasExistentes = problemasExistentesService.buscarProblemaPorID(id);
+            return Response.status(Response.Status.OK).entity(problemasExistentes).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -50,11 +48,11 @@ public class VeiculoController {
     }
 
     @PUT
-    @Path("/atualizarVeiculo/{id}")
+    @Path("/atualizaProblema/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response atualizarVeiculo(@PathParam("id") long id, Veiculo veiculo){
-        try{
-            veiculoService.atualizarVeiculo(id, veiculo);
+    public Response atualizarProblema(@PathParam("id")long id, ProblemasExistentes problemasExistentes){
+        try {
+            problemasExistentesService.atualizarProblema(id, problemasExistentes);
             return Response.status(Response.Status.OK).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
@@ -65,10 +63,10 @@ public class VeiculoController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response retornaClientes(){
-        try{
-            ArrayList<Veiculo> veiculos = veiculoService.listarTodosVeiculos();
-            return Response.status(Response.Status.OK).entity(veiculos).build();
+    public Response retornaProblemas(){
+        try {
+            ArrayList<ProblemasExistentes> problemasExistentes = problemasExistentesService.retornaProblemas();
+            return Response.status(Response.Status.OK).entity(problemasExistentes).build();
         }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -76,14 +74,15 @@ public class VeiculoController {
         }
     }
 
+
     @DELETE
-    @Path("deletarVeiculo/{id}")
+    @Path("/deletar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deletarVeiculo(@PathParam("id")long id){
+    public Response deletarProblema(@PathParam("id")long id){
         try {
-            veiculoService.deletarVeiculo(id);
+            problemasExistentesService.deletarProblemas(id);
             return Response.status(Response.Status.OK).build();
-        } catch (RuntimeException e){
+        }catch (RuntimeException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();

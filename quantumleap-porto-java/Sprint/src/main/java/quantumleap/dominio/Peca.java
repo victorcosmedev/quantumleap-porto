@@ -3,6 +3,7 @@ package quantumleap.dominio;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Peca {
+
     private Long idPeca;
     @JsonProperty
     private String nomePeca;
@@ -66,7 +67,4 @@ public class Peca {
         this.modeloPeca = modeloPeca;
     }
 
-    public void setIdPeca(long idPeca) {
-        this.idPeca = idPeca;
-    }
 }

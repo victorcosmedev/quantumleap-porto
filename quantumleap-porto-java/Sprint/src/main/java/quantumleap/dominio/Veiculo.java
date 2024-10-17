@@ -11,21 +11,30 @@ public class Veiculo {
     @JsonProperty
     private String modeloVeiculo;
     @JsonProperty
-    private Date anoVeiculo;
+    private int anoVeiculo;
     @JsonProperty
     private double quantidadeQuilometros;
     @JsonProperty
     private String placaVeiculo;
     @JsonProperty
     private String nomeCliente;
+    @JsonProperty
+    private long idCliente;
 
-    public Veiculo(String montadoraVeiculo, String modeloVeiculo, Date anoVeiculo, double quantidadeQuilometros, String placaVeiculo){
+    public Veiculo(String montadoraVeiculo, String modeloVeiculo, int anoVeiculo, double quantidadeQuilometros, String placaVeiculo, long idCliente){
         this.montadoraVeiculo = montadoraVeiculo;
         this.modeloVeiculo = modeloVeiculo;
         this.anoVeiculo = anoVeiculo;
         this.quantidadeQuilometros = quantidadeQuilometros;
         this.placaVeiculo = placaVeiculo;
+        this.idCliente = idCliente;
     }
+
+    public void setIdCliente(long idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public Veiculo(){}
 
 
     public String getMontadoraVeiculo() {
@@ -44,11 +53,11 @@ public class Veiculo {
         this.modeloVeiculo = modeloVeiculo;
     }
 
-    public Date getAnoVeiculo() {
+    public int getAnoVeiculo() {
         return anoVeiculo;
     }
 
-    public void setAnoVeiculo(Date anoVeiculo) {
+    public void setAnoVeiculo(int anoVeiculo) {
         this.anoVeiculo = anoVeiculo;
     }
 
@@ -83,5 +92,9 @@ public class Veiculo {
 
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
+    }
+
+    public long getIdCliente() {
+        return idCliente;
     }
 }

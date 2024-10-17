@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class DiagnosticoDAO {
+public class DiagnosticoDAO implements RepositorioDiagnostico{
 
     private Connection conexao;
 
@@ -21,10 +21,10 @@ public class DiagnosticoDAO {
     public void adicionarDiagnostico(Diagnostico diagnostico) {
         String sql = "INSERT INTO tb_qfx_diagnostico (id_cliente, id_veiculo, id_problema, id_guincho) VALUES (?, ?, ?, ?)";
         try (PreparedStatement pstmt = conexao.prepareStatement(sql, new String[] {"id_diagnostico"})) {
-            pstmt.setLong(1, diagnostico.getCliente().getIdCliente());
-            pstmt.setLong(2, diagnostico.getVeiculo().getIdVeiculo());
-            pstmt.setLong(3, diagnostico.getProblemasExistentes().getIdProblemas());
-            pstmt.setLong(4, diagnostico.getGuincho().getIdGuincho());
+            pstmt.setLong(1, diagnostico.getIdCliente());
+            pstmt.setLong(2, diagnostico.getIdVeiculo());
+            pstmt.setLong(3, diagnostico.getIdProblemasExistentes());
+            pstmt.setLong(4, diagnostico.getIdGuincho());
             pstmt.executeUpdate();
 
             try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
@@ -42,21 +42,17 @@ public class DiagnosticoDAO {
     public Diagnostico buscarDiagnosticoPorId(Long idDiagnostico) {
         Diagnostico diagnostico = null;
         String sql = "SELECT * FROM tb_qfx_diagnostico WHERE id_diagnostico = ?";
-        ClienteDAO clienteDAO = new ClienteDAO();
-        VeiculoDAO veiculoDAO = new VeiculoDAO();
-        ProblemasExistentesDAO problemasExistentesDAO = new ProblemasExistentesDAO();
-        GuinchoDAO guinchoDAO = new GuinchoDAO();
 
         try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
             pstmt.setLong(1, idDiagnostico);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    Cliente cliente = clienteDAO.buscarClientePorId(rs.getLong("id_cliente"));
-                    Veiculo veiculo = veiculoDAO.buscarVeiculoPorId(rs.getLong("id_veiculo"));
-                    ProblemasExistentes problemasExistentes = problemasExistentesDAO.buscarProblemasExistentesPorId(rs.getLong("id_problema"));
-                    Guincho guincho = guinchoDAO.buscarGuinchoPorId(rs.getLong("id_guincho"));
-
-                    diagnostico = new Diagnostico(cliente, veiculo, problemasExistentes, guincho);
+                    diagnostico = new Diagnostico(
+                            rs.getLong("id_cliente"),
+                            rs.getLong("id_veiculo"),
+                            rs.getLong("id_problema"),
+                            rs.getLong("id_guincho")
+                    );
                     diagnostico.setIdDiagnostico(idDiagnostico);
                 }
             }
@@ -67,13 +63,14 @@ public class DiagnosticoDAO {
     }
 
 
+
     public void atualizarDiagnostico(long idDiagnostico, Diagnostico novoDiagnostico) {
         String sql = "UPDATE tb_qfx_diagnostico SET id_cliente = ?, id_veiculo = ?, id_problema = ?, id_guincho = ? WHERE id_diagnostico = ?";
         try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
-            pstmt.setLong(1, novoDiagnostico.getCliente().getIdCliente());
-            pstmt.setLong(2, novoDiagnostico.getVeiculo().getIdVeiculo());
-            pstmt.setLong(3, novoDiagnostico.getProblemasExistentes().getIdProblemas());
-            pstmt.setLong(4, novoDiagnostico.getGuincho().getIdGuincho());
+            pstmt.setLong(1, novoDiagnostico.getIdCliente());
+            pstmt.setLong(2, novoDiagnostico.getIdVeiculo());
+            pstmt.setLong(3, novoDiagnostico.getIdProblemasExistentes());
+            pstmt.setLong(4, novoDiagnostico.getIdGuincho());
             pstmt.setLong(5, idDiagnostico);
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -103,11 +100,7 @@ public class DiagnosticoDAO {
                 long problemasExistentesId = rs.getLong("id_problema");
                 long guinchoId = rs.getLong("id_guincho");
 
-                Cliente cliente = new ClienteDAO().buscarClientePorId(clienteId);
-                Veiculo veiculo = new VeiculoDAO().buscarVeiculoPorId(veiculoId);
-                ProblemasExistentes problemasExistentes = new ProblemasExistentesDAO().buscarProblemaPorId(problemasExistentesId);
-                Guincho guincho = new GuinchoDAO().buscarGuinchoPorId(guinchoId);
-                Diagnostico diagnostico = new Diagnostico(cliente, veiculo, problemasExistentes, guincho);
+                Diagnostico diagnostico = new Diagnostico(clienteId, veiculoId, problemasExistentesId, guinchoId);
                 diagnostico.setIdDiagnostico(idDiagnostico);
                 diagnosticos.add(diagnostico);
             }
