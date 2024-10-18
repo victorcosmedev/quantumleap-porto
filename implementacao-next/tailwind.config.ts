@@ -19,11 +19,14 @@ const config: Config = {
         'xl': '992px',
         'lg': '768px',
         'md': '576px',
-        'sm': '414px'
+        'sm': '375px'
       },
       fontFamily: {
         sans: ['var(--font-inter)']
-      }
+      },
+      backgroundImage: {
+        'motorista-azul': "url('/img/motorista-azul.jpeg')",
+      },
     },
   },
   plugins: [],
