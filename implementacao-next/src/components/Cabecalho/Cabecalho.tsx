@@ -7,6 +7,14 @@ import iconeUsuario from "@/img/icone-usuario.png";
 import iconeMenu from "@/img/icone-hamburguer.png";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export default function Cabecalho() {
 
@@ -44,42 +52,40 @@ export default function Cabecalho() {
   }
 
   return (
-    <header className="flex border-solid border-2 border-red-600 align-middle justify-between w-100 gap-6 2xl:px-[75px] 2xl:h-[13vh] 2xl:py-3 lg:px-[75px] lg:h-[13vh] lg:py-2 md:px-[75px] md:h-[13vh] md:py-2 ">
-      <Image src={imgLogo} alt="Logo da Porto Seguro" width="200" height="100" className="border-solid border-2 w-[auto]" layout="intrinsic"/>
-      <nav className="hidden border-solid border-2 border-blue-700 md:flex align-middle justify-between 2xl:w-[100%] lg:w-[100%] sm:invisible sm:hidden">
-        <ul className="hamburguer">
-          <li>
-            <Link href="/">
+    <header className="flex justify-between items-center lg:h-[10vh] lg:py-[2vh] lg:px-[5vw] lg:gap-[2vw] sm:h-[10vh] sm:py-[3vh] sm:px-[5vw] sm:gap-[2vw]">
+      <Image src={imgLogo} alt="Logo da Porto Seguro" width="200" height="100" className="w-auto h-[6vh]"/>
+      <nav className="flex lg:w-full justify-between items-center">
+        <ul className="sm:block lg:hidden h-full">
+          <li className="h-full">
+            <Link href="/" className="w-full h-auto">
               <Image
                 src={iconeMenu}
                 alt="menu com mais opções"
                 width={200}
                 height={100}
-                layout="intrinsic"
+                className="w-auto h-[5vh]"
               />
             </Link>
           </li>
         </ul>
-        <ul className="flex list-none border border-3 border-green-600 items-center links-header 2xl:gap-x-5 2xl:text-xl lg:gap-x-5 lg:text-md md:text-sm sm:gap-x-5 sm:text-md">
+        <ul className="gap-3 text-base lg:font-semibold lg:flex sm:hidden">
           <li className="">
-            <Link href={"/"} className="2xl:font-semibold lg:font-semibold">Home</Link>
+            <Link href={"/"}>Home</Link>
           </li>
           <li>
-            <Link href={"/sobre-nos"} className="2xl:font-semibold lg:font-semibold">Sobre nós</Link>
+            <Link href={"/sobre-nos"}>Sobre nós</Link>
           </li>
           <li>
-            <Link href={"/"} className="2xl:font-semibold lg:font-semibold">Pedir  Guincho</Link>
+            <Link href={"/"}>Pedir  Guincho</Link>
           </li>
         </ul>
-        <div className="flex items-center justify-between gap-4 border border-2 2xl:py-0 xl:py-1 lg:py-1 ">
-          <div className="border border-red-600 h-fit">
+        <div className="lg:flex sm:hidden items-center justify-between gap-4 h-full">
+          <div className="">
             <button className="bg-blue-800 rounded-md text-white 2xl:px-3 2xl:py-1 2xl:font-semibold lg:font-semibold lg:px-3 lg:py-0.5 lg:text-sm" onClick={botaoSair}>{conteudoBotao}</button>
           </div>
-          <div className="border border-2 h-full">
-            <Link href="/area-cliente">
-              <Image src={iconeUsuario} alt="" width={200} height={100} className="w-auto h-full"/>
-            </Link>
-          </div>
+          <Link href="/area-cliente" className="block h-full lg:w-[4.5vw]">
+            <Image src={iconeUsuario} alt="" width={200} height={100} className="w-auto h-full"/>
+          </Link>
         </div>
       </nav>
     </header>

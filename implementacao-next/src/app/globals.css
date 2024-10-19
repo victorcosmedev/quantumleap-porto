@@ -20,14 +20,14 @@
     } */
 
 
-    .hamburguer{
+    /* .hamburguer{
 
         @media screen and (min-width: 576px){
             display: none;
         }
-    }
+    } */
 
-    .card-integrante {
+    /* .card-integrante {
         @apply flex w-full items-center md:flex-row sm:flex-col sm:items-center;
         & img{
             @apply rounded-full h-full w-auto mr-8;
@@ -44,8 +44,8 @@
     }
 
     .box-banner-cadastro{
-        /* background-image: url("../../public/img/motorista-azul.jpeg");  */
-    }
+        background-image: url("../../public/img/motorista-azul.jpeg"); 
+    } */
 
 
 }

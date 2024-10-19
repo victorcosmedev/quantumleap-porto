@@ -12,8 +12,7 @@ import logoPorto from "@/img/logo-porto.png";
 export default function Rodape() {
   return (
     <footer className="w-full flex items-center justify-between px-[10vw] md:gap-[40vw] sm:gap-[20vw] py-6  bg-black">
-      
-      <nav className="flex gap-2 flex-col md:w-[25%]">
+      <nav className="flex gap-2 flex-col sm:w-[25%] md:w-[20%]">
         <ul className="flex gap-3 xl:gap-2 lg:gap-1 md:gap-1 sm:gap-1">
           <li>
             <a href="https://twitter.com/portoseguro" target="_blank"
@@ -126,7 +125,7 @@ export default function Rodape() {
         alt="logo da porto seguro"
         width={200}
         height={100}
-        className="h-full md:w-[25%] sm:w-[40%]"
+        className="h-full md:w-[25%] sm:w-[30%]"
         layout="intrinsic"
       />
     </footer>
