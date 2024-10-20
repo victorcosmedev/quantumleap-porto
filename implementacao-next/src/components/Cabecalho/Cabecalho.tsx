@@ -6,7 +6,7 @@ import imgLogo from "@/img/logo-porto.png";
 import iconeUsuario from "@/img/icone-usuario.png";
 import iconeMenu from "@/img/icone-hamburguer.png";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/compat/router";
 import { Inter } from "@next/font/google";
 
 const inter = Inter({
@@ -19,11 +19,10 @@ const inter = Inter({
 export default function Cabecalho() {
 
   const [conteudoBotao, setConteudoBotao] = useState("");
-  // const router = useRouter();
   const [usuarioLogado, setUsuarioLogado] = useState(sessionStorage.getItem('usuarioAutenticado'));
+  const router = useRouter();
   
   useEffect(() => {
-    
     console.log("Usuário está logado? " + usuarioLogado);
 
     if(usuarioLogado !== null){
@@ -43,7 +42,7 @@ export default function Cabecalho() {
       window.location.reload();
       
     } else {
-      // router.push("/login");
+      router?.push("/login");
     }
   }
 
@@ -76,7 +75,7 @@ export default function Cabecalho() {
             <Link href={"/sobre-nos"}>Sobre nós</Link>
           </li>
           <li>
-            <Link href={"/"}>Pedir  Guincho</Link>
+            <Link href={"/"} onClick={botaoChamarGuincho}>Pedir  Guincho</Link>
           </li>
         </ul>
         <div className="lg:flex sm:hidden items-center justify-between gap-4 h-full">
