@@ -79,7 +79,7 @@ export default function Login(){
     }
     
   return(
-    <main className="mx-auto lg:py-[20vh] lg:px-[25vw]">
+    <main className="lg:py-[20vh] lg:px-[25vw]">
       <form className="border lg:border-slate-400 bg-slate-100 flex justify-center lg:rounded-2xl lg:py-8 lg:px-9 lg:h-fit sm:py-8 sm:px-[10vw] sm:h-[80vh] items-center" onSubmit={envioFormulario}>
           <fieldset className="w-full flex flex-col lg:gap-3 lg:text-lg lg:font-medium sm:gap-5 sm:text-lg sm:font-medium">
               <div className="text-center">
@@ -116,4 +116,4 @@ export default function Login(){
       </form>
     </main>
   );
-}
+} 
