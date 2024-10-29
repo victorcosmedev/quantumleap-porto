@@ -1,7 +1,8 @@
 "use client"
-import { useRouter } from "next/compat/router";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 
 export default function Login(){
 
@@ -77,10 +78,30 @@ export default function Login(){
 			}, 5000);
         }
     }
+
+    //envioFormulario
+
+    const [email, setEmail] = useState<string>('')
+    const [senha, setSenha] = useState<string>('')
+
+    async function handleSubmit(event: SyntheticEvent){
+        event.preventDefault()
+        const result = await signIn('credentials', {
+            email,
+            senha,
+            redirect: false
+        })
+
+        if (result?.error) {
+            console.log(result)
+            return
+        }
+        router.replace('/')
+    }
     
   return(
     <main className="lg:py-[20vh] lg:px-[25vw]">
-      <form className="border lg:border-slate-400 bg-slate-100 flex justify-center lg:rounded-2xl lg:py-8 lg:px-9 lg:h-fit sm:py-8 sm:px-[10vw] sm:h-[80vh] items-center" onSubmit={envioFormulario}>
+      <form className="border lg:border-slate-400 bg-slate-100 flex justify-center lg:rounded-2xl lg:py-8 lg:px-9 lg:h-fit sm:py-8 sm:px-[10vw] sm:h-[80vh] items-center" onSubmit={handleSubmit}>
           <fieldset className="w-full flex flex-col lg:gap-3 lg:text-lg lg:font-medium sm:gap-5 sm:text-lg sm:font-medium">
               <div className="text-center">
                 <h1 className="lg:font-semibold lg:text-xl sm:font-semibold sm:text-xl">Acessar Conta</h1>
@@ -88,14 +109,14 @@ export default function Login(){
               </div>
               
               <div className="flex flex-col w-full lg:gap-1 sm:gap-1">
-                  <label htmlFor="cpf">CPF</label>
+                  <label htmlFor="email">Email</label>
                   <input
-                  id="cpf"
+                  id="email"
                   className="border rounded-md lg:py-1 lg:px-3 lg:text-sm sm:py-1 sm:px-3 sm:text-sm"
                   type="text"
-                  name="cpf"
-                  placeholder="CPF / CNPJ"
-                  minLength={8}
+                  name="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                   />
               </div>
@@ -107,9 +128,12 @@ export default function Login(){
                   type="password"
                   name="senha"
                   placeholder="Senha"
+                  onChange={(e) => setSenha(e.target.value)}
                   required
                   />
               </div>
+
+
               <button className="justify-self-start w-fit text-white bg-azul-escuro lg:text-sm lg:py-1 lg:px-4 lg:rounded-md sm:text-sm sm:py-1 sm:px-4 sm:rounded-md" type="submit">Enviar</button>
               <p className={`${classeMensagem === "sucesso" ? "text-green-600" : "text-red-700"}`}>{msgStatusEnvio}</p>
           </fieldset>
