@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -10,49 +10,54 @@ import { useRouter } from "next/compat/router";
 import { Inter } from "@next/font/google";
 
 const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  display: 'swap',
-  variable: '--font-inter',
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export default function Cabecalho() {
+  // const [conteudoBotao, setConteudoBotao] = useState("");
+  // const [usuarioLogado, setUsuarioLogado] = useState(
+  //   sessionStorage.getItem("usuarioAutenticado")
+  // );
+  // const router = useRouter();
 
-  const [conteudoBotao, setConteudoBotao] = useState("");
-  const [usuarioLogado, setUsuarioLogado] = useState(sessionStorage.getItem('usuarioAutenticado'));
-  const router = useRouter();
+  // useEffect(() => {
+  //   console.log("Usuário está logado? " + usuarioLogado);
+
+  //   if (usuarioLogado !== null) {
+  //     setConteudoBotao("Sair");
+  //   } else {
+  //     setConteudoBotao("Entrar");
+  //   }
+  // }, [usuarioLogado]);
+
+  // const botaoSair = () => {
+  //   const usuarioLogado = sessionStorage.getItem("usuarioAutenticado");
+  //   if (usuarioLogado) {
+  //     sessionStorage.removeItem("usuarioAutenticado");
+  //     // Navega diretamente para a página desejada após o logout
+  //     router.push("/"); // Substitua "/" pela URL desejada
+  //   } else {
+  //     router.push("/login");
+  //   }
+  // };
+
   
-  useEffect(() => {
-    console.log("Usuário está logado? " + usuarioLogado);
-
-    if(usuarioLogado !== null){
-      setConteudoBotao("Sair");
-    } else {
-      setConteudoBotao("Entrar");
-    }
-  }, [usuarioLogado]);
-
-  const botaoSair = () => {
-    const usuarioLogado = sessionStorage.getItem('usuarioAutenticado');
-    if(usuarioLogado){
-      sessionStorage.removeItem('usuarioAutenticado');
-      
-      
-      // router.push("/");
-      window.location.reload();
-      
-    } else {
-      router?.push("/login");
-    }
-  }
-
   const botaoChamarGuincho = () => {
     alert("Aguarde, estamos enviando um guincho para sua localização");
-  }
+  };
 
   return (
     <header className="flex justify-between items-center lg:h-[10vh] lg:py-[2vh] lg:px-[5vw] lg:gap-[2vw] sm:h-[10vh] sm:py-[3vh] sm:px-[5vw] sm:gap-[2vw]">
-      <Image src={imgLogo} alt="Logo da Porto Seguro" width="200" height="100" className="w-auto h-[6vh]"/>
+      <Image
+        src={imgLogo}
+        alt="Logo da Porto Seguro"
+        width="200"
+        height="100"
+        className="w-auto h-[6vh]"
+      />
       <nav className="flex lg:w-full justify-between items-center">
         <ul className="sm:block lg:hidden h-full">
           <li className="h-full">
@@ -75,15 +80,29 @@ export default function Cabecalho() {
             <Link href={"/sobre-nos"}>Sobre nós</Link>
           </li>
           <li>
-            <Link href={"/"} onClick={botaoChamarGuincho}>Pedir  Guincho</Link>
+            <Link href={"/"} onClick={botaoChamarGuincho}>
+              Pedir Guincho
+            </Link>
           </li>
         </ul>
         <div className="lg:flex sm:hidden items-center justify-between gap-4 h-full">
           <div className="">
-            <button className="bg-blue-800 rounded-md text-white 2xl:px-3 2xl:py-1 2xl:font-semibold lg:font-semibold lg:px-3 lg:py-0.5 lg:text-sm" onClick={botaoSair}>{conteudoBotao}</button>
+            <Link href={"/login"}> <button
+              className="bg-blue-800 rounded-md text-white 2xl:px-3 2xl:py-1 2xl:font-semibold lg:font-semibold lg:px-3 lg:py-0.5 lg:text-sm"
+
+            >
+              Entrar
+            </button></Link>
+           
           </div>
           <Link href="/area-cliente" className="block h-full lg:w-[4.5vw]">
-            <Image src={iconeUsuario} alt="" width={200} height={100} className="w-auto h-full"/>
+            <Image
+              src={iconeUsuario}
+              alt=""
+              width={200}
+              height={100}
+              className="w-auto h-full"
+            />
           </Link>
         </div>
       </nav>
