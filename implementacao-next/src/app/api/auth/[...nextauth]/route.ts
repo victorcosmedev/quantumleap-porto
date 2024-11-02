@@ -1,17 +1,15 @@
-import NextAuth, { NextAuthOptions } from "next-auth"
-import CredentialsProvider from "next-auth/providers/credentials"
-
+import NextAuth, { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
 
 const nextAuthOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({
             name: 'credentials',
             credentials: {
-                email: {label: 'email', type:'text'},
-                password: {label: 'senha', type: 'password'}
+                email: { label: 'email', type: 'text' },
+                senha: { label: 'senha', type: 'password' }
             },
-            
-            async authorize(credentials, req) {
+            async authorize(credentials) {
                 const response = await fetch('http://localhost:8080/clientes/login', {
                     method: "POST",
                     headers: {
@@ -19,25 +17,34 @@ const nextAuthOptions: NextAuthOptions = {
                     },
                     body: JSON.stringify({
                         email: credentials?.email,
-                        password: credentials?.password
+                        senha: credentials?.senha 
                     }),
-                })
+                });
 
-                const user = await response.json()
+                const user = await response.json();
 
-                if(user && response.ok){
-                    return user
+                if (user && response.ok) {
+                    return user; 
                 }
-                return null
-            },
-
-
+                return null; 
+            }
         })
     ],
-    pages:{
+    pages: {
         signIn: '/area-cliente'
-    }
+    },
+    callbacks: {
+		async jwt({ token, user }) {
+			user && (token.user = user)
+			return token
+		},
+		async session({ session, token }){
+			session = token.user as any
+			return session
+		}
+	}
 }
-const handler = NextAuth(nextAuthOptions)
+;
 
-export { handler as GET, handler as POST }
+const handler = NextAuth(nextAuthOptions);
+export { handler as GET, handler as POST, nextAuthOptions }; 

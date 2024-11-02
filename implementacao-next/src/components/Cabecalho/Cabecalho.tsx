@@ -5,9 +5,10 @@ import Link from "next/link";
 import imgLogo from "@/img/logo-porto.png";
 import iconeUsuario from "@/img/icone-usuario.png";
 import iconeMenu from "@/img/icone-hamburguer.png";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/compat/router";
 import { Inter } from "@next/font/google";
+import { useSession } from "next-auth/react"; 
+import ButtonLogout from "../ButtonLogout";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,38 +17,15 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+
 export default function Cabecalho() {
-  // const [conteudoBotao, setConteudoBotao] = useState("");
-  // const [usuarioLogado, setUsuarioLogado] = useState(
-  //   sessionStorage.getItem("usuarioAutenticado")
-  // );
-  // const router = useRouter();
+  const { data: session } = useSession();
 
-  // useEffect(() => {
-  //   console.log("Usuário está logado? " + usuarioLogado);
 
-  //   if (usuarioLogado !== null) {
-  //     setConteudoBotao("Sair");
-  //   } else {
-  //     setConteudoBotao("Entrar");
-  //   }
-  // }, [usuarioLogado]);
-
-  // const botaoSair = () => {
-  //   const usuarioLogado = sessionStorage.getItem("usuarioAutenticado");
-  //   if (usuarioLogado) {
-  //     sessionStorage.removeItem("usuarioAutenticado");
-  //     // Navega diretamente para a página desejada após o logout
-  //     router.push("/"); // Substitua "/" pela URL desejada
-  //   } else {
-  //     router.push("/login");
-  //   }
-  // };
-
-  
   const botaoChamarGuincho = () => {
     alert("Aguarde, estamos enviando um guincho para sua localização");
   };
+
 
   return (
     <header className="flex justify-between items-center lg:h-[10vh] lg:py-[2vh] lg:px-[5vw] lg:gap-[2vw] sm:h-[10vh] sm:py-[3vh] sm:px-[5vw] sm:gap-[2vw]">
@@ -73,7 +51,7 @@ export default function Cabecalho() {
           </li>
         </ul>
         <ul className="gap-3 text-base lg:font-semibold lg:flex sm:hidden">
-          <li className="">
+          <li>
             <Link href={"/"}>Home</Link>
           </li>
           <li>
@@ -86,14 +64,16 @@ export default function Cabecalho() {
           </li>
         </ul>
         <div className="lg:flex sm:hidden items-center justify-between gap-4 h-full">
-          <div className="">
-            <Link href={"/login"}> <button
-              className="bg-blue-800 rounded-md text-white 2xl:px-3 2xl:py-1 2xl:font-semibold lg:font-semibold lg:px-3 lg:py-0.5 lg:text-sm"
-
-            >
-              Entrar
-            </button></Link>
-           
+          <div>
+            {!session ? ( // Verifique se a sessão não existe
+              <Link href={"/login"}>
+                <button className="bg-blue-800 rounded-md text-white 2xl:px-3 2xl:py-1 2xl:font-semibold lg:font-semibold lg:px-3 lg:py-0.5 lg:text-sm">
+                  Entrar
+                </button>
+              </Link>
+            ) : (
+              <ButtonLogout/>
+            )}
           </div>
           <Link href="/area-cliente" className="block h-full lg:w-[4.5vw]">
             <Image
