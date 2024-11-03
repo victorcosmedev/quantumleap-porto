@@ -1,12 +1,12 @@
-import Image from "next/image";
-
+import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div>
-      <h1>Pagina nao encontrada</h1>
-      <Image src="/public/img/242683-P3BXMN-354.jpg" alt="Página de Erro" width={200} height={50} placeholder="blur" blurDataURL="/blur.jpg" layout="responsive"/>
-      <h2>Teste</h2>
-    </div>
+    <main className="lg:h-[80vh] flex items-center justify-center">
+      <div className="border border-red-600 text-center">
+        <h1 className="lg:font-bold lg:text-2xl">Opa! Infelizmente <span className="text-azul-escuro">não conseguimos encontrar o que você queria.</span></h1>
+        <p className="lg:font-semibold lg:text-lg"><Link href={"/"} className="text-azul-escuro underline underline-offset-3">Clique aqui</Link> para voltar à página inicial.</p>
+      </div>
+    </main>
   )
 }
