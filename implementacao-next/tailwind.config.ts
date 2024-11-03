@@ -19,7 +19,7 @@ const config: Config = {
         'xl': '992px',
         'lg': '768px',
         'md': '576px',
-        'sm': '375px'
+        'sm': '315px'
       },
       fontFamily: {
         sans: ['var(--font-inter)']
