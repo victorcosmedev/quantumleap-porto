@@ -3,10 +3,19 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { TipoVeiculo } from "@/types/types";
+import { useRouter } from "next/navigation";
 
 export default function AreaCliente() {
   const { data: session } = useSession();
-  const [cliente, setCliente] = useState<TipoVeiculo[]>([]);
+  const [classeBotaoAreaDoCliente, setClasseBotaoAreaDoCliente] = useState("text-white bg-azul-escuro");
+  const [listaDeVeiculos, setListaDeVeiculos] = useState<TipoVeiculo[]>([]);
+  const router = useRouter();
+
+  const botaoCadastroVeiculoOnClick = () => {
+    setClasseBotaoCadastroDoVeiculo(styles.buttonSelected);
+    setClasseBotaoAreaDoCliente("");
+    setMostrarAreaDoCliente(false);
+  };
 
   useEffect(() => {
     if (session) {
@@ -23,18 +32,25 @@ export default function AreaCliente() {
             }
           );
           if (!response.ok) {
-            throw new Error("Network response was not ok");
+            throw new Error("Usuário não tem veículo");
           }
           const data = await response.json();
-          setCliente(data);
+          setListaDeVeiculos(data);
+
+          setTimeout(() => {
+
+            console.log(listaDeVeiculos);
+          }, 2000);
         } catch (error) {
           console.error("Erro ao buscar veículos do cliente:", error);
         }
       };
-
+    
       chamadaApi();
+    } else {
+      router.push("/");
     }
-  }, [session]);
+  }, [session, router]);
 
   const [veiculo, setVeiculo] = useState<TipoVeiculo>({
     idVeiculo: 0,
@@ -49,7 +65,7 @@ export default function AreaCliente() {
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
-
+    console.log("submit")
     try{
       const response = await fetch('http://localhost:8080/veiculos', {
         method: 'POST',
@@ -71,14 +87,49 @@ export default function AreaCliente() {
           nomeCliente: session?.nomeCliente ?? "",
           idCliente: session?.idCliente ?? 0,
         });
-    }} catch(error){
+        window.location.reload();
+      }
+    } catch(error){
       console.error("Erro ao cadastrar veículo:", error);
     }
   }
 
+  const buscarVeiculoParaEditar = (idVeiculo: number) => {
+    const veiculoSelecionado: TipoVeiculo = listaDeVeiculos.find((veiculo) => veiculo.idVeiculo == idVeiculo);
+    console.log(veiculoSelecionado);
+    setVeiculo(veiculoSelecionado);
+  }
 
+  const handleDelete = async (idVeiculo: number) => {
+    try {
+      const response = await fetch(`http://localhost:8080/veiculos/deletarVeiculo/${idVeiculo}`, {
+        method: "DELETE"
+      });
 
+      if(response.ok){
+        alert("Veículo deletado com sucesso!");
+        window.location.reload();
+        
+      }
+    } catch (error){
+      console.log("Não foi possível cadastrar o veículo.", error);
+    }
+  }
 
+  const handleUpdate = async () => {
+    console.log(veiculo);
+    try {
+      const response = await fetch(`http://localhost:8080/veiculos/atualizarVeiculo/${veiculo.idVeiculo}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(veiculo)
+      });
+    } catch (error) {
+      console.log("Não foi possível atualizar o usuário.", error);
+    }
+  }
 
   return (
     <main className="w-full lg:py-[25vh] lg:px-[15vw] lg:text-lg sm:py-[10vh] sm:px-[15vw] sm:text-base">
@@ -93,6 +144,8 @@ export default function AreaCliente() {
           <h1>Olá, {session?.nomeCliente}</h1>
         </div>
         <div className="bg-slate-300 grid lg:grid-cols-2 sm:grid-cols-1 lg:px-[3.5%] lg:py-4 lg:rounded-md lg:gap-3 sm:px-[5%] sm:py-3 sm:rounded-md sm:gap-3">
+
+
           <form onSubmit={handleSubmit}>
             <fieldset className="grid grid-cols-2 grid-rows-3 lg:gap-x-2 sm:gap-x-2">
               <div className="w-full lg:py-2 sm:py-2">
@@ -105,7 +158,7 @@ export default function AreaCliente() {
                   placeholder="Ex.: Honda"
                   name="montadoraVeiculo"
                   value={veiculo.montadoraVeiculo}
-                    onChange={(e) => setVeiculo({...veiculo,montadoraVeiculo:e.target.value})}
+                  onChange={(event) => setVeiculo({...veiculo,montadoraVeiculo:event.target.value})}
                 />
               </div>
               <div className="w-full py-2">
@@ -118,7 +171,7 @@ export default function AreaCliente() {
                   name='modeloVeiculo'
                   placeholder="Ex.: Accord"
                   value={veiculo.modeloVeiculo}
-                  onChange={(e) => setVeiculo({...veiculo,modeloVeiculo:e.target.value})}
+                  onChange={(event) => setVeiculo({...veiculo,modeloVeiculo:event.target.value})}
                 />
               </div>
               <div className="w-full py-2">
@@ -131,7 +184,7 @@ export default function AreaCliente() {
                   placeholder="Ex.: 2010"
                   name="anoVeiculo"
                   value={veiculo.anoVeiculo}
-                  onChange={(e) => setVeiculo({...veiculo,anoVeiculo: parseFloat(e.target.value)})}
+                  onChange={(event) => setVeiculo({...veiculo,anoVeiculo: parseFloat(event.target.value)})}
                
                 />
               </div>
@@ -145,7 +198,7 @@ export default function AreaCliente() {
                   placeholder="Ex.: ABC-1A34"
                   name="placaVeiculo"
                   value={veiculo.placaVeiculo}
-                  onChange={(e) => setVeiculo({...veiculo,placaVeiculo: e.target.value})}
+                  onChange={(event) => setVeiculo({...veiculo,placaVeiculo: event.target.value})}
                
                 />
               </div>
@@ -159,41 +212,62 @@ export default function AreaCliente() {
                   placeholder="Ex.: 2.000"
                   name="quantidadeQuilometros"
                   value={veiculo.quantidadeQuilometros}
-                  onChange={(e) => setVeiculo({...veiculo,quantidadeQuilometros: parseFloat(e.target.value)})}
+                  onChange={(event) => setVeiculo({...veiculo,quantidadeQuilometros: parseFloat(event.target.value)})}
                
                 />
               </div>
             </fieldset>
             <button
               type="submit"
-              className="bg-azul-escuro text-white lg:font-semibold lg:text-base lg:px-3 lg:py-1 lg:rounded-md sm:font-semibold sm:text-xs sm:px-3 sm:py-1 sm:rounded-md"
+              className="bg-azul-escuro text-white lg:font-semibold lg:text-base lg:px-3 lg:py-1 lg:rounded-md sm:font-semibold sm:text-xs sm:px-3 sm:py-1 sm:rounded-md me-3"
             >
               Enviar
             </button>
+
+            <button
+              type="button"
+              className="bg-orange-500 text-black lg:font-semibold lg:text-base lg:px-3 lg:py-1 lg:rounded-md sm:font-semibold sm:text-xs sm:px-3 sm:py-1 sm:rounded-md"
+              onClick={() => handleUpdate()}
+            >
+              Editar
+            </button>
           </form>
 
-          <table className="bg-slate-50 lg:px-2 lg:py-2 rounded-md lg:text-sm sm:text-base w-full sm:col-span-2 lg:col-span-1 sm:px-2 sm:py-2 flex flex-col sm:gap-2">
+          <div className="bg-slate-50 lg:px-2 lg:py-2 rounded-md lg:text-sm sm:text-base w-full sm:col-span-2 lg:col-span-1 sm:px-2 sm:py-2 flex flex-col sm:gap-2">
             <h1 className="font-semibold lg:mb-1 lg:text-base sm:text-sm">
               Veículos Cadastrados
             </h1>
-            <thead>
-              <tr>
-                <th>Informações Veiculos</th>
-                <th>Ano Veiculo</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cliente.map((veiculo) => (
-                <tr key={veiculo.idVeiculo}>
-                  <td className="font-semibold">
-                    {veiculo.montadoraVeiculo} {veiculo.modeloVeiculo} |{" "}
-                    {veiculo.placaVeiculo}
-                  </td>
-                  <td>{veiculo.anoVeiculo}</td>
+            <table className="table auto">
+              <thead>
+                <tr>
+                  <th className="bg-slate-400">Montadora</th>
+                  <th className="bg-slate-400">Modelo</th>
+                  <th className="bg-slate-400">Ano Veiculo</th>
+                  <th className="bg-slate-400">Placa</th>
+                  <th className="bg-slate-400">Editar/ Excluir</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {listaDeVeiculos.map((veiculo) => (
+                  <tr key={veiculo.idVeiculo}>
+                    <td className="font-semibold text-center border">
+                      {veiculo.montadoraVeiculo}
+                    </td>
+                    <td className="text-center border">
+                    {veiculo.modeloVeiculo}
+                    </td>
+                    <td className="text-center border">
+                      {veiculo.anoVeiculo}
+                    </td>
+                    <td className="text-center border">{veiculo.placaVeiculo}</td>
+                    <td className="text-center border">
+                    <button onClick={() => buscarVeiculoParaEditar(veiculo.idVeiculo)}>Editar</button> | <button onClick={() => handleDelete(veiculo.idVeiculo)}>Excluir</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </main>
