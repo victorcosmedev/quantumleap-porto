@@ -1,83 +1,59 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
-interface Usuario {
-  nome: string;
-  email: string;
-  senha: string;
-  cpf: string;
-  id?: string; // `id` é opcional inicialmente
-  veiculos: [];
-}
+import { TipoCliente } from "@/types/types";
 
 export default function Cadastro() {
   const [msgStatusEnvio, setMsgStatusEnvio] = useState("");
   const [classeMensagem, setClasseMensagem] = useState("");
   const router = useRouter();
 
-  const validaCpf = (cpf: string): boolean => {
-    for (let i: number = 0; i < localStorage.length; i++) {
-      const chave: string | null = localStorage.key(i);
-      const valor = chave ? localStorage.getItem(chave) : null;
-      const usuarioExtraido = JSON.parse(valor) as Usuario;
-      const cpfUsuarioExtraido = usuarioExtraido.cpf;
+  const [cliente, setCliente] = useState<TipoCliente>({
+    idCliente: 0,
+    nomeCliente: "",
+    emailCliente: "",
+    telefoneCliente: "",
+    senhaCliente: "",
+    clientePorto: false,
+    localizacaoCliente: ""
+  });
 
-      if (cpf == cpfUsuarioExtraido) {
-        return false;
-      }
-    }
-
-    return true;
-  };
-
-  const envioFormulario = (event) => {
-    event.preventDefault();
-
-    // Recebendo todos os valores do form
-    const nome = event.target.nome.value;
-    const email = event.target.email.value;
-    const senha = event.target.senha.value;
-    const cpf = event.target.cpf.value;
-
+  const handleSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
+    console.log("Objeto postado: ", cliente);
     // Observação: Verificando se os campos estão vazios
-    if (nome && cpf && email && senha) {
-      // validando a unicidade do usuário via CPF
-      if (validaCpf(cpf)) {
-        const objetoUsuario: Usuario = {
-          nome: nome,
-          email: email,
-          senha: senha,
-          cpf: cpf,
-          veiculos: [],
-        };
+    event.preventDefault();
+    try{
+      const response = await fetch("http://localhost:8080/clientes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // Fazendo o destructuring do cliente, pois o método POST não exige idCliente, que está presente em tipoCliente
+        body: JSON.stringify({
+          nomeCliente: cliente.nomeCliente,
+          telefoneCliente: cliente.telefoneCliente,
+          senhaCliente: cliente.senhaCliente,
+          clientePorto: cliente.clientePorto,
+          emailCliente: cliente.emailCliente,
+          localizacaoCliente: cliente.localizacaoCliente
+        }),
+      })
 
-        objetoUsuario.id = "user_" + objetoUsuario.cpf;
-        localStorage.setItem(objetoUsuario.id, JSON.stringify(objetoUsuario));
 
+      if(response.ok){
         setMsgStatusEnvio("Cadastro realizado com sucesso!");
         setClasseMensagem("sucesso");
 
         setTimeout(() => {
           router.push("/");
-        }, 5000);
+        }, 3500);
+
       } else {
         setClasseMensagem("erro");
-        setMsgStatusEnvio(
-          "Você já está cadastrado. Estamos te redirecionando ao login..."
-        );
-
-        setTimeout(() => {
-          router.push("/login/");
-        }, 5000);
+        setMsgStatusEnvio("Preencha todos os campos!");
       }
-    } else {
-      setClasseMensagem("erro");
-      setMsgStatusEnvio("Preencha todos os campos!");
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 5000);
+    } catch(error){
+      console.error(error);
     }
   };
 
@@ -85,7 +61,7 @@ export default function Cadastro() {
     <main className="lg:py-[20vh] lg:px-[25vw]">
       <form
         className="border lg:border-slate-400 bg-slate-100 flex justify-center lg:rounded-2xl lg:py-8 lg:px-9 lg:h-fit sm:py-8 sm:px-[10vw] sm:h-[80vh] items-center"
-        onSubmit={envioFormulario}
+        onSubmit={handleSubmit}
       >
         <fieldset className="w-full flex flex-col lg:gap-3 lg:text-lg lg:font-medium sm:gap-5 sm:text-lg sm:font-medium">
           <div className="text-center">
@@ -105,6 +81,8 @@ export default function Cadastro() {
               className="border rounded-md lg:py-1 lg:px-3 lg:text-sm sm:py-1 sm:px-3 sm:text-sm"
               type="text"
               name="nome"
+              value={cliente.nomeCliente}
+              onChange={(event) => setCliente({...cliente, nomeCliente: event.target.value})}
               placeholder="Nome"
               minLength={3}
               required
@@ -112,15 +90,32 @@ export default function Cadastro() {
           </div>
           <div className="flex flex-col w-full lg:gap-1 sm:gap-1">
             <label htmlFor="cpf">
-              CPF<span>*</span>
+              Telefone<span>*</span>
             </label>
             <input
-              id="cpf"
+              id="telefone"
               className="border rounded-md lg:py-1 lg:px-3 lg:text-sm sm:py-1 sm:px-3 sm:text-sm"
               type="text"
-              name="cpf"
-              placeholder="CPF/CNPJ"
+              name="telefone"
+              placeholder="1123456789"
               minLength={11}
+              value={cliente.telefoneCliente}
+              onChange={(event) => setCliente({...cliente, telefoneCliente: event.target.value})}
+              required
+            />
+          </div>
+          <div className="flex flex-col w-full lg:gap-1 sm:gap-1">
+            <label htmlFor="email">
+              Endereço<span>*</span>
+            </label>
+            <input
+              id="endereco"
+              className="border rounded-md lg:py-1 lg:px-3 lg:text-sm sm:py-1 sm:px-3 sm:text-sm"
+              type="text"
+              name="endereco"
+              value={cliente.localizacaoCliente}
+              onChange={(event) => setCliente({...cliente, localizacaoCliente: event.target.value})}
+              placeholder="Insira seu endereço completo"
               required
             />
           </div>
@@ -133,7 +128,9 @@ export default function Cadastro() {
               className="border rounded-md lg:py-1 lg:px-3 lg:text-sm sm:py-1 sm:px-3 sm:text-sm"
               type="text"
               name="email"
-              placeholder="Email"
+              value={cliente.emailCliente}
+              onChange={(event) => setCliente({...cliente, emailCliente: event.target.value})}
+              placeholder="Insira seu endereço completo"
               required
             />
           </div>
@@ -147,6 +144,8 @@ export default function Cadastro() {
               type="password"
               name="senha"
               placeholder="Senha"
+              value={cliente.senhaCliente}
+              onChange={(event) => setCliente({...cliente, senhaCliente: event.target.value})}
               minLength={8}
               required
             />
@@ -154,8 +153,7 @@ export default function Cadastro() {
           <button className="justify-self-start w-fit text-white bg-azul-escuro lg:text-sm lg:py-1 lg:px-4 lg:rounded-md sm:text-sm sm:py-1 sm:px-4 sm:rounded-md" type="submit">
             Enviar
           </button>
-          <p
-            className={`${
+          <p className={`${
               classeMensagem === "sucesso" ? "text-green-600" : "text-red-600"
             }`}
           >

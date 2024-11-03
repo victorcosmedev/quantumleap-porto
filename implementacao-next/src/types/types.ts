@@ -8,3 +8,14 @@ export type TipoVeiculo = {
     nomeCliente: string | null; 
     idCliente: number | null; 
 };
+
+
+export type TipoCliente = {
+    idCliente: number;
+    nomeCliente: string;
+    emailCliente: string;
+    telefoneCliente: string;
+    senhaCliente: string;
+    clientePorto: boolean;
+    localizacaoCliente: string;
+}
