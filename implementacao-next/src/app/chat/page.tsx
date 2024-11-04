@@ -1,7 +1,6 @@
 "use client"
 
 import { Problema } from "@/types/types";
-import Link from "next/link";
 import { useState } from "react"
 
 export default function Chat() {
