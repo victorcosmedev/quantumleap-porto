@@ -19,98 +19,7 @@ export default function AreaCliente() {
     localizacaoCliente: "",
   });
   const router = useRouter();
-  
 
-  useEffect(() => {
-    if (session) {
-      const buscaVeiculos = async () => {
-        try {
-          const response = await fetch(
-            `http://localhost:8080/veiculos/buscarVeiculoCliente/${session.idCliente}`,
-            {
-              method: "GET",
-              credentials: "include",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          if (!response.ok) {
-            throw new Error("Usuário não tem veículo");
-          }
-          const data = await response.json();
-          setListaDeVeiculos(data);
-
-          setTimeout(() => {
-            console.log(listaDeVeiculos);
-          }, 2000);
-        } catch (error) {
-          console.error("Erro ao buscar veículos do cliente:", error);
-        }
-      };
-
-      buscaVeiculos();
-      const buscaUsuario = async (idCliente: number) => {
-        console.log(`http://localhost:8080/clientes/${idCliente}`);
-        try {
-          const response = await fetch(
-            `http://localhost:8080/clientes/${idCliente}`,
-            {
-              method: "GET",
-            }
-          );
-          const dadosUsuario = await response.json();
-          setCliente(dadosUsuario);
-        } catch (error) {
-          console.log("Não foi possível carregar os dados do usuário.", error);
-        }
-      };
-
-      buscaUsuario(session.idCliente);
-    } else {
-      router.push("/");
-    }
-  }, [session, router, listaDeVeiculos]);
-
-  const [exibirDadosUsuario, setExibirDadosUsuario] = useState(true);
-
-  
-  useEffect(() => {
-    renderizaAreaUsuario();
-  }, [exibirDadosUsuario, listaDeVeiculos])  
-
-  const deletarUsuario = async () => {
-    // console.log(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`);
-    try {
-      await fetch(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`, {
-        method: "DELETE",
-      })
-
-
-    } catch(error){
-      console.log("Não foi possível deletar o usuário.", error);
-    }
-  }
-
-  async function logout() {
-    await signOut({
-      redirect: false,
-    });
-    router.replace("/");
-  }
-
-  
-
-  const [veiculo, setVeiculo] = useState<TipoVeiculo>({
-    idVeiculo: 0,
-    montadoraVeiculo: "",
-    modeloVeiculo: "",
-    anoVeiculo: 0.0,
-    quantidadeQuilometros: 0.0,
-    placaVeiculo: "",
-    nomeCliente: session?.nomeCliente ?? "",
-    idCliente: session?.idCliente ?? 0,
-  });
   const renderizaAreaUsuario = () => {
     if (exibirDadosUsuario) {
       return(
@@ -243,6 +152,91 @@ export default function AreaCliente() {
       )
     }
   }
+  
+
+  useEffect(() => {
+    if (session) {
+      const buscaVeiculos = async () => {
+        try {
+          const response = await fetch(
+            `http://localhost:8080/veiculos/buscarVeiculoCliente/${session.idCliente}`,
+            {
+              method: "GET",
+              credentials: "include",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          if (!response.ok) {
+            throw new Error("Usuário não tem veículo");
+          }
+          const data = await response.json();
+          setListaDeVeiculos(data);
+
+          setTimeout(() => {
+            console.log(listaDeVeiculos);
+          }, 2000);
+        } catch (error) {
+          console.error("Erro ao buscar veículos do cliente:", error);
+        }
+      };
+
+      buscaVeiculos();
+      const buscaUsuario = async (idCliente: number) => {
+        console.log(`http://localhost:8080/clientes/${idCliente}`);
+        try {
+          const response = await fetch(
+            `http://localhost:8080/clientes/${idCliente}`,
+            {
+              method: "GET",
+            }
+          );
+          const dadosUsuario = await response.json();
+          setCliente(dadosUsuario);
+        } catch (error) {
+          console.log("Não foi possível carregar os dados do usuário.", error);
+        }
+      };
+
+      buscaUsuario(session.idCliente);
+    } else {
+      router.push("/");
+    }
+  }, [session, router, listaDeVeiculos]);
+
+  const [exibirDadosUsuario, setExibirDadosUsuario] = useState(true);
+
+  
+  useEffect(() => {
+    renderizaAreaUsuario();
+  }, [exibirDadosUsuario, listaDeVeiculos,re])  
+
+  const deletarUsuario = async () => {
+    // console.log(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`);
+    try {
+      await fetch(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`, {
+        method: "DELETE",
+      })
+
+
+    } catch(error){
+      console.log("Não foi possível deletar o usuário.", error);
+    }
+  }
+
+
+  const [veiculo, setVeiculo] = useState<TipoVeiculo>({
+    idVeiculo: 0,
+    montadoraVeiculo: "",
+    modeloVeiculo: "",
+    anoVeiculo: 0.0,
+    quantidadeQuilometros: 0.0,
+    placaVeiculo: "",
+    nomeCliente: session?.nomeCliente ?? "",
+    idCliente: session?.idCliente ?? 0,
+  });
+  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
