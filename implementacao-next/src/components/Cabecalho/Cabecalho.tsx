@@ -5,17 +5,10 @@ import Link from "next/link";
 import imgLogo from "@/img/logo-porto.png";
 import iconeUsuario from "@/img/icone-usuario.png";
 import iconeMenu from "@/img/icone-hamburguer.png";
-import { Inter } from "@next/font/google";
 import { useSession } from "next-auth/react"; 
 import ButtonLogout from "../ButtonLogout";
 
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 
 export default function Cabecalho() {

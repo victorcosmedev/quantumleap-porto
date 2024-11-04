@@ -4,14 +4,10 @@ import { useState, useEffect } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { TipoCliente, TipoVeiculo } from "@/types/types";
 import { useRouter } from "next/navigation";
-import { render } from "react-dom";
 import Link from "next/link";
 
 export default function AreaCliente() {
   const { data: session } = useSession();
-  const [classeBotaoAreaDoCliente, setClasseBotaoAreaDoCliente] = useState(
-    "text-white bg-azul-escuro"
-  );
   const [listaDeVeiculos, setListaDeVeiculos] = useState<TipoVeiculo[]>([]);
   const [cliente, setCliente] = useState<TipoCliente>({
     idCliente: 0,
@@ -23,85 +19,6 @@ export default function AreaCliente() {
     localizacaoCliente: "",
   });
   const router = useRouter();
-
-  useEffect(() => {
-    if (session) {
-      const buscaVeiculos = async () => {
-        try {
-          const response = await fetch(
-            `http://localhost:8080/veiculos/buscarVeiculoCliente/${session.idCliente}`,
-            {
-              method: "GET",
-              credentials: "include",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          if (!response.ok) {
-            throw new Error("Usuário não tem veículo");
-          }
-          const data = await response.json();
-          setListaDeVeiculos(data);
-
-          setTimeout(() => {
-            console.log(listaDeVeiculos);
-          }, 2000);
-        } catch (error) {
-          console.error("Erro ao buscar veículos do cliente:", error);
-        }
-      };
-
-      buscaVeiculos();
-      const buscaUsuario = async (idCliente: number) => {
-        console.log(`http://localhost:8080/clientes/${idCliente}`);
-        try {
-          const response = await fetch(
-            `http://localhost:8080/clientes/${idCliente}`,
-            {
-              method: "GET",
-            }
-          );
-          const dadosUsuario = await response.json();
-          setCliente(dadosUsuario);
-        } catch (error) {
-          console.log("Não foi possível carregar os dados do usuário.", error);
-        }
-      };
-
-      buscaUsuario(session.idCliente);
-    } else {
-      router.push("/");
-    }
-  }, [session, router]);
-
-  const [exibirDadosUsuario, setExibirDadosUsuario] = useState(true);
-
-  useEffect(() => {
-    renderizaAreaUsuario();
-  }, [exibirDadosUsuario])  
-
-  const deletarUsuario = () => {
-    // console.log(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`);
-    try {
-      const response = fetch(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`, {
-        method: "DELETE",
-      })
-
-      logout();
-
-    } catch(error){
-      console.log("Não foi possível deletar o usuário.", error);
-    }
-  }
-
-  async function logout() {
-    await signOut({
-      redirect: false,
-    });
-    router.replace("/");
-  }
-
   const renderizaAreaUsuario = () => {
     if (exibirDadosUsuario) {
       return(
@@ -234,6 +151,87 @@ export default function AreaCliente() {
       )
     }
   }
+
+  useEffect(() => {
+    if (session) {
+      const buscaVeiculos = async () => {
+        try {
+          const response = await fetch(
+            `http://localhost:8080/veiculos/buscarVeiculoCliente/${session.idCliente}`,
+            {
+              method: "GET",
+              credentials: "include",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          if (!response.ok) {
+            throw new Error("Usuário não tem veículo");
+          }
+          const data = await response.json();
+          setListaDeVeiculos(data);
+
+          setTimeout(() => {
+            console.log(listaDeVeiculos);
+          }, 2000);
+        } catch (error) {
+          console.error("Erro ao buscar veículos do cliente:", error);
+        }
+      };
+
+      buscaVeiculos();
+      const buscaUsuario = async (idCliente: number) => {
+        console.log(`http://localhost:8080/clientes/${idCliente}`);
+        try {
+          const response = await fetch(
+            `http://localhost:8080/clientes/${idCliente}`,
+            {
+              method: "GET",
+            }
+          );
+          const dadosUsuario = await response.json();
+          setCliente(dadosUsuario);
+        } catch (error) {
+          console.log("Não foi possível carregar os dados do usuário.", error);
+        }
+      };
+
+      buscaUsuario(session.idCliente);
+    } else {
+      router.push("/");
+    }
+  }, [session, router, listaDeVeiculos. renderizaAreaUsuario]);
+
+  const [exibirDadosUsuario, setExibirDadosUsuario] = useState(true);
+
+  
+  useEffect(() => {
+    renderizaAreaUsuario();
+  }, [exibirDadosUsuario, listaDeVeiculos, renderizaAreaUsuario()])  
+
+  const deletarUsuario = () => {
+    // console.log(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`);
+    try {
+      const response = fetch(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`, {
+        method: "DELETE",
+      })
+      const data = response.
+      logout();
+
+    } catch(error){
+      console.log("Não foi possível deletar o usuário.", error);
+    }
+  }
+
+  async function logout() {
+    await signOut({
+      redirect: false,
+    });
+    router.replace("/");
+  }
+
+  
 
   const [veiculo, setVeiculo] = useState<TipoVeiculo>({
     idVeiculo: 0,
