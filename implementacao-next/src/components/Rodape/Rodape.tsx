@@ -120,7 +120,6 @@ export default function Rodape() {
         </ul>
       </nav>
       <Image
-        className="border-2 border-green-600"
         src={logoPorto}
         alt="logo da porto seguro"
         width={200}

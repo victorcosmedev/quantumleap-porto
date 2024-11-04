@@ -79,14 +79,13 @@ export default function AreaCliente() {
     renderizaAreaUsuario();
   }, [exibirDadosUsuario, listaDeVeiculos])  
 
-  const deletarUsuario = () => {
+  const deletarUsuario = async () => {
     // console.log(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`);
     try {
-      const response = fetch(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`, {
+      await fetch(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`, {
         method: "DELETE",
       })
-      const data = response.
-      logout();
+
 
     } catch(error){
       console.log("Não foi possível deletar o usuário.", error);
@@ -276,9 +275,17 @@ export default function AreaCliente() {
   };
 
   const buscarVeiculoParaEditar = (idVeiculo: number) => {
-    const veiculoSelecionado: TipoVeiculo = listaDeVeiculos.find(
-      (veiculo) => veiculo.idVeiculo == idVeiculo
-    );
+    const veiculoSelecionado: TipoVeiculo = listaDeVeiculos.find((veiculo) => veiculo.idVeiculo == idVeiculo 
+    ) ?? {
+      idVeiculo: 0, 
+      montadoraVeiculo: "", 
+      modeloVeiculo: "", 
+      anoVeiculo: 0, 
+      quantidadeQuilometros: 0, 
+      placaVeiculo: "", 
+      nomeCliente: "", 
+      idCliente: 0, 
+  };
     console.log(veiculoSelecionado);
     setVeiculo(veiculoSelecionado);
   };
