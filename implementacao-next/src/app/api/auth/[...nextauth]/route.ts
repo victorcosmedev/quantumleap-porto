@@ -35,8 +35,10 @@ const nextAuthOptions: NextAuthOptions = {
     },
     callbacks: {
 		async jwt({ token, user }) {
-			user && (token.user = user)
-			return token
+			if (user) {
+                token.user = user;
+            }
+            return token;
 		},
 		async session({ session, token }){
 			session = token.user as any

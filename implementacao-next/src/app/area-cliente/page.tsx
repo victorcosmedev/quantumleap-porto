@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { TipoCliente, TipoVeiculo } from "@/types/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -210,7 +210,7 @@ export default function AreaCliente() {
   
   useEffect(() => {
     renderizaAreaUsuario();
-  }, [exibirDadosUsuario, listaDeVeiculos,re])  
+  }, [exibirDadosUsuario, listaDeVeiculos,renderizaAreaUsuario])  
 
   const deletarUsuario = async () => {
     // console.log(`http://localhost:8080/clientes/deletarCliente/${cliente.idCliente}`);
