@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    /* .cabecalho {
+        @apply flex border-solid border-2 border-red-600 align-middle justify-between w-100 gap-6 2xl:px-[75px] 2xl:h-[13vh] 2xl:py-3 lg:px-[75px] lg:h-[13vh] lg:py-2;
+
+        & img {
+            @apply border-solid border-2 w-[auto];
+        }
+
+        & nav {
+            @apply border-solid border-2 border-blue-700 flex align-middle justify-between 2xl:w-[100%] lg:w-[100%];
+
+           
+
+            
+        }
+    } */
+
+
+    /* .hamburguer{
+
+        @media screen and (min-width: 576px){
+            display: none;
+        }
+    } */
+
+    /* .card-integrante {
+        @apply flex w-full items-center md:flex-row sm:flex-col sm:items-center;
+        & img{
+            @apply rounded-full h-full w-auto mr-8;
+        }
+
+        & div {
+            @apply font-black border border-2 flex sm:flex-col sm:items-center sm:text-xs sm:text-center md:items-start md:text-base md:text-start;
+
+
+            & h4 {
+                @apply text-slate-500
+            }
+        }
+    }
+
+    .box-banner-cadastro{
+        background-image: url("../../public/img/motorista-azul.jpeg"); 
+    } */
+
+
+}
