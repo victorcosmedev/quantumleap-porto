@@ -51,7 +51,7 @@ export default function EditarCadastro({ params }: { params: { id: number }}) {
   };
 
   useEffect(() => {
-    console.log(`http://localhost/8080/clientes/${params.id}`);
+    console.log(`http://localhost:8080/clientes/${params.id}`);
     if(params.id){
         const buscaDadosUsuario = async () => {
             try{
