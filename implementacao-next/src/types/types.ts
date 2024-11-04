@@ -19,3 +19,7 @@ export type TipoCliente = {
     clientePorto: boolean;
     localizacaoCliente: string;
 }
+
+export type Problema = {
+    problema: string;
+}

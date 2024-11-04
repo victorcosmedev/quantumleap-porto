@@ -39,7 +39,7 @@ export default function Cabecalho() {
       <nav className="flex lg:w-full justify-between items-center">
         <ul className="sm:block lg:hidden h-full">
           <li className="h-full">
-            <Link href="/" className="w-full h-auto">
+            <Link href="/menu" className="w-full h-auto">
               <Image
                 src={iconeMenu}
                 alt="menu com mais opções"
